@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.15.5.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -27,7 +27,7 @@ of features.
 chmod a-x examples/*
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build
+CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
 %check
 %{__python} tests/test_internals.py -q
@@ -46,6 +46,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Thu Dec  7 2006 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.15.5.1-4
+- Add -DHAVE_CURL_OPENSSL to fix PPC build problem.
+
 * Thu Dec  7 2006 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.15.5.1-3
 - Don't forget to Provide: pycurl!!!
 
