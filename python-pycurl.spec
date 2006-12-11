@@ -1,20 +1,28 @@
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
+%define cvs 20061207
+
 Name:           python-pycurl
-Version:        7.15.5.1
-Release:        4%{?dist}
+Version:        7.16.0
+Release:        0.1.%{cvs}%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPL
 URL:            http://pycurl.sourceforge.net/
-Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
+#Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
+
+# to recreate this tarball:
+# cvs -d:pserver:anonymous@pycurl.cvs.sourceforge.net:/cvsroot/pycurl export -D %{cvs} -d pycurl-%{cvs} pycurl
+# tar cjf pycurl-%{cvs}.tar.bz2 pycurl-%{cvs}
+
+Source0:        pycurl-%{cvs}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel
-BuildRequires:  curl-devel >= 7.15.5
+BuildRequires:  curl-devel >= 7.16.0
 
-Provides:	pycurl = %{version}-%{release}
+Provides:       pycurl = %{version}-%{release}
 
 %description
 PycURL is a Python interface to libcurl. PycURL can be used to fetch
@@ -23,8 +31,10 @@ urllib Python module. PycURL is mature, very fast, and supports a lot
 of features.
 
 %prep
-%setup -q -n pycurl-%{version}
+%setup -q -n pycurl-%{cvs}
 chmod a-x examples/*
+rm examples/.cvsignore
+rm tests/.cvsignore
 
 %build
 CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
@@ -46,6 +56,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Thu Dec  7 2006 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.16.0-0.1.20061207
+- Update to a CVS snapshot since development has a newer version of curl than is in FC <= 6
+
 * Thu Dec  7 2006 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.15.5.1-4
 - Add -DHAVE_CURL_OPENSSL to fix PPC build problem.
 
@@ -58,4 +71,3 @@ rm -rf %{buildroot}
 
 * Thu Dec  7 2006 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.15.5.1-1
 - First version for Fedora Extras
-
