@@ -1,12 +1,12 @@
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.16.2.1
+Version:        7.16.4
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
-License:        LGPL
+License:        LGPLv2+
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 
@@ -47,6 +47,10 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Wed Aug 29 2007 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.16.4-1
+- Update to 7.16.4
+- Update license tag.
+
 * Sat Jun  9 2007 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.16.2.1-1
 - Update to released version.
 
