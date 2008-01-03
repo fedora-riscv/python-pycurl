@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.16.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -14,6 +14,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.16.0
+BuildRequires:  openssl-devel
 
 Provides:       pycurl = %{version}-%{release}
 
@@ -47,6 +48,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Thu Jan  3 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.16.4-2
+- BR openssl-devel
+
 * Wed Aug 29 2007 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.16.4-1
 - Update to 7.16.4
 - Update license tag.
