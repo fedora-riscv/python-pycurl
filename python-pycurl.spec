@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.16.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -48,6 +48,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Tue Feb 19 2008 Fedora Release Engineering <rel-eng@fedoraproject.org> - 7.16.4-3
+- Autorebuild for GCC 4.3
+
 * Thu Jan  3 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.16.4-2
 - BR openssl-devel
 
