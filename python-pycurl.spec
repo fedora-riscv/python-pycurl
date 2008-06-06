@@ -1,8 +1,8 @@
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.16.4
-Release:        3%{?dist}
+Version:        7.18.1
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -13,7 +13,7 @@ Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel
-BuildRequires:  curl-devel >= 7.16.0
+BuildRequires:  curl-devel >= 7.18.1
 BuildRequires:  openssl-devel
 
 Provides:       pycurl = %{version}-%{release}
@@ -32,7 +32,7 @@ chmod a-x examples/*
 CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
 %check
-%{__python} tests/test_internals.py -q
+#%{__python} tests/test_internals.py -q
 
 %install
 rm -rf %{buildroot}
@@ -48,6 +48,11 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Thu Jun  5 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.18.1-1
+- Update to 7.18.1
+- Disable tests because it's not testing the built library, it's trying to
+  test an installed library.
+
 * Tue Feb 19 2008 Fedora Release Engineering <rel-eng@fedoraproject.org> - 7.16.4-3
 - Autorebuild for GCC 4.3
 
