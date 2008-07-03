@@ -1,7 +1,7 @@
 %{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.18.1
+Version:        7.18.2
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
@@ -9,6 +9,7 @@ Group:          Development/Languages
 License:        LGPLv2+
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
+Patch0:		python-pycurl-no-static-libs.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -25,14 +26,16 @@ urllib Python module. PycURL is mature, very fast, and supports a lot
 of features.
 
 %prep
-%setup -q -n pycurl-%{version}
+%setup0 -q -n pycurl-%{version}
+%patch0 -p0
 chmod a-x examples/*
 
 %build
 CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
 %check
-#%{__python} tests/test_internals.py -q
+export PYTHONPATH=$PWD/build/lib*
+%{__python} tests/test_internals.py -q
 
 %install
 rm -rf %{buildroot}
@@ -48,6 +51,11 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Thu Jul  3 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.18.2-1
+- Update to 7.18.2
+- Thanks to Ville Skyttä re-enable the tests and fix a minor problem
+  with the setup.py. (Bug # 45400)
+
 * Thu Jun  5 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.18.1-1
 - Update to 7.18.1
 - Disable tests because it's not testing the built library, it's trying to
