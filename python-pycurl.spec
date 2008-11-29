@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.18.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -51,6 +51,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Sat Nov 29 2008 Ignacio Vazquez-Abrams <ivazqueznet+rpm@gmail.com> - 7.18.2-2
+- Rebuild for Python 2.6
+
 * Thu Jul  3 2008 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.18.2-1
 - Update to 7.18.2
 - Thanks to Ville Skyttä re-enable the tests and fix a minor problem
