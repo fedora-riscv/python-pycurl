@@ -22,8 +22,9 @@ BuildRequires:  openssl-devel
 # Yes, that should be handled by library versioning (which would then get
 # automatically reflected by rpm).
 # For now, we have to reflect that dependency.
-%define libcurl_version_sed '/^#define LIBCURL_VERSION "/!d;s/"[^"]*$//;s/.*"//;q'
-%define libcurl_version %(sed %{libcurl_version_sed} /usr/include/curl/curlver.h)
+%define libcurl_sed '/^#define LIBCURL_VERSION "/!d;s/"[^"]*$//;s/.*"//;q'
+%define curlver_h /usr/include/curl/curlver.h
+%define libcurl_ver %(sed %{libcurl_sed} %{curlver_h} 2>/dev/null || echo 0)
 Requires:	libcurl >= %{libcurl_version}
 
 Provides:       pycurl = %{version}-%{release}
