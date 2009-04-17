@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -16,6 +16,15 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.19.0
 BuildRequires:  openssl-devel
+
+# During its initialization, PycURL checks that the actual libcurl version
+# is not lower than the one used when PycURL was built.
+# Yes, that should be handled by library versioning (which would then get
+# automatically reflected by rpm).
+# For now, we have to reflect that dependency.
+%define libcurl_version_sed '/^#define LIBCURL_VERSION "/!d;s/"[^"]*$//;s/.*"//;q'
+%define libcurl_version %(sed %{libcurl_version_sed} /usr/include/curl/curlver.h)
+Requires:	libcurl >= %{libcurl_version}
 
 Provides:       pycurl = %{version}-%{release}
 
@@ -51,6 +60,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Fri Apr 17 2009 Stepan Kasal <skasal@redhat.com> - 7.19.0-2
+- add a require to reflect a dependency on libcurl version (#496308)
+
 * Thu Mar  5 2009 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.19.0-1
 - Update to 7.19.0
 
