@@ -2,11 +2,11 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
-License:        LGPLv2+
+License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 Patch0:		python-pycurl-no-static-libs.patch
@@ -57,10 +57,14 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING ChangeLog README TODO examples doc tests
+%doc COPYING COPYING2 ChangeLog README TODO examples doc tests
 %{python_sitearch}/*
 
 %changelog
+* Tue Mar  2 2010 Karel Klic <kklic@redhat.com> - 7.19.0-5
+- Package COPYING2 file
+- Added MIT as a package license
+
 * Sun Jul 26 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_12_Mass_Rebuild
 
