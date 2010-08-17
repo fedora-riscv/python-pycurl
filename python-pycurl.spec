@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -10,7 +10,7 @@ License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 Patch0:		python-pycurl-no-static-libs.patch
-
+Patch1:         python-pycurl-fix-do_curl_reset-refcount.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  python-devel
@@ -38,6 +38,7 @@ of features.
 %prep
 %setup0 -q -n pycurl-%{version}
 %patch0 -p0
+%patch1 -p1
 chmod a-x examples/*
 
 %build
@@ -61,6 +62,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Tue Aug 17 2010 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.19.0-7
+- Add patch developed by David Malcolm to fix segfaults caused by a missing incref
+
 * Thu Jul 22 2010 David Malcolm <dmalcolm@redhat.com> - 7.19.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Features/Python_2.7/MassRebuild
 
