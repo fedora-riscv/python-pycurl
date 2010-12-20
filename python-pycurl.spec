@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -12,6 +12,7 @@ Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 Patch0:		python-pycurl-no-static-libs.patch
 Patch1:         python-pycurl-fix-do_curl_reset-refcount.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Requires:       keyutils-libs
 
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.19.0
@@ -62,6 +63,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Mon Dec 20 2010 Dennis Gilmore <dennis@ausil.us> - 7.19.0-8
+- add Missing Requires on keyutils-libs
+
 * Tue Aug 17 2010 Jeffrey C. Ollie <jeff@ocjtech.us> - 7.19.0-7
 - Add patch developed by David Malcolm to fix segfaults caused by a missing incref
 
