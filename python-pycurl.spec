@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -63,6 +63,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Mon Dec 20 2010 Dennis Gilmore <dennis@ausil.us> - 7.19.0-8
 - add Missing Requires on keyutils-libs
 
