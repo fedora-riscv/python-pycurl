@@ -1,17 +1,16 @@
-%{!?python_sitearch: %define python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
+%{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        11%{?dist}
+Release:        12%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
-Patch0:		python-pycurl-no-static-libs.patch
-Patch1:         python-pycurl-fix-do_curl_reset-refcount.patch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Patch0:         %{name}-no-static-libs.patch
+Patch1:         %{name}-fix-do_curl_reset-refcount.patch
 Requires:       keyutils-libs
 
 BuildRequires:  python-devel
@@ -23,10 +22,10 @@ BuildRequires:  openssl-devel
 # Yes, that should be handled by library versioning (which would then get
 # automatically reflected by rpm).
 # For now, we have to reflect that dependency.
-%define libcurl_sed '/^#define LIBCURL_VERSION "/!d;s/"[^"]*$//;s/.*"//;q'
-%define curlver_h /usr/include/curl/curlver.h
-%define libcurl_ver %(sed %{libcurl_sed} %{curlver_h} 2>/dev/null || echo 0)
-Requires:	libcurl >= %{libcurl_ver}
+%global libcurl_sed '/^#define LIBCURL_VERSION "/!d;s/"[^"]*$//;s/.*"//;q'
+%global curlver_h /usr/include/curl/curlver.h
+%global libcurl_ver %(sed %{libcurl_sed} %{curlver_h} 2>/dev/null || echo 0)
+Requires:       libcurl >= %{libcurl_ver}
 
 Provides:       pycurl = %{version}-%{release}
 
@@ -50,19 +49,17 @@ export PYTHONPATH=$PWD/build/lib*
 %{__python} tests/test_internals.py -q
 
 %install
-rm -rf %{buildroot}
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
- 
-%clean
-rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
 %doc COPYING COPYING2 ChangeLog README TODO examples doc tests
 %{python_sitearch}/*
 
 %changelog
+* Wed Aug 22 2012 Jan Synáček <jsynacek@redhat.com> - 7.19.0-12
+- Improve spec
+
 * Sat Jul 21 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-11
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
 
