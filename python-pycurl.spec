@@ -2,17 +2,26 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
-Patch0:         %{name}-no-static-libs.patch
-Patch1:         %{name}-fix-do_curl_reset-refcount.patch
-Requires:       keyutils-libs
 
+# upstream patches
+Patch1:         0001-No-longer-keep-copies-of-string-options-since-this-i.patch
+Patch2:         0002-Fixes-https-sourceforge.net-tracker-func-detail-aid-.patch
+Patch3:         0003-Fixes-refcount-bug-and-provides-better-organization-.patch
+Patch4:         0004-Test-for-reset-fixes-refcount-bug.patch
+Patch5:         0005-Updating-ChangeLog-with-relevant-changes.patch
+
+# downstream patches
+Patch101:       0101-setup.py-do-not-use-curl-config-static-libs.patch
+Patch102:       0102-test_internals.py-add-a-test-for-ref-counting-of-res.patch
+
+Requires:       keyutils-libs
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.19.0
 BuildRequires:  openssl-devel
@@ -37,8 +46,13 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
-%patch0 -p0
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch101 -p1
+%patch102 -p1
 chmod a-x examples/*
 
 %build
@@ -57,6 +71,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Mon Feb 25 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-14
+- apply bug-fixes committed to upstream CVS since 7.19.0 (fixes #896025)
+
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-13
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
