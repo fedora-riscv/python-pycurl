@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        12%{?dist}
+Release:        13%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -11,6 +11,7 @@ URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 Patch0:         %{name}-no-static-libs.patch
 Patch1:         %{name}-fix-do_curl_reset-refcount.patch
+Patch3:         0003-Fixes-refcount-bug-and-provides-better-organization-.patch
 Requires:       keyutils-libs
 
 BuildRequires:  python-devel
@@ -37,6 +38,7 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
+%patch3 -p1
 %patch0 -p0
 %patch1 -p1
 chmod a-x examples/*
@@ -57,6 +59,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Tue Feb 26 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-13
+- reinitialize pycurl-specific defaults in reset() (#896025)
+
 * Wed Aug 22 2012 Jan Synáček <jsynacek@redhat.com> - 7.19.0-12
 - Improve spec
 
