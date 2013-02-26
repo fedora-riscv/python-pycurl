@@ -1,14 +1,14 @@
 From 4a377e2d60fb903e91a370595a6ea22cb7ee0e0e Mon Sep 17 00:00:00 2001
 From: zanee <zanee>
 Date: Wed, 28 Apr 2010 16:02:41 +0000
-Subject: [PATCH 3/5] Fixes refcount bug and provides better organization of PyCurl object. Submitted by dbprice1.
+Subject: [PATCH 3/5 v2] Fixes refcount bug and provides better organization of PyCurl object. Submitted by dbprice1.
 
 https://sourceforge.net/tracker/?func=detail&aid=2893665&group_id=28236&atid=392777
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
- src/pycurl.c |   89 +++++++++++++++++++++++++++++++++++++--------------------
- 1 files changed, 58 insertions(+), 31 deletions(-)
+ src/pycurl.c |   88 +++++++++++++++++++++++++++++++++++++--------------------
+ 1 files changed, 57 insertions(+), 31 deletions(-)
 
 diff --git a/src/pycurl.c b/src/pycurl.c
 index 6de1514..32c7ca5 100644
@@ -140,7 +140,7 @@ index 6de1514..32c7ca5 100644
      curl_easy_reset(self->handle);
  
      /* Decref callbacks and file handles */
-@@ -1421,10 +1439,19 @@ do_curl_reset(CurlObject *self)
+@@ -1421,6 +1439,14 @@ do_curl_reset(CurlObject *self)
      SFREE(self->postquote);
      SFREE(self->prequote);
  #undef SFREE
@@ -155,11 +155,6 @@ index 6de1514..32c7ca5 100644
      return Py_None;
  }
  
- /* --------------- unsetopt/setopt/getinfo --------------- */
-+    int res;
- 
- static PyObject *
- util_curl_unsetopt(CurlObject *self, int option)
 -- 
 1.7.1
 
