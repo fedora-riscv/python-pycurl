@@ -2,15 +2,16 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        10%{?dist}
+Release:        11%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
-Patch0:		python-pycurl-no-static-libs.patch
+Patch0:         python-pycurl-no-static-libs.patch
 Patch1:         python-pycurl-fix-do_curl_reset-refcount.patch
+Patch3:         0003-Fixes-refcount-bug-and-provides-better-organization-.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires:       keyutils-libs
 
@@ -38,6 +39,7 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
+%patch3 -p1
 %patch0 -p0
 %patch1 -p1
 chmod a-x examples/*
@@ -63,6 +65,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Tue Feb 26 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-11
+- reinitialize pycurl-specific defaults in reset() (#896025)
+
 * Sat Jan 14 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
