@@ -1,7 +1,7 @@
-From 0bd83ea6c820db26f98936e6e017d39fb214cbd0 Mon Sep 17 00:00:00 2001
+From 593cf090dacc230cd28aee1993d86b2b83b414f9 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Mon, 25 Feb 2013 19:50:18 +0100
-Subject: [PATCH 2/2] test_internals.py: add a test for ref-counting of reset()
+Subject: [PATCH 1/4] test_internals.py: add a test for ref-counting of reset()
 
 ---
  tests/test_internals.py |    5 +++++

@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        14%{?dist}
+Release:        15%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -18,8 +18,10 @@ Patch4:         0004-Test-for-reset-fixes-refcount-bug.patch
 Patch5:         0005-Updating-ChangeLog-with-relevant-changes.patch
 
 # downstream patches
-Patch101:       0101-setup.py-do-not-use-curl-config-static-libs.patch
-Patch102:       0102-test_internals.py-add-a-test-for-ref-counting-of-res.patch
+Patch101:       0101-test_internals.py-add-a-test-for-ref-counting-of-res.patch
+Patch102:       0102-pycurl.c-eliminate-duplicated-code-in-util_write_cal.patch
+Patch103:       0103-pycurl.c-allow-to-return-1-from-write-callback.patch
+Patch104:       0104-test_write_abort.py-test-returning-1-from-write-call.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -53,6 +55,8 @@ of features.
 %patch5 -p1
 %patch101 -p1
 %patch102 -p1
+%patch103 -p1
+%patch104 -p1
 chmod a-x examples/*
 
 %build
@@ -60,7 +64,7 @@ CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
 %check
 export PYTHONPATH=$PWD/build/lib*
-%{__python} tests/test_internals.py -q
+make test PYTHON=%{__python}
 
 %install
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
@@ -71,6 +75,10 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Wed Mar 06 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-15
+- allow to return -1 from the write callback (#857875) 
+- remove the patch for curl-config --static-libs no longer needed
+
 * Mon Feb 25 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-14
 - apply bug-fixes committed to upstream CVS since 7.19.0 (fixes #896025)
 
