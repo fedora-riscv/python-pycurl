@@ -63,7 +63,7 @@ chmod a-x examples/*
 CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
 %check
-export PYTHONPATH=$PWD/build/lib*
+export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
 make test PYTHON=%{__python}
 
 %install
@@ -78,6 +78,7 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 * Wed Mar 06 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-15
 - allow to return -1 from the write callback (#857875) 
 - remove the patch for curl-config --static-libs no longer needed
+- run the tests against the just built pycurl, not the system one
 
 * Mon Feb 25 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-14
 - apply bug-fixes committed to upstream CVS since 7.19.0 (fixes #896025)
