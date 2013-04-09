@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        15%{?dist}
+Release:        15.1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -22,6 +22,7 @@ Patch101:       0101-test_internals.py-add-a-test-for-ref-counting-of-res.patch
 Patch102:       0102-pycurl.c-eliminate-duplicated-code-in-util_write_cal.patch
 Patch103:       0103-pycurl.c-allow-to-return-1-from-write-callback.patch
 Patch104:       0104-test_write_abort.py-test-returning-1-from-write-call.patch
+Patch105:       0105-add-the-GLOBAL_ACK_EINTR-constant-to-the-list-of-exp.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -57,6 +58,7 @@ of features.
 %patch102 -p1
 %patch103 -p1
 %patch104 -p1
+%patch105 -p1
 chmod a-x examples/*
 
 %build
@@ -75,6 +77,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Tue Apr 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-15.1
+- add the GLOBAL_ACK_EINTR constant to the list of exported symbols (#920589)
+
 * Wed Mar 06 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-15
 - allow to return -1 from the write callback (#857875) 
 - remove the patch for curl-config --static-libs no longer needed
