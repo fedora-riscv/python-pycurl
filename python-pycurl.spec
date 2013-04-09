@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        11%{?dist}
+Release:        11.1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -13,6 +13,10 @@ Patch0:         python-pycurl-no-static-libs.patch
 Patch1:         python-pycurl-fix-do_curl_reset-refcount.patch
 Patch3:         0003-Fixes-refcount-bug-and-provides-better-organization-.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
+# bz #920589 - add the GLOBAL_ACK_EINTR constant to the list of exported symbols
+Patch105:       0105-add-the-GLOBAL_ACK_EINTR-constant-to-the-list-of-exp.patch
+
 Requires:       keyutils-libs
 
 BuildRequires:  python-devel
@@ -42,6 +46,7 @@ of features.
 %patch3 -p1
 %patch0 -p0
 %patch1 -p1
+%patch105 -p1
 chmod a-x examples/*
 
 %build
@@ -65,6 +70,9 @@ rm -rf %{buildroot}
 %{python_sitearch}/*
 
 %changelog
+* Tue Apr 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-11.1
+- add the GLOBAL_ACK_EINTR constant to the list of exported symbols (#920589)
+
 * Tue Feb 26 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-11
 - reinitialize pycurl-specific defaults in reset() (#896025)
 

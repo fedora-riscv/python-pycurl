@@ -1,0 +1,61 @@
+From cf4104369f5716a6904152435713ec81358c0102 Mon Sep 17 00:00:00 2001
+From: Zdenek Pavlas <zpavlas@redhat.com>
+Date: Wed, 13 Mar 2013 16:55:58 +0100
+Subject: [PATCH] add the GLOBAL_ACK_EINTR constant to the list of exported symbols
+
+... if built against a new enough version of libcurl
+
+Bug: https://bugzilla.redhat.com/920589
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |   19 +++++++++++++++----
+ 1 files changed, 15 insertions(+), 4 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index b59eeb8..9a7135c 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -3125,6 +3125,16 @@ static PyTypeObject CurlMulti_Type = {
+      */
+ };
+ 
++static int
++are_global_init_flags_valid(int flags)
++{
++#ifdef CURL_GLOBAL_ACK_EINTR
++    /* CURL_GLOBAL_ACK_EINTR was introduced in libcurl-7.30.0 */
++    return !(flags & ~(CURL_GLOBAL_ALL | CURL_GLOBAL_ACK_EINTR));
++#else
++    return !(flags & ~(CURL_GLOBAL_ALL));
++#endif
++}
+ 
+ /*************************************************************************
+ // module level
+@@ -3142,10 +3152,7 @@ do_global_init(PyObject *dummy, PyObject *args)
+         return NULL;
+     }
+ 
+-    if (!(option == CURL_GLOBAL_SSL ||
+-          option == CURL_GLOBAL_WIN32 ||
+-          option == CURL_GLOBAL_ALL ||
+-          option == CURL_GLOBAL_NOTHING)) {
++    if (!are_global_init_flags_valid(option)) {
+         PyErr_SetString(PyExc_ValueError, "invalid option to global_init");
+         return NULL;
+     }
+@@ -3780,6 +3787,10 @@ initpycurl(void)
+     insint(d, "GLOBAL_ALL", CURL_GLOBAL_ALL);
+     insint(d, "GLOBAL_NOTHING", CURL_GLOBAL_NOTHING);
+     insint(d, "GLOBAL_DEFAULT", CURL_GLOBAL_DEFAULT);
++#ifdef CURL_GLOBAL_ACK_EINTR
++    /* CURL_GLOBAL_ACK_EINTR was introduced in libcurl-7.30.0 */
++    insint(d, "GLOBAL_ACK_EINTR", CURL_GLOBAL_ACK_EINTR);
++#endif
+ 
+ 
+     /* constants for curl_multi_socket interface */
+-- 
+1.7.1
+
