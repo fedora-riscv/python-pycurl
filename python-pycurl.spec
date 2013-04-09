@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        15%{?dist}
+Release:        16.20120408git9b8f4e38%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -10,23 +10,16 @@ License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 
-# upstream patches
-Patch1:         0001-No-longer-keep-copies-of-string-options-since-this-i.patch
-Patch2:         0002-Fixes-https-sourceforge.net-tracker-func-detail-aid-.patch
-Patch3:         0003-Fixes-refcount-bug-and-provides-better-organization-.patch
-Patch4:         0004-Test-for-reset-fixes-refcount-bug.patch
-Patch5:         0005-Updating-ChangeLog-with-relevant-changes.patch
-
-# downstream patches
-Patch101:       0101-test_internals.py-add-a-test-for-ref-counting-of-res.patch
-Patch102:       0102-pycurl.c-eliminate-duplicated-code-in-util_write_cal.patch
-Patch103:       0103-pycurl.c-allow-to-return-1-from-write-callback.patch
-Patch104:       0104-test_write_abort.py-test-returning-1-from-write-call.patch
+# sync with upstream's 9b8f4e38
+Patch0:         0000-pycurl-7.19.7-9b8f4e38.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.19.0
 BuildRequires:  openssl-devel
+BuildRequires:  python-bottle
+BuildRequires:  python-nose
+BuildRequires:  vsftpd
 
 # During its initialization, PycURL checks that the actual libcurl version
 # is not lower than the one used when PycURL was built.
@@ -48,16 +41,12 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch101 -p1
-%patch102 -p1
-%patch103 -p1
-%patch104 -p1
-chmod a-x examples/*
+
+# drop CVS stuff that would prevent git patches from being applied
+find -type f | xargs sed -i 's/\$Id: [^$]*\$/$Id$/'
+
+# upstream patches
+%patch0 -p1
 
 %build
 CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
@@ -71,10 +60,13 @@ make test PYTHON=%{__python}
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %files
-%doc COPYING COPYING2 ChangeLog README TODO examples doc tests
+%doc COPYING COPYING2 ChangeLog README.rst TODO examples doc tests
 %{python_sitearch}/*
 
 %changelog
+* Tue Apr 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-16.20120408git9b8f4e38
+- sync with upstream 9b8f4e38 (fixes #928370)
+
 * Wed Mar 06 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-15
 - allow to return -1 from the write callback (#857875) 
 - remove the patch for curl-config --static-libs no longer needed
