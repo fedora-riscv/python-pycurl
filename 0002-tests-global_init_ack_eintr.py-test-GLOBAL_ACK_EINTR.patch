@@ -1,0 +1,42 @@
+From 3fba1b63a99f68bedb9a3d60326d22bd8f10f83b Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Wed, 3 Apr 2013 15:06:32 +0200
+Subject: [PATCH 2/2] tests/global_init_ack_eintr.py: test GLOBAL_ACK_EINTR
+
+... if we have a new enough version of libcurl
+---
+ tests/global_init_ack_eintr.py |   22 ++++++++++++++++++++++
+ 1 files changed, 22 insertions(+), 0 deletions(-)
+ create mode 100644 tests/global_init_ack_eintr.py
+
+diff --git a/tests/global_init_ack_eintr.py b/tests/global_init_ack_eintr.py
+new file mode 100644
+index 0000000..429fc3f
+--- /dev/null
++++ b/tests/global_init_ack_eintr.py
+@@ -0,0 +1,22 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++import pycurl
++import unittest
++
++from . import util
++
++class GlobalInitAckEintrTest(unittest.TestCase):
++    def test_global_init_default(self):
++        # initialize libcurl with DEFAULT flags
++        pycurl.global_init(pycurl.GLOBAL_DEFAULT)
++        pycurl.global_cleanup()
++
++    def test_global_init_ack_eintr(self):
++        # the GLOBAL_ACK_EINTR flag was introduced in libcurl-7.30, but can also
++        # be backported for older versions of libcurl at the distribution level
++        if not util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
++            # initialize libcurl with the GLOBAL_ACK_EINTR flag
++            pycurl.global_init(pycurl.GLOBAL_ACK_EINTR)
++            pycurl.global_cleanup()
+-- 
+1.7.1
+

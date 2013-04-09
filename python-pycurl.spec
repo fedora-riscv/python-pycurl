@@ -13,6 +13,10 @@ Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 # sync with upstream's 9b8f4e38
 Patch0:         0000-pycurl-7.19.7-9b8f4e38.patch
 
+# bz #920589 - add the GLOBAL_ACK_EINTR constant to the list of exported symbols
+Patch1:         0001-add-the-GLOBAL_ACK_EINTR-constant-to-the-list-of-exp.patch
+Patch2:         0002-tests-global_init_ack_eintr.py-test-GLOBAL_ACK_EINTR.patch
+
 Requires:       keyutils-libs
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.19.0
@@ -48,6 +52,10 @@ find -type f | xargs sed -i 's/\$Id: [^$]*\$/$Id$/'
 # upstream patches
 %patch0 -p1
 
+# patches not yet upstream
+%patch1 -p1
+%patch2 -p1
+
 %build
 CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
@@ -66,6 +74,7 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %changelog
 * Tue Apr 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-16.20120408git9b8f4e38
 - sync with upstream 9b8f4e38 (fixes #928370)
+- add the GLOBAL_ACK_EINTR constant to the list of exported symbols (#920589)
 
 * Wed Mar 06 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-15
 - allow to return -1 from the write callback (#857875) 
