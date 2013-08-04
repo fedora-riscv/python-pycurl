@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        16.20120408git9b8f4e38%{?dist}
+Release:        17.20120408git9b8f4e38%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -75,6 +75,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-17.20120408git9b8f4e38
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Tue Apr 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-16.20120408git9b8f4e38
 - sync with upstream 9b8f4e38 (fixes #928370)
 - add the GLOBAL_ACK_EINTR constant to the list of exported symbols (#920589)
