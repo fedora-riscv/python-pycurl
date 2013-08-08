@@ -1,7 +1,7 @@
-From 15a1c96494611dafd6444655bce0b13c64a6172f Mon Sep 17 00:00:00 2001
+From 9a426178c83f756ec248e9fd0010030ae7c62f2a Mon Sep 17 00:00:00 2001
 From: Kjetil Jacobsen <kjetilja@gmail.com>
 Date: Tue, 9 Sep 2008 18:49:59 +0000
-Subject: [PATCH 001/112] whitespace
+Subject: [PATCH 001/149] whitespace
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -25,10 +25,10 @@ index 0fb7f8c..3d68424 100644
 1.7.1
 
 
-From f79d0ea41bad7ea25cf949ca5398ed61b87de722 Mon Sep 17 00:00:00 2001
+From b5f6dd9fd839e54db567d0451483a400edad60a4 Mon Sep 17 00:00:00 2001
 From: Kjetil Jacobsen <kjetilja@gmail.com>
 Date: Mon, 29 Sep 2008 10:56:57 +0000
-Subject: [PATCH 002/112] No longer keep copies of string options since this is managed by libcurl
+Subject: [PATCH 002/149] No longer keep copies of string options since this is managed by libcurl
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -216,10 +216,10 @@ index 50ec9ce..189f5d6 100644
 1.7.1
 
 
-From 5267a6278f4b3993811a5eacf068942e01416d29 Mon Sep 17 00:00:00 2001
+From f241a60acc67cc8cbf3d36a2f3d55e1abf88bc33 Mon Sep 17 00:00:00 2001
 From: Christopher Warner <cwarner@kernelcode.com>
 Date: Fri, 23 Apr 2010 16:06:41 +0000
-Subject: [PATCH 003/112] Fixes https://sourceforge.net/tracker/?func=detail&aid=2812016&group_id=28236&atid=392777 with applied patch from sourceforge user dbprice1.
+Subject: [PATCH 003/149] Fixes https://sourceforge.net/tracker/?func=detail&aid=2812016&group_id=28236&atid=392777 with applied patch from sourceforge user dbprice1.
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -269,10 +269,10 @@ index 1c3831b..632399d 100644
 1.7.1
 
 
-From efeb6581db4c6fd8980bb4007d14afce96ce4642 Mon Sep 17 00:00:00 2001
+From 70114226c76ee06c6bacb488734796551ac9b2f9 Mon Sep 17 00:00:00 2001
 From: Christopher Warner <cwarner@kernelcode.com>
 Date: Wed, 28 Apr 2010 16:02:41 +0000
-Subject: [PATCH 004/112] Fixes refcount bug and provides better organization of PyCurl object. Submitted by dbprice1.
+Subject: [PATCH 004/149] Fixes refcount bug and provides better organization of PyCurl object. Submitted by dbprice1.
 
 https://sourceforge.net/tracker/?func=detail&aid=2893665&group_id=28236&atid=392777
 
@@ -429,10 +429,10 @@ index 189f5d6..47de850 100644
 1.7.1
 
 
-From 6c8f676e53cf3a54836134ddc11d7a707793414d Mon Sep 17 00:00:00 2001
+From a607b0c9f4676858fcf6335e9fb0c9ed6a9c3069 Mon Sep 17 00:00:00 2001
 From: Christopher Warner <cwarner@kernelcode.com>
 Date: Wed, 28 Apr 2010 16:03:40 +0000
-Subject: [PATCH 005/112] Test for reset fixes refcount bug
+Subject: [PATCH 005/149] Test for reset fixes refcount bug
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -525,10 +525,10 @@ index 0000000..1addcfe
 1.7.1
 
 
-From 5c2023a7a9373d7ca816c2546fd2db63432bba0c Mon Sep 17 00:00:00 2001
+From f773340ec40d5988d4a5b75e64b898dbe4a89800 Mon Sep 17 00:00:00 2001
 From: Christopher Warner <cwarner@kernelcode.com>
 Date: Wed, 28 Apr 2010 16:06:35 +0000
-Subject: [PATCH 006/112] Added myself to the list of maintainers
+Subject: [PATCH 006/149] Added myself to the list of maintainers
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -554,10 +554,10 @@ index 632399d..33704ef 100644
 1.7.1
 
 
-From 86777baedfac6c10ec0edd4e1e68519be83740e1 Mon Sep 17 00:00:00 2001
+From 67e0b9ac7c521b39d7dc779a79d21009f5619fa1 Mon Sep 17 00:00:00 2001
 From: Christopher Warner <cwarner@kernelcode.com>
 Date: Tue, 4 May 2010 18:47:08 +0000
-Subject: [PATCH 007/112] Updating ChangeLog with relevant changes
+Subject: [PATCH 007/149] Updating ChangeLog with relevant changes
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -587,10 +587,10 @@ index 618654d..885c8b0 100644
 1.7.1
 
 
-From f42d34b86ce7c4d93bde71d7d1c56486bd98afa3 Mon Sep 17 00:00:00 2001
+From 310638226dbe77b71a8eb9f8da58cf15d236337a Mon Sep 17 00:00:00 2001
 From: Christopher Warner <cwarner@kernelcode.com>
 Date: Wed, 13 Oct 2010 15:53:40 +0000
-Subject: [PATCH 008/112] Added CURLOPT_SEEKFUNCTION, CURLOPT_SEEKDATA
+Subject: [PATCH 008/149] Added CURLOPT_SEEKFUNCTION, CURLOPT_SEEKDATA
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -736,10 +736,10 @@ index 47de850..ac448b0 100644
 1.7.1
 
 
-From cd16f58fd7e2a089408ad0275bdcac6d6e5e1b7e Mon Sep 17 00:00:00 2001
+From bd8a7fa3279613f41c503f5946d2576d4df70865 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Tue, 26 Feb 2013 09:13:24 +0100
-Subject: [PATCH 009/112] pycurl.c: remove a left-over global variable introduced in r150
+Subject: [PATCH 009/149] pycurl.c: remove a left-over global variable introduced in r150
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -762,10 +762,10 @@ index ac448b0..094bc60 100644
 1.7.1
 
 
-From 802240d937867454026b6d8baaded841f6f32057 Mon Sep 17 00:00:00 2001
+From de45f3fc04323c619a879e835f8f212c8c887364 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Mon, 25 Feb 2013 19:50:18 +0100
-Subject: [PATCH 010/112] test_internals.py: add a test for ref-counting in reset()
+Subject: [PATCH 010/149] test_internals.py: add a test for ref-counting in reset()
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -792,10 +792,10 @@ index a1a6533..3f5eefd 100644
 1.7.1
 
 
-From 2baf0fab555c9f0f292e400222c79b01f9211abf Mon Sep 17 00:00:00 2001
+From be80a76e848ea77764da165d517ae0a8aca64604 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 01:15:00 -0500
-Subject: [PATCH 011/112] Add gitignore
+Subject: [PATCH 011/149] Add gitignore
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -814,10 +814,10 @@ index 0000000..796b96d
 1.7.1
 
 
-From 53a2bfa7c8f381a4d4465d204fc3e4f7133a2db6 Mon Sep 17 00:00:00 2001
+From c0bee23c728e61874fc2f89d800685c32b331f80 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 1 Mar 2013 00:11:47 -0500
-Subject: [PATCH 012/112] A much simpler request test, in unittest format
+Subject: [PATCH 012/149] A much simpler request test, in unittest format
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -866,10 +866,10 @@ index 0000000..0761d6c
 1.7.1
 
 
-From 127442bead3a274cc5239e6389682d239c1fcbca Mon Sep 17 00:00:00 2001
+From c178c8f0b6ca9a839cd344b4ebe9e561d804d297 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 1 Mar 2013 13:35:59 -0500
-Subject: [PATCH 013/112] init.py for test package
+Subject: [PATCH 013/149] init.py for test package
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -883,10 +883,10 @@ index 0000000..e69de29
 1.7.1
 
 
-From 97ac029a9e925bd4903bd7a41e69110e158ec897 Mon Sep 17 00:00:00 2001
+From a2a23e3e89e9d4cf7e61bf0259534fb0117ddf09 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 1 Mar 2013 13:36:08 -0500
-Subject: [PATCH 014/112] wsgi application runner
+Subject: [PATCH 014/149] wsgi application runner
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -986,10 +986,10 @@ index 0000000..d658614
 1.7.1
 
 
-From 766e9a77708953c56b33d087561eddab853a08da Mon Sep 17 00:00:00 2001
+From 72ac92b738b9709e84ebd56fd055286c173e5fee Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 1 Mar 2013 14:06:42 -0500
-Subject: [PATCH 015/112] Test application to be on the server side
+Subject: [PATCH 015/149] Test application to be on the server side
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1014,10 +1014,10 @@ index 0000000..b173fd6
 1.7.1
 
 
-From a1449f4986686920904d7f781327e3ca520e4933 Mon Sep 17 00:00:00 2001
+From 83482f1c46d57074fa985def4f0aa62cc0df15d6 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 1 Mar 2013 14:07:04 -0500
-Subject: [PATCH 016/112] Use the test application in request test
+Subject: [PATCH 016/149] Use the test application in request test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1117,10 +1117,10 @@ index 0761d6c..127fbeb 100644
 1.7.1
 
 
-From b332c2265bd3958a964bd2e69f9eeda96bafc814 Mon Sep 17 00:00:00 2001
+From 9f92a0e68c031e26012db508c2a9482f8a466f6c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sat, 2 Mar 2013 02:23:27 -0500
-Subject: [PATCH 017/112] Put stringio import into util
+Subject: [PATCH 017/149] Put stringio import into util
 
 This way all tests can simply import stringio from util in one line.
 
@@ -1152,10 +1152,10 @@ index a1a9978..891da44 100644
 1.7.1
 
 
-From c912395f00df7a91f3d9c0fcc16821c7cc25bf63 Mon Sep 17 00:00:00 2001
+From 0289b4917a8510e174fe2237c28bdd219be3ef3f Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sat, 2 Mar 2013 02:24:11 -0500
-Subject: [PATCH 018/112] Debug test, ported from the old debug test
+Subject: [PATCH 018/149] Debug test, ported from the old debug test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1219,10 +1219,10 @@ index 0000000..dd00719
 1.7.1
 
 
-From d3133de193791e731867c0ab02c49cd3f88422c0 Mon Sep 17 00:00:00 2001
+From 972cd4d7322aaa68074e44d5c9200a220fbb2b7e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sat, 2 Mar 2013 02:43:57 -0500
-Subject: [PATCH 019/112] Write output to a stringio to avoid stdout spam
+Subject: [PATCH 019/149] Write output to a stringio to avoid stdout spam
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1254,10 +1254,10 @@ index dd00719..8005239 100644
 1.7.1
 
 
-From ff2df7b5ef851c29328dfb1ff501ff610690c63b Mon Sep 17 00:00:00 2001
+From ece77e7257bea16a9a9d4dd5efd948358974bc4a Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sat, 2 Mar 2013 02:44:24 -0500
-Subject: [PATCH 020/112] Use stringio from util in request test
+Subject: [PATCH 020/149] Use stringio from util in request test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1299,10 +1299,10 @@ index 127fbeb..afd8566 100644
 1.7.1
 
 
-From 8121df921a0615d1f5c6793ad86e17dc20e00902 Mon Sep 17 00:00:00 2001
+From aa359d2da90735e06d9c5dcf387e472e4b11f60d Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sat, 2 Mar 2013 04:06:00 -0500
-Subject: [PATCH 021/112] Add a test that writes response to a file
+Subject: [PATCH 021/149] Add a test that writes response to a file
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1333,10 +1333,10 @@ index afd8566..7386a51 100644
 1.7.1
 
 
-From 5c59850b231cc0e9d38c7d56e67d55500e024577 Mon Sep 17 00:00:00 2001
+From 517c8f2dd4dc519fd733e049abab704e052866b6 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:14:26 -0500
-Subject: [PATCH 022/112] Account for the case of nose running no tests
+Subject: [PATCH 022/149] Account for the case of nose running no tests
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1361,10 +1361,10 @@ index d658614..7b39358 100644
 1.7.1
 
 
-From 48ac39062e8cd19ee4ddf590278aa6e35477a8d3 Mon Sep 17 00:00:00 2001
+From cc68fffc8365c4f8e761a586d5e74beb5fd71473 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:14:41 -0500
-Subject: [PATCH 023/112] Split request test
+Subject: [PATCH 023/149] Split request test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1622,10 +1622,10 @@ index 0000000..fd1c28d
 1.7.1
 
 
-From 3f765182563497ed5dc0348474e8e9f30618576e Mon Sep 17 00:00:00 2001
+From f7055358a57d0fa9bcef3f0ad38a63ff5422178c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:22:05 -0500
-Subject: [PATCH 024/112] Need to flush when using default write function
+Subject: [PATCH 024/149] Need to flush when using default write function
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1660,10 +1660,10 @@ index 2efc579..afbba33 100644
 1.7.1
 
 
-From 8515cd10d9ead70ce306fcf2de96b0d34a402d88 Mon Sep 17 00:00:00 2001
+From bb6edcd11b75949aa4c7b7513ce70f8a16a8a857 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:34:39 -0500
-Subject: [PATCH 025/112] Trying to get the default write function test to work with nose output capture, but no luck so far
+Subject: [PATCH 025/149] Trying to get the default write function test to work with nose output capture, but no luck so far
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1754,10 +1754,10 @@ index afbba33..853992b 100644
 1.7.1
 
 
-From a43c72743b7a191622da9b1a933600c92b892529 Mon Sep 17 00:00:00 2001
+From 83a7d49e7e27f499e9d400a1af09e07fcc595c2f Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:35:25 -0500
-Subject: [PATCH 026/112] Fix test class names
+Subject: [PATCH 026/149] Fix test class names
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1795,10 +1795,10 @@ index 6528f81..67c9c63 100644
 1.7.1
 
 
-From 748ffdb26baef8fa43e8da7e086325e5a77dafee Mon Sep 17 00:00:00 2001
+From 44ff45d8644789a098ea68b196b5f5cea5fbfd35 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:36:34 -0500
-Subject: [PATCH 027/112] Delete unused imports
+Subject: [PATCH 027/149] Delete unused imports
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1823,10 +1823,10 @@ index fd1c28d..018800d 100644
 1.7.1
 
 
-From da193274e430029a18b1f9b28729d9e165196f29 Mon Sep 17 00:00:00 2001
+From f14cdea639d6976f8dd8077be28c4452d4c8d1cf Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 00:41:35 -0500
-Subject: [PATCH 028/112] Test for header function
+Subject: [PATCH 028/149] Test for header function
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1894,10 +1894,10 @@ index 0000000..bfe7173
 1.7.1
 
 
-From 040b13d56a0eb2a9c8e5ee7e35142c4e240d48db Mon Sep 17 00:00:00 2001
+From 2491ddd3f028059b4e86338ad64413de75db28af Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 01:35:21 -0500
-Subject: [PATCH 029/112] FTP test
+Subject: [PATCH 029/149] FTP test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -1963,10 +1963,10 @@ index 0000000..d215b6e
 1.7.1
 
 
-From eb36d56c850ed14a52d0a1f3afb62165444f9b84 Mon Sep 17 00:00:00 2001
+From ead7f2743a7bd6b497d994ca11dc823a144d50d7 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 01:44:22 -0500
-Subject: [PATCH 030/112] Getinfo test
+Subject: [PATCH 030/149] Getinfo test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2027,10 +2027,10 @@ index 0000000..39dff2f
 1.7.1
 
 
-From ca2118da041f15f5bbb2bf6a0e12b7bd57d16332 Mon Sep 17 00:00:00 2001
+From 7c48535bef19bf13a9d8aef377d4465490a588f2 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 02:05:30 -0500
-Subject: [PATCH 031/112] Ported internals test
+Subject: [PATCH 031/149] Ported internals test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2272,10 +2272,10 @@ index 0000000..34d4eb8
 1.7.1
 
 
-From 5400bd486457b34d8c49ca3ad1f74f03143172bd Mon Sep 17 00:00:00 2001
+From c7b8f39437e953deb8af1b17f366a6242db28d5d Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 02:16:10 -0500
-Subject: [PATCH 032/112] Make cyclic gc test actually check that cycles are collected
+Subject: [PATCH 032/149] Make cyclic gc test actually check that cycles are collected
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2324,10 +2324,10 @@ index 34d4eb8..fb451df 100644
 1.7.1
 
 
-From b0c490027c63d5f8eb5dfc81c646e5edfb79635c Mon Sep 17 00:00:00 2001
+From 6fa36d3a070e784fc679427a6c56725ee30375e8 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 03:00:20 -0500
-Subject: [PATCH 033/112] Ported memleak test
+Subject: [PATCH 033/149] Ported memleak test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2404,10 +2404,10 @@ index 0000000..6e9f76c
 1.7.1
 
 
-From dd5650bb58e60c27fa32c27b5d39dbf5ad13c132 Mon Sep 17 00:00:00 2001
+From cef807dfde5e1ca931947ec37d0171227899e72f Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 03:06:26 -0500
-Subject: [PATCH 034/112] Ported the first multi test
+Subject: [PATCH 034/149] Ported the first multi test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2481,10 +2481,10 @@ index 0000000..4c0bdaf
 1.7.1
 
 
-From c651e8ab37cc21ab790b293ad00ad43a8a5e608f Mon Sep 17 00:00:00 2001
+From 5a9488e0e5f75e70faf37b419819ce18878f29ed Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 12:55:42 -0500
-Subject: [PATCH 035/112] Port multi2 test
+Subject: [PATCH 035/149] Port multi2 test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2587,10 +2587,10 @@ index 4c0bdaf..fd96e51 100644
 1.7.1
 
 
-From 18212fb2181a57e67988e7a336ac4b9c90e17d1a Mon Sep 17 00:00:00 2001
+From ddeba20f213aea07a2491df171b899b2453de70b Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 14:05:49 -0500
-Subject: [PATCH 036/112] Porting multi3 test
+Subject: [PATCH 036/149] Porting multi3 test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2680,10 +2680,10 @@ index fd96e51..1c13f70 100644
 1.7.1
 
 
-From 55b38bfbba56f6179633dc90f7cf3e72c3433b9f Mon Sep 17 00:00:00 2001
+From bd01383371db110534ea39c4ce35563d63a21f73 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 14:15:13 -0500
-Subject: [PATCH 037/112] Exercise all 3 possibilites in ported multi3 test
+Subject: [PATCH 037/149] Exercise all 3 possibilites in ported multi3 test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2753,10 +2753,10 @@ index 1c13f70..e1fec05 100644
 1.7.1
 
 
-From 6ec826f66a9a86a2c1701e60a094d1f0004f9dff Mon Sep 17 00:00:00 2001
+From 587c4b3403bf16ce5ab8a72e738ac26dab4a31c8 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Sun, 3 Mar 2013 14:21:33 -0500
-Subject: [PATCH 038/112] Port mulit4 test
+Subject: [PATCH 038/149] Port mulit4 test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2835,10 +2835,10 @@ index e1fec05..a508809 100644
 1.7.1
 
 
-From b29ff271843da14e9b008e8853a3b84b06ed6ecc Mon Sep 17 00:00:00 2001
+From cd0e96615c24173e38177395931899aaa566c270 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 00:24:44 -0500
-Subject: [PATCH 039/112] Port multit6 test
+Subject: [PATCH 039/149] Port multit6 test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2912,10 +2912,10 @@ index a508809..e83ce48 100644
 1.7.1
 
 
-From a14adcb02e78aa26e1f6b326815a7a0ae824fc4d Mon Sep 17 00:00:00 2001
+From d59cc0dffc1f70545317c03307211559afe46b6d Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 00:38:59 -0500
-Subject: [PATCH 040/112] Improve info_read test to test info_read
+Subject: [PATCH 040/149] Improve info_read test to test info_read
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -2966,10 +2966,10 @@ index e83ce48..10af44c 100644
 1.7.1
 
 
-From ef1510a4b5426b2fb0458ae244be17a578407fc7 Mon Sep 17 00:00:00 2001
+From 9b239643fd425e600b467f91ce7ea0560dd88b79 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 00:40:25 -0500
-Subject: [PATCH 041/112] Port multi5 test
+Subject: [PATCH 041/149] Port multi5 test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3042,10 +3042,10 @@ index 10af44c..d9c6174 100644
 1.7.1
 
 
-From 2a6f3d5ff191f6709fddfac3a2e0a6794a66f75d Mon Sep 17 00:00:00 2001
+From c16f8df53e9f97d2ef4c0acb19e4abcda5825260 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 22:05:34 -0500
-Subject: [PATCH 042/112] Ported test_multi_socket.py
+Subject: [PATCH 042/149] Ported test_multi_socket.py
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3173,10 +3173,10 @@ index 0000000..2586569
 1.7.1
 
 
-From 408772865075a389e89441afc44ae402bf87cae7 Mon Sep 17 00:00:00 2001
+From 9a0ae278c27b16fa7dc745c2add39101a13fc9ec Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 22:29:45 -0500
-Subject: [PATCH 043/112] Ported test_multi_socket_select.py
+Subject: [PATCH 043/149] Ported test_multi_socket_select.py
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3324,10 +3324,10 @@ index 0000000..b9ba950
 1.7.1
 
 
-From b9fc3bbb01affc790d94801556275e853d03c2c0 Mon Sep 17 00:00:00 2001
+From 7631c7c047354c1dacb09459fefd6ea9ca11a28b Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:15:47 -0500
-Subject: [PATCH 044/112] Ported test_multi_timer.py
+Subject: [PATCH 044/149] Ported test_multi_timer.py
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3433,10 +3433,10 @@ index 0000000..e961780
 1.7.1
 
 
-From 1411a22bd02d30b7a0dc884ad406fdb4169e1307 Mon Sep 17 00:00:00 2001
+From eb523b0b4e3729d6613e1841d3d3715ad6e58109 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:17:14 -0500
-Subject: [PATCH 045/112] Timers are tested in multi_timer test, delete them from other multi tests
+Subject: [PATCH 045/149] Timers are tested in multi_timer test, delete them from other multi tests
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3526,10 +3526,10 @@ index 2586569..2cce7ae 100644
 1.7.1
 
 
-From dae1d75a3c083cc5c37cefff47d185ed0bf16af6 Mon Sep 17 00:00:00 2001
+From c4ad7c4b2cf2107fb4dfcf468fef554bb8f1a38f Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:30:48 -0500
-Subject: [PATCH 046/112] Ported post test
+Subject: [PATCH 046/149] Ported post test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3615,10 +3615,10 @@ index 0000000..183c4c9
 1.7.1
 
 
-From 453c605a6a0ab5b04d5d1e2cf70cd99a4fd9db18 Mon Sep 17 00:00:00 2001
+From 789b647eff13181fa527cb218dd487695abf3515 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:35:02 -0500
-Subject: [PATCH 047/112] Port test_post2.py null byte test
+Subject: [PATCH 047/149] Port test_post2.py null byte test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3680,10 +3680,10 @@ index 183c4c9..6f9cf80 100644
 1.7.1
 
 
-From 7b1e54bf72d209964ba47f5bfa8f8b192b697632 Mon Sep 17 00:00:00 2001
+From 2f56e4844e78280410f781b04d43ac49ce08129e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:50:51 -0500
-Subject: [PATCH 048/112] Port test_post2.py file upload test
+Subject: [PATCH 048/149] Port test_post2.py file upload test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3768,10 +3768,10 @@ index 6f9cf80..7df0f3b 100644
 1.7.1
 
 
-From f48bdb27952ad5e38f8c259711a514e146ff454c Mon Sep 17 00:00:00 2001
+From c8f91c64ad1eb067907e9b97bd5f8bfa27c29062 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:51:45 -0500
-Subject: [PATCH 049/112] Add a note that this test takes forever to run
+Subject: [PATCH 049/149] Add a note that this test takes forever to run
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3794,10 +3794,10 @@ index 7df0f3b..564d043 100644
 1.7.1
 
 
-From e276465088c1bfa8141417c1d8375de2c5a969a2 Mon Sep 17 00:00:00 2001
+From 9ac9dce97226d34e6bb077a0357063fd23056158 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 5 Mar 2013 23:59:04 -0500
-Subject: [PATCH 050/112] Ported test_post3.py
+Subject: [PATCH 050/149] Ported test_post3.py
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3875,10 +3875,10 @@ index 0000000..a09e83a
 1.7.1
 
 
-From bff1fa53c2c59ee0a31e3bb73d20eb56cf0305d4 Mon Sep 17 00:00:00 2001
+From 8a4babacffc0bbeacdfcfb3f9888f26efd6c072c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:10:41 -0500
-Subject: [PATCH 051/112] Ported test_socketopen.py
+Subject: [PATCH 051/149] Ported test_socketopen.py
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -3941,10 +3941,10 @@ index 0000000..dff3f65
 1.7.1
 
 
-From 3336fa0310f6f030f8a9e27009c42e1b560d3a43 Mon Sep 17 00:00:00 2001
+From bf65a3bac3446950421927da8230216acefebf86 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:13:46 -0500
-Subject: [PATCH 052/112] Ported test_share.py
+Subject: [PATCH 052/149] Ported test_share.py
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4013,10 +4013,10 @@ index 0000000..7b5da77
 1.7.1
 
 
-From 1a601a915a969434e1c707e3d17e302b1c7421a5 Mon Sep 17 00:00:00 2001
+From c5f46d8247e3cbf3d2a0a2cf74c7daeade97c1d8 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:26:45 -0500
-Subject: [PATCH 053/112] Port test_reset.py, which appears to be broken; skip the ported version for now
+Subject: [PATCH 053/149] Port test_reset.py, which appears to be broken; skip the ported version for now
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4110,10 +4110,10 @@ index 0000000..66b7108
 1.7.1
 
 
-From 4c6a41a2156ef35f9f06f604101bc12422806eed Mon Sep 17 00:00:00 2001
+From 4aba306862de76d584af790bf2dd90f0d55fda0e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:55:41 -0500
-Subject: [PATCH 054/112] Start a server on each port once, different servers should go on different ports
+Subject: [PATCH 054/149] Start a server on each port once, different servers should go on different ports
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4153,10 +4153,10 @@ index 7b39358..6d3b69f 100644
 1.7.1
 
 
-From 5e561de2fcf5cab18d29063b778ea24d61ce8b0e Mon Sep 17 00:00:00 2001
+From 8fc24d93e2188d68c738e602c75753cec503de7d Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:56:44 -0500
-Subject: [PATCH 055/112] Need to skip more aggressively it would seem
+Subject: [PATCH 055/149] Need to skip more aggressively it would seem
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4194,10 +4194,10 @@ index 66b7108..cc55f86 100644
 1.7.1
 
 
-From 136485fea353fb6b2c63bf8ea313187835852d11 Mon Sep 17 00:00:00 2001
+From d3a77eabe019b1707a7bdf8cbae32d1eddd12f9c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 01:29:59 -0500
-Subject: [PATCH 056/112] Store urlencode result in a local variable, otherwise things break in a highly weird way
+Subject: [PATCH 056/149] Store urlencode result in a local variable, otherwise things break in a highly weird way
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4247,10 +4247,10 @@ index 564d043..e8b0675 100644
 1.7.1
 
 
-From f456a8e787078a333c2465a1bb4b4bae2a76be9f Mon Sep 17 00:00:00 2001
+From 3ea332ffec21dfe6ddf3e0bc66a101259f88f216 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 01:32:33 -0500
-Subject: [PATCH 057/112] Fix regular expression to allow all hex chars like it should
+Subject: [PATCH 057/149] Fix regular expression to allow all hex chars like it should
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4274,10 +4274,10 @@ index fb451df..f628ab2 100644
 1.7.1
 
 
-From c321100736f098850b3b6c2b75fbf7355ae635ce Mon Sep 17 00:00:00 2001
+From 990569ee36eac37c03f28c86b2a8cfc7a29752ab Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 01:36:48 -0500
-Subject: [PATCH 058/112] Rewrite cyclic gc test to use id()
+Subject: [PATCH 058/149] Rewrite cyclic gc test to use id()
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4328,10 +4328,10 @@ index f628ab2..0133da0 100644
 1.7.1
 
 
-From 5b644f3685a8af09b39a0b94b718a2fc7c33b22e Mon Sep 17 00:00:00 2001
+From 3b7bb39d6b33031ff1efd03abdc174caa32ef3bc Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 03:25:34 -0500
-Subject: [PATCH 059/112] Adjust ftp test to work with vsftpd started from project root
+Subject: [PATCH 059/149] Adjust ftp test to work with vsftpd started from project root
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4398,10 +4398,10 @@ index d215b6e..1d382ed 100644
 1.7.1
 
 
-From 758ab367deff461fdd9c631ee4128bd7a4a0b1b3 Mon Sep 17 00:00:00 2001
+From ce0c221f9db95029982619afd5cc154d68a97334 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:01:13 -0500
-Subject: [PATCH 060/112] Execute vsftpd as test ftp server
+Subject: [PATCH 060/149] Execute vsftpd as test ftp server
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4564,10 +4564,10 @@ index 0000000..0abb39f
 1.7.1
 
 
-From 67495d01da3e8875a9b5882ecdca50c96ee47b15 Mon Sep 17 00:00:00 2001
+From 0457d78a5bd77c11ac67698f125c596f16f05da6 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:37:19 -0500
-Subject: [PATCH 061/112] Move gtk and xmlrpc tests to examples as they do not test anything not already tested by the test suite
+Subject: [PATCH 061/149] Move gtk and xmlrpc tests to examples as they do not test anything not already tested by the test suite
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -4863,10 +4863,10 @@ index bc5953e..0000000
 1.7.1
 
 
-From 8519dd18dd06138ed48eebfef966e3740e7737ef Mon Sep 17 00:00:00 2001
+From 25e7d646b9d5c80e8987528bf1b0031622ab440b Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 00:37:41 -0500
-Subject: [PATCH 062/112] Delete old tests
+Subject: [PATCH 062/149] Delete old tests
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6680,10 +6680,10 @@ index 25e639b..0000000
 1.7.1
 
 
-From 217287f1378ef018fae789f748470a170515a3ea Mon Sep 17 00:00:00 2001
+From f19bc32a8351b67ab3690b3ee0d4fe6843749a9b Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 13:36:38 -0500
-Subject: [PATCH 063/112] Fix make test to run nosetests (closes #5)
+Subject: [PATCH 063/149] Fix make test to run nosetests (closes #5)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6716,10 +6716,10 @@ index 9b2369d..9475250 100644
 1.7.1
 
 
-From dd6cb3db28d4960e5a5902731bd989b918a018ce Mon Sep 17 00:00:00 2001
+From 61d61649b7687c85bdcef3da3650bcce03c4735d Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:25:47 -0500
-Subject: [PATCH 064/112] First stab at travis configuration
+Subject: [PATCH 064/149] First stab at travis configuration
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6757,10 +6757,10 @@ index 0000000..f3c7e8e
 1.7.1
 
 
-From 6d4f146d910400dfcfe9ea758024fbf0a118242f Mon Sep 17 00:00:00 2001
+From 8ceafd381dd7bca305686e33529a207b6544e2b4 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:37:47 -0500
-Subject: [PATCH 065/112] Building the C module will help
+Subject: [PATCH 065/149] Building the C module will help
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6783,10 +6783,10 @@ index 2350dfb..ae17929 100644
 1.7.1
 
 
-From 08975482a2e8f09128e261c352866049b1b3b928 Mon Sep 17 00:00:00 2001
+From 1365d5ca2d70074d588cd23392862264494f0eeb Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:45:46 -0500
-Subject: [PATCH 066/112] Go through more hoops (/bin/dash in play?)
+Subject: [PATCH 066/149] Go through more hoops (/bin/dash in play?)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6809,10 +6809,10 @@ index ae17929..4afdff9 100644
 1.7.1
 
 
-From b55b5ace06a87a7bd1464b3be888a9d71b204a58 Mon Sep 17 00:00:00 2001
+From 99896926cfdfc180f8c330cf2371c6cb023b4bac Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:50:21 -0500
-Subject: [PATCH 067/112] Forgot about bottle
+Subject: [PATCH 067/149] Forgot about bottle
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6830,10 +6830,10 @@ index f3c7e8e..36b0b24 100644
 1.7.1
 
 
-From cbf6fd82722d6db1a6bf8c20b2a95bc04373a31d Mon Sep 17 00:00:00 2001
+From ce37bf646c42352895ba83c6bf7364012666c5c7 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:20:25 -0500
-Subject: [PATCH 068/112] Python 2.5 needs simplejson
+Subject: [PATCH 068/149] Python 2.5 needs simplejson
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -6871,10 +6871,10 @@ index 0000000..52e3460
 1.7.1
 
 
-From c90d60edd47a2a3ef20b3a09f2c2c3dc59938746 Mon Sep 17 00:00:00 2001
+From bc7eb4aad84f8249356c9d221fd5f404943f6699 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Thu, 7 Mar 2013 04:23:52 -0500
-Subject: [PATCH 069/112] Expand readme (mostly borrowed from @Lispython's fork)
+Subject: [PATCH 069/149] Expand readme (mostly borrowed from @Lispython's fork)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7006,10 +7006,10 @@ index 0000000..3518d9d
 1.7.1
 
 
-From 27c1817d13b1773558d5a7b6b327c14c5b4ffdf9 Mon Sep 17 00:00:00 2001
+From 0d6217a0204fe48fae9b6db0b5b73f2a71cdb90c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Thu, 7 Mar 2013 04:30:23 -0500
-Subject: [PATCH 070/112] Readme -> readme.rst elsewhere
+Subject: [PATCH 070/149] Readme -> readme.rst elsewhere
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7100,10 +7100,10 @@ index e8b0675..6f9d8d4 100644
 1.7.1
 
 
-From b3a7a67683458b9b5f7d8a68df533319b6bfbcd6 Mon Sep 17 00:00:00 2001
+From 1bcb3684a9ba30411c675ddc2e75e9a5a5def311 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:50:34 -0500
-Subject: [PATCH 071/112] Python 2.5 compatibility: with statement
+Subject: [PATCH 071/149] Python 2.5 compatibility: with statement
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7155,10 +7155,10 @@ index 67c9c63..c3c8822 100644
 1.7.1
 
 
-From 370806caa376039f9ba97b9e79e7565b54a4b6f0 Mon Sep 17 00:00:00 2001
+From 05d4fbe859d886ec0f0d104b5114a0f416021097 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:10:22 -0500
-Subject: [PATCH 072/112] Python 2.5 compatibility: json/simplejson
+Subject: [PATCH 072/149] Python 2.5 compatibility: json/simplejson
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7217,10 +7217,10 @@ index a09e83a..4d8f261 100644
 1.7.1
 
 
-From d1128e970d6427e16f9eb4909531427a0c799d2e Mon Sep 17 00:00:00 2001
+From f29edfdd24ee3524a2674ba149c8a8d25741263c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:18:02 -0500
-Subject: [PATCH 073/112] Python 2.5 compatibility: except as
+Subject: [PATCH 073/149] Python 2.5 compatibility: except as
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7252,10 +7252,10 @@ index 5217a3f..8a978ec 100644
 1.7.1
 
 
-From 64a832f50f7063cce2df5507b69ac2f216e22f59 Mon Sep 17 00:00:00 2001
+From 28f459a96fcc6c74afa50b7b3c01a2dd75bd59f8 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:23:08 -0500
-Subject: [PATCH 074/112] Delete unused io imports
+Subject: [PATCH 074/149] Delete unused io imports
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7330,10 +7330,10 @@ index 018800d..e9ab0c7 100644
 1.7.1
 
 
-From 6c9103dd1769a91967dc9f5d2d0ac3a48fa9528f Mon Sep 17 00:00:00 2001
+From 8e2ee4ec10741ae7373f3c490df6696267871c12 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:54:35 -0500
-Subject: [PATCH 075/112] Ignore fsync of stdout failures on travis
+Subject: [PATCH 075/149] Ignore fsync of stdout failures on travis
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7382,10 +7382,10 @@ index 27a3d04..1c8ec16 100644
 1.7.1
 
 
-From 560621974748957f45da26461184ace7bbf05919 Mon Sep 17 00:00:00 2001
+From e7da1d864d955f21f31bdf880ed903abbee7c2ba Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 04:58:42 -0500
-Subject: [PATCH 076/112] My vps says timeout might be -1 there
+Subject: [PATCH 076/149] My vps says timeout might be -1 there
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7412,10 +7412,10 @@ index 0c472cf..6db8b44 100644
 1.7.1
 
 
-From 9de0de72ea5134d0e3976b0044936ed42e422fc4 Mon Sep 17 00:00:00 2001
+From ee685a967f67e26ae32ec0c1d34fbad461fce2e7 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:14:57 -0500
-Subject: [PATCH 077/112] Show pycurl versions in package setup
+Subject: [PATCH 077/149] Show pycurl versions in package setup
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7435,10 +7435,10 @@ index e69de29..c1ff976 100644
 1.7.1
 
 
-From 37b493365811d2809927163de3809ac80d1bfc9a Mon Sep 17 00:00:00 2001
+From 359fc6e31a21620ea564288ae43ae23db35d1b2e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:07:19 -0500
-Subject: [PATCH 078/112] Show what the entries are if assertion fails
+Subject: [PATCH 078/149] Show what the entries are if assertion fails
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7460,10 +7460,10 @@ index 8005239..d74bed9 100644
 1.7.1
 
 
-From 54c08110d132bcc1f79d0484154854f7fedbe6d1 Mon Sep 17 00:00:00 2001
+From 4c65d037fce349811d4954db137d0b3d5b3abe85 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:09:22 -0500
-Subject: [PATCH 079/112] More informative failure message
+Subject: [PATCH 079/149] More informative failure message
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7490,10 +7490,10 @@ index d9c6174..8701649 100644
 1.7.1
 
 
-From 8870f4272ba3bb0042168e597a32e3c22b80dc6f Mon Sep 17 00:00:00 2001
+From 831b7a919d47b55e787c8af457b6ec815fca2035 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 06:34:39 -0500
-Subject: [PATCH 080/112] Return complete response bodies for 403 and 404 responses as it looks like exact wording varies between bottle versions
+Subject: [PATCH 080/149] Return complete response bodies for 403 and 404 responses as it looks like exact wording varies between bottle versions
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7552,10 +7552,10 @@ index 8701649..d540413 100644
 1.7.1
 
 
-From 567ab2309e67aecda5ba7e46069b1cb85b9bea73 Mon Sep 17 00:00:00 2001
+From 6730160a7ede5c1bb490836cb42269d06a497dbe Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 22:15:47 -0500
-Subject: [PATCH 081/112] Debug messages originated by curl 7.22 are different
+Subject: [PATCH 081/149] Debug messages originated by curl 7.22 are different
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7583,10 +7583,10 @@ index d74bed9..70e121c 100644
 1.7.1
 
 
-From d3e6168efb78f643677693afc607abd9e635dd07 Mon Sep 17 00:00:00 2001
+From 283ebc888e8016f575457db70a81eb46f219467c Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 22:17:48 -0500
-Subject: [PATCH 082/112] Times in http headers are in UTC
+Subject: [PATCH 082/149] Times in http headers are in UTC
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7611,10 +7611,10 @@ index 00080ba..7ca564d 100644
 1.7.1
 
 
-From c223f392fde2b40bb5d88763bcfd9e6883de36c0 Mon Sep 17 00:00:00 2001
+From 0034724dd8ec8526f361c067d72e87c930f6eeb3 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 22:26:19 -0500
-Subject: [PATCH 083/112] Create a generalized function for curl version comparisons
+Subject: [PATCH 083/149] Create a generalized function for curl version comparisons
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7681,10 +7681,10 @@ index 0000000..80e780c
 1.7.1
 
 
-From e7e7a0f047d88409d9355dab3fab2316b809e5ae Mon Sep 17 00:00:00 2001
+From d794edf43a119d4f600d3be8536c22419c9f4abb Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 22:27:25 -0500
-Subject: [PATCH 084/112] Use version comparison helper in debug test
+Subject: [PATCH 084/149] Use version comparison helper in debug test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7726,10 +7726,10 @@ index 46ac59f..b8e22ec 100644
 1.7.1
 
 
-From ee31a65de12bea5d00f0720eb8b5ec5be796c322 Mon Sep 17 00:00:00 2001
+From c1143004a0f27190fc4aec1228396db992f5c5de Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 6 Mar 2013 22:30:44 -0500
-Subject: [PATCH 085/112] libcurl 7.23.0 produces different results
+Subject: [PATCH 085/149] libcurl 7.23.0 produces different results
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7758,10 +7758,10 @@ index e961780..c4b3df4 100644
 1.7.1
 
 
-From f510b505c4e497904e3591696c7d8985baea409b Mon Sep 17 00:00:00 2001
+From abc0199b4b2517a82c492cd3f64f10883a5ec257 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Thu, 7 Mar 2013 00:16:21 -0500
-Subject: [PATCH 086/112] Change memleak test to use id() rather than regexp match of addresses (closes #12)
+Subject: [PATCH 086/149] Change memleak test to use id() rather than regexp match of addresses (closes #12)
 
 This commit also fixes the test to check objects that GC tracks
 rather than the object type repeatedly.
@@ -7816,10 +7816,10 @@ index 6e9f76c..1b1bbd5 100644
 1.7.1
 
 
-From 70206193e5219fac1da3e3d27167ed070fdff7b9 Mon Sep 17 00:00:00 2001
+From 14dd7fdbe5697f7e7349cbe44258f41f74455fc0 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Mon, 11 Mar 2013 22:19:14 -0400
-Subject: [PATCH 087/112] More informative exception message when vsftpd is missing or not in PATH (closes #6)
+Subject: [PATCH 087/149] More informative exception message when vsftpd is missing or not in PATH (closes #6)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7860,10 +7860,10 @@ index 8d5c0cc..ce08da9 100644
 1.7.1
 
 
-From c42d5555e33105b8ea2317e63ac4b80b0c152be9 Mon Sep 17 00:00:00 2001
+From 1505197b9eb8d5ccbc3d039866e87d522455d9d0 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Mon, 11 Mar 2013 22:22:02 -0400
-Subject: [PATCH 088/112] Delete -1 timer assertion from multi timer test (closes #19)
+Subject: [PATCH 088/149] Delete -1 timer assertion from multi timer test (closes #19)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7891,10 +7891,10 @@ index c4b3df4..ff856d7 100644
 1.7.1
 
 
-From ccc7c66b76cef1ad3a00448d08f4aec7e21eaf69 Mon Sep 17 00:00:00 2001
+From 041b4666519f3fa2594f5ee919e62006cb8ae2f1 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Mon, 11 Mar 2013 14:00:04 +0100
-Subject: [PATCH 089/112] remove .cvsignore files, add *.pyc and *.pyo to .gitignore
+Subject: [PATCH 089/149] remove .cvsignore files, add *.pyc and *.pyo to .gitignore
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7913,10 +7913,10 @@ index 796b96d..899daba 100644
 1.7.1
 
 
-From bed41e852cb37b23b2cfc4513b701f3463a97c86 Mon Sep 17 00:00:00 2001
+From 3dc27e280021512e84cd77f68c7ff3d4e5cb2ae0 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Mon, 11 Mar 2013 22:40:12 -0400
-Subject: [PATCH 090/112] Readd cvsignore contents and empty directories
+Subject: [PATCH 090/149] Readd cvsignore contents and empty directories
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -7941,10 +7941,10 @@ index 899daba..c873e32 100644
 1.7.1
 
 
-From 49e560395f55efa3bb9ec09f44b5c893f0571404 Mon Sep 17 00:00:00 2001
+From d6c800cdc963e349921cae8ac10df9f9f23cac79 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Mon, 11 Mar 2013 14:03:06 +0100
-Subject: [PATCH 091/112] vsftpd.conf: add background=no to allow for proper shutdown
+Subject: [PATCH 091/149] vsftpd.conf: add background=no to allow for proper shutdown
 
 When the "background" directive in the vsftpd.conf configuration file is
 set to "YES", the vsftpd startup script forks, creating a child process
@@ -7973,10 +7973,10 @@ index 0abb39f..b4e4972 100644
 1.7.1
 
 
-From 2d1e91297f6d56286b9172090e6c16d9e509de0a Mon Sep 17 00:00:00 2001
+From 8acdaaf5c311038a5dd7fcd81f13c0bb984b66c7 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Tue, 26 Feb 2013 14:49:47 +0100
-Subject: [PATCH 092/112] pycurl.c: eliminate duplicated code in util_write_callback()
+Subject: [PATCH 092/149] pycurl.c: eliminate duplicated code in util_write_callback()
 
 Suggested by Zdenek Pavlas <https://bugzilla.redhat.com/857875#c8>.
 
@@ -8010,10 +8010,10 @@ index 094bc60..f701543 100644
 1.7.1
 
 
-From a3ab87495c91bf9b88ed5b8e8b4369d7adab96c2 Mon Sep 17 00:00:00 2001
+From b55c2cab56733a86b4ebc5ccccdf8c5530bca85a Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Tue, 26 Feb 2013 16:58:55 +0100
-Subject: [PATCH 093/112] pycurl.c: allow to return -1 from write callback
+Subject: [PATCH 093/149] pycurl.c: allow to return -1 from write callback
 
 ... to abort the transfer and WRITEFUNC_PAUSE to pause the transfer
 
@@ -8058,10 +8058,10 @@ index f701543..a30c339 100644
 1.7.1
 
 
-From 1ca0c365f45526d625fe79475c74b92818e9889d Mon Sep 17 00:00:00 2001
+From 32664e552084fad471de98f219f58c52c95653f4 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Wed, 6 Mar 2013 14:38:01 +0100
-Subject: [PATCH 094/112] write_abort_test.py: test returning -1 from write callback
+Subject: [PATCH 094/149] write_abort_test.py: test returning -1 from write callback
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8114,10 +8114,10 @@ index 0000000..73e8245
 1.7.1
 
 
-From 671bb961f3c16821684ac92f1ae6de9138b92d0f Mon Sep 17 00:00:00 2001
+From 808c5b785ccd2f3bcca15146ae998a8609229b38 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Mon, 11 Mar 2013 23:48:10 -0400
-Subject: [PATCH 095/112] setup/teardown consistent with other tests
+Subject: [PATCH 095/149] setup/teardown consistent with other tests
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8165,10 +8165,10 @@ index 73e8245..f720882 100755
 1.7.1
 
 
-From 0ddb01d99c34fa5ae7581697edeb2de49decc442 Mon Sep 17 00:00:00 2001
+From c662b504c202ca434d723de3984c12a35358e9f8 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Mon, 11 Mar 2013 23:48:41 -0400
-Subject: [PATCH 096/112] Correct shebang
+Subject: [PATCH 096/149] Correct shebang
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8189,10 +8189,10 @@ index f720882..3272961 100755
 1.7.1
 
 
-From 165d6e5e332a20ceca178b105aa165aa6873b662 Mon Sep 17 00:00:00 2001
+From 43d385231293a22fb65490db8348c9a18592c7b0 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Mon, 11 Mar 2013 23:56:36 -0400
-Subject: [PATCH 097/112] Check that bogus return values from write callback are correctly handled (still)
+Subject: [PATCH 097/149] Check that bogus return values from write callback are correctly handled (still)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8254,10 +8254,10 @@ index 0000000..4bec2ad
 1.7.1
 
 
-From cafe4e74ebd12a2c571319e0cfeb6d64f48abe08 Mon Sep 17 00:00:00 2001
+From c04e16173e67b91c47018a5f023d703f751ba23e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 12 Mar 2013 00:00:40 -0400
-Subject: [PATCH 098/112] Fix mode on write abort test
+Subject: [PATCH 098/149] Fix mode on write abort test
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8271,10 +8271,10 @@ new mode 100644
 1.7.1
 
 
-From c84e139df96307aff908f69949cbe123fc40a14f Mon Sep 17 00:00:00 2001
+From a14d3afd57c9a402e8256a53cdcc389008356f3e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 12 Mar 2013 00:02:56 -0400
-Subject: [PATCH 099/112] This test fails intermittently, add diagnostics
+Subject: [PATCH 099/149] This test fails intermittently, add diagnostics
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8298,10 +8298,10 @@ index 6db8b44..9546169 100644
 1.7.1
 
 
-From 47db8853813888148a4bc91754de8a83de4e8c0b Mon Sep 17 00:00:00 2001
+From 2af85c62b266127bd9e58d1df2b1fb079a0e9654 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 12 Mar 2013 22:43:47 -0400
-Subject: [PATCH 100/112] Python 2.5 compatibility: socket.create_connection
+Subject: [PATCH 100/149] Python 2.5 compatibility: socket.create_connection
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8344,10 +8344,10 @@ index 8a978ec..be05dfa 100644
 1.7.1
 
 
-From 94f689b61e1675f3ab9b4cc74ad53ae960d0a1b0 Mon Sep 17 00:00:00 2001
+From d1c79723cecd7ee75181f29b46081fc49ea28790 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 12 Mar 2013 22:55:08 -0400
-Subject: [PATCH 101/112] Python 2.5 compatibility: poll_interval in SocketServer
+Subject: [PATCH 101/149] Python 2.5 compatibility: poll_interval in SocketServer
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8399,10 +8399,10 @@ index be05dfa..114ce42 100644
 1.7.1
 
 
-From d8dda1c31521d338b9119dd679c25257232a8656 Mon Sep 17 00:00:00 2001
+From cb24d7050133cbed97c7f05ef6f649c7a7bfede3 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 15 Mar 2013 12:28:11 -0400
-Subject: [PATCH 102/112] Tests do not call global cleanup for now
+Subject: [PATCH 102/149] Tests do not call global cleanup for now
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8423,10 +8423,10 @@ index cc55f86..61a692a 100644
 1.7.1
 
 
-From 8e307f81488c66a02516204cb7566f159b065371 Mon Sep 17 00:00:00 2001
+From 7a74c1e39377d4220ffafe335a71487515bede8e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 15 Mar 2013 17:01:35 -0400
-Subject: [PATCH 103/112] Python 3 compatibility: except syntax
+Subject: [PATCH 103/149] Python 3 compatibility: except syntax
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8466,10 +8466,10 @@ index 4bec2ad..ef709db 100644
 1.7.1
 
 
-From f1674b26ef4094d20c46dbfc0cb7ae3026fce525 Mon Sep 17 00:00:00 2001
+From 84bb12176059f28c0cc030d6b620656a00fff3a4 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 15 Mar 2013 21:21:50 -0400
-Subject: [PATCH 104/112] Python 3 compatibility: map
+Subject: [PATCH 104/149] Python 3 compatibility: map
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8493,10 +8493,10 @@ index b8e22ec..1e9f406 100644
 1.7.1
 
 
-From 5797557b27a19c247967f8fc3cf8b1068139fecf Mon Sep 17 00:00:00 2001
+From d30ec2cf96c66cd176bb999fb7a3a39d13ddf0dd Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Fri, 15 Mar 2013 21:27:58 -0400
-Subject: [PATCH 105/112] Python 3 compatibility: apply no longer exists
+Subject: [PATCH 105/149] Python 3 compatibility: apply no longer exists
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8553,10 +8553,10 @@ index 332c04c..0ecc399 100644
 1.7.1
 
 
-From 94c63e7fe049d893a455b944c0deebe0f0c3ed37 Mon Sep 17 00:00:00 2001
+From c903dc9eebdf010bfc8142b5f47cd564e04baa19 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 26 Feb 2013 16:40:28 -0500
-Subject: [PATCH 106/112] Python 3 compatibility: exception raising syntax
+Subject: [PATCH 106/149] Python 3 compatibility: exception raising syntax
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8580,10 +8580,10 @@ index 013bd11..725007c 100644
 1.7.1
 
 
-From 530d280486742612cdbf7b306ce20e0200195adc Mon Sep 17 00:00:00 2001
+From 2643ab0cd015f09b1a0fd928c8e1102eee8e203e Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 27 Feb 2013 20:23:28 -0500
-Subject: [PATCH 107/112] Python 3 compatibility: print syntax (src)
+Subject: [PATCH 107/149] Python 3 compatibility: print syntax (src)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8613,10 +8613,10 @@ index 5b6b549..5617262 100644
 1.7.1
 
 
-From 8f47e45b2814f03400f5f42aa67527147981b67f Mon Sep 17 00:00:00 2001
+From c2f5306b77da24f1cb1cf45b9dbda93b817bf6e6 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Tue, 26 Feb 2013 16:49:09 -0500
-Subject: [PATCH 108/112] Python 3 compatibility: print syntax (former tests)
+Subject: [PATCH 108/149] Python 3 compatibility: print syntax (former tests)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -8653,10 +8653,10 @@ index bc5953e..3a5469a 100644
 1.7.1
 
 
-From a69c0133c05d1a8b059514b58c369f69db53faa9 Mon Sep 17 00:00:00 2001
+From 0106dfe86ca2a5620f07c2687cb05502636298ce Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Wed, 27 Feb 2013 20:23:39 -0500
-Subject: [PATCH 109/112] Python 3 compatibility: print syntax (examples)
+Subject: [PATCH 109/149] Python 3 compatibility: print syntax (examples)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -9199,10 +9199,10 @@ index ec0df50..a9a7d9e 100644
 1.7.1
 
 
-From 41478f926b683d2141732936cad1855a7632552a Mon Sep 17 00:00:00 2001
+From bb811ad5b2d2819d502c84c735b7efec84d4d557 Mon Sep 17 00:00:00 2001
 From: Oleg Pudeyev <oleg@bsdpower.com>
 Date: Thu, 28 Feb 2013 00:30:00 -0500
-Subject: [PATCH 110/112] Python 3 compatibility: printing to stderr (linksys example)
+Subject: [PATCH 110/149] Python 3 compatibility: printing to stderr (linksys example)
 
 Signed-off-by: Kamil Dudka <kdudka@redhat.com>
 ---
@@ -9273,10 +9273,10 @@ index 24cb2a9..f66ff0d 100755
 1.7.1
 
 
-From a20b726b10b5e1bc27ba95808ef11154973b6403 Mon Sep 17 00:00:00 2001
+From 2ea28565bcf16bb2e792467650012081e2268cf1 Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Mon, 8 Apr 2013 14:25:26 +0200
-Subject: [PATCH 111/112] allow to unset a previously set RANGE value
+Subject: [PATCH 111/149] allow to unset a previously set RANGE value
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -9354,10 +9354,10 @@ index 0000000..4400851
 1.7.1
 
 
-From 6d43dc15185016b0e2dd993e18bd124f87554445 Mon Sep 17 00:00:00 2001
+From 576e87580356497b601ec16a9a794db959d43f0e Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Mon, 8 Apr 2013 14:31:30 +0200
-Subject: [PATCH 112/112] allow to use setopt(..., None) as unsetopt()
+Subject: [PATCH 112/149] allow to use setopt(..., None) as unsetopt()
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -9411,6 +9411,3026 @@ index 4400851..10ee801 100644
 +        self.curl.setopt(pycurl.RANGE, None)
 +        self.curl.perform()
 +        assert 10 < self.read
+-- 
+1.7.1
+
+
+From 5c27a721fc3aaeaeddabb394ae6c9502391bdea6 Mon Sep 17 00:00:00 2001
+From: Zdenek Pavlas <zpavlas@redhat.com>
+Date: Wed, 13 Mar 2013 16:55:58 +0100
+Subject: [PATCH 113/149] add the GLOBAL_ACK_EINTR constant to the list of exported symbols
+
+... if built against a new enough version of libcurl
+
+Bug: https://bugzilla.redhat.com/920589
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |   19 +++++++++++++++----
+ 1 files changed, 15 insertions(+), 4 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 619ca20..9950e00 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -3210,6 +3210,16 @@ static PyTypeObject CurlMulti_Type = {
+      */
+ };
+ 
++static int
++are_global_init_flags_valid(int flags)
++{
++#ifdef CURL_GLOBAL_ACK_EINTR
++    /* CURL_GLOBAL_ACK_EINTR was introduced in libcurl-7.30.0 */
++    return !(flags & ~(CURL_GLOBAL_ALL | CURL_GLOBAL_ACK_EINTR));
++#else
++    return !(flags & ~(CURL_GLOBAL_ALL));
++#endif
++}
+ 
+ /*************************************************************************
+ // module level
+@@ -3227,10 +3237,7 @@ do_global_init(PyObject *dummy, PyObject *args)
+         return NULL;
+     }
+ 
+-    if (!(option == CURL_GLOBAL_SSL ||
+-          option == CURL_GLOBAL_WIN32 ||
+-          option == CURL_GLOBAL_ALL ||
+-          option == CURL_GLOBAL_NOTHING)) {
++    if (!are_global_init_flags_valid(option)) {
+         PyErr_SetString(PyExc_ValueError, "invalid option to global_init");
+         return NULL;
+     }
+@@ -3866,6 +3873,10 @@ initpycurl(void)
+     insint(d, "GLOBAL_ALL", CURL_GLOBAL_ALL);
+     insint(d, "GLOBAL_NOTHING", CURL_GLOBAL_NOTHING);
+     insint(d, "GLOBAL_DEFAULT", CURL_GLOBAL_DEFAULT);
++#ifdef CURL_GLOBAL_ACK_EINTR
++    /* CURL_GLOBAL_ACK_EINTR was introduced in libcurl-7.30.0 */
++    insint(d, "GLOBAL_ACK_EINTR", CURL_GLOBAL_ACK_EINTR);
++#endif
+ 
+ 
+     /* constants for curl_multi_socket interface */
+-- 
+1.7.1
+
+
+From 5a165baaa2b275293c1e045d8c0023d55bd0cbfc Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Wed, 3 Apr 2013 15:06:32 +0200
+Subject: [PATCH 114/149] tests/global_init_ack_eintr.py: test GLOBAL_ACK_EINTR
+
+... if we have a new enough version of libcurl
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/global_init_ack_eintr.py |   22 ++++++++++++++++++++++
+ 1 files changed, 22 insertions(+), 0 deletions(-)
+ create mode 100644 tests/global_init_ack_eintr.py
+
+diff --git a/tests/global_init_ack_eintr.py b/tests/global_init_ack_eintr.py
+new file mode 100644
+index 0000000..429fc3f
+--- /dev/null
++++ b/tests/global_init_ack_eintr.py
+@@ -0,0 +1,22 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++import pycurl
++import unittest
++
++from . import util
++
++class GlobalInitAckEintrTest(unittest.TestCase):
++    def test_global_init_default(self):
++        # initialize libcurl with DEFAULT flags
++        pycurl.global_init(pycurl.GLOBAL_DEFAULT)
++        pycurl.global_cleanup()
++
++    def test_global_init_ack_eintr(self):
++        # the GLOBAL_ACK_EINTR flag was introduced in libcurl-7.30, but can also
++        # be backported for older versions of libcurl at the distribution level
++        if not util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
++            # initialize libcurl with the GLOBAL_ACK_EINTR flag
++            pycurl.global_init(pycurl.GLOBAL_ACK_EINTR)
++            pycurl.global_cleanup()
+-- 
+1.7.1
+
+
+From 788e012e64250cfb473d201a836e1a92c7772154 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Tue, 9 Apr 2013 18:52:41 -0400
+Subject: [PATCH 115/149] Add a test for bogus init flags and fix test name
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/global_init_ack_eintr.py |   22 ----------------------
+ tests/global_init_test.py      |   28 ++++++++++++++++++++++++++++
+ 2 files changed, 28 insertions(+), 22 deletions(-)
+ delete mode 100644 tests/global_init_ack_eintr.py
+ create mode 100644 tests/global_init_test.py
+
+diff --git a/tests/global_init_ack_eintr.py b/tests/global_init_ack_eintr.py
+deleted file mode 100644
+index 429fc3f..0000000
+--- a/tests/global_init_ack_eintr.py
++++ /dev/null
+@@ -1,22 +0,0 @@
+-#! /usr/bin/env python
+-# -*- coding: iso-8859-1 -*-
+-# vi:ts=4:et
+-
+-import pycurl
+-import unittest
+-
+-from . import util
+-
+-class GlobalInitAckEintrTest(unittest.TestCase):
+-    def test_global_init_default(self):
+-        # initialize libcurl with DEFAULT flags
+-        pycurl.global_init(pycurl.GLOBAL_DEFAULT)
+-        pycurl.global_cleanup()
+-
+-    def test_global_init_ack_eintr(self):
+-        # the GLOBAL_ACK_EINTR flag was introduced in libcurl-7.30, but can also
+-        # be backported for older versions of libcurl at the distribution level
+-        if not util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
+-            # initialize libcurl with the GLOBAL_ACK_EINTR flag
+-            pycurl.global_init(pycurl.GLOBAL_ACK_EINTR)
+-            pycurl.global_cleanup()
+diff --git a/tests/global_init_test.py b/tests/global_init_test.py
+new file mode 100644
+index 0000000..b76254b
+--- /dev/null
++++ b/tests/global_init_test.py
+@@ -0,0 +1,28 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++import pycurl
++import unittest
++import nose.tools
++
++from . import util
++
++class GlobalInitTest(unittest.TestCase):
++    def test_global_init_default(self):
++        # initialize libcurl with DEFAULT flags
++        pycurl.global_init(pycurl.GLOBAL_DEFAULT)
++        pycurl.global_cleanup()
++
++    def test_global_init_ack_eintr(self):
++        # the GLOBAL_ACK_EINTR flag was introduced in libcurl-7.30, but can also
++        # be backported for older versions of libcurl at the distribution level
++        if not util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
++            # initialize libcurl with the GLOBAL_ACK_EINTR flag
++            pycurl.global_init(pycurl.GLOBAL_ACK_EINTR)
++            pycurl.global_cleanup()
++    
++    @nose.tools.raises(ValueError)
++    def test_global_init_bogus(self):
++        # initialize libcurl with bogus flags
++        pycurl.global_init(0xffff)
+-- 
+1.7.1
+
+
+From 91992e2ef3664d68c8e98269b78911b929ad991a Mon Sep 17 00:00:00 2001
+From: anonymous <anonymous@users.sourceforge.net>
+Date: Tue, 26 Feb 2013 16:32:20 -0500
+Subject: [PATCH 116/149] Python 3 support.
+
+http://sourceforge.net/tracker/?func=detail&aid=2917775&group_id=28236&atid=392779
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ setup.py |   18 +++++++++---------
+ 1 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 725007c..e0d0379 100644
+--- a/setup.py
++++ b/setup.py
+@@ -31,7 +31,7 @@ def scan_argv(s, default):
+     i = 1
+     while i < len(sys.argv):
+         arg = sys.argv[i]
+-        if string.find(arg, s) == 0:
++        if str.find(arg, s) == 0:
+             p = arg[len(s):]
+             assert p, arg
+             del sys.argv[i]
+@@ -46,8 +46,8 @@ def add_libdirs(envvar, sep, fatal=0):
+     v = os.environ.get(envvar)
+     if not v:
+         return
+-    for dir in string.split(v, sep):
+-        dir = string.strip(dir)
++    for dir in str.split(v, sep):
++        dir = str.strip(dir)
+         if not dir:
+             continue
+         dir = os.path.normpath(dir)
+@@ -55,7 +55,7 @@ def add_libdirs(envvar, sep, fatal=0):
+             if not dir in library_dirs:
+                 library_dirs.append(dir)
+         elif fatal:
+-            print "FATAL: bad directory %s in environment variable %s" % (dir, envvar)
++            print("FATAL: bad directory %s in environment variable %s" % (dir, envvar))
+             sys.exit(1)
+ 
+ 
+@@ -65,13 +65,13 @@ if sys.platform == "win32":
+     # and thus unlikely to match your installation.
+     CURL_DIR = r"c:\src\build\pycurl\curl-7.16.2.1"
+     CURL_DIR = scan_argv("--curl-dir=", CURL_DIR)
+-    print "Using curl directory:", CURL_DIR
++    print("Using curl directory:", CURL_DIR)
+     assert os.path.isdir(CURL_DIR), "please check CURL_DIR in setup.py"
+     include_dirs.append(os.path.join(CURL_DIR, "include"))
+     extra_objects.append(os.path.join(CURL_DIR, "lib", "libcurl.lib"))
+     extra_link_args.extend(["gdi32.lib", "wldap32.lib", "winmm.lib", "ws2_32.lib",])
+     add_libdirs("LIB", ";")
+-    if string.find(sys.version, "MSC") >= 0:
++    if str.find(sys.version, "MSC") >= 0:
+         extra_compile_args.append("-O2")
+         extra_compile_args.append("-GF")        # enable read-only string pooling
+         extra_compile_args.append("-WX")        # treat warnings as errors
+@@ -85,10 +85,10 @@ else:
+     CURL_CONFIG = scan_argv("--curl-config=", CURL_CONFIG)
+     d = os.popen("'%s' --version" % CURL_CONFIG).read()
+     if d:
+-        d = string.strip(d)
++        d = str.strip(d)
+     if not d:
+-        raise Exception, ("`%s' not found -- please install the libcurl development files" % CURL_CONFIG)
+-    print "Using %s (%s)" % (CURL_CONFIG, d)
++        raise Exception("`%s' not found -- please install the libcurl development files" % CURL_CONFIG)
++    print("Using %s (%s)" % (CURL_CONFIG, d))
+     for e in split_quoted(os.popen("'%s' --cflags" % CURL_CONFIG).read()):
+         if e[:2] == "-I":
+             # do not add /usr/include
+-- 
+1.7.1
+
+
+From 6f6649b79ea66493e878eda3e3cfd87cba18a02f Mon Sep 17 00:00:00 2001
+From: decitre <decitre@users.sourceforge.net>
+Date: Tue, 26 Feb 2013 16:36:32 -0500
+Subject: [PATCH 117/149] Corrected Python 3 support.
+
+http://sourceforge.net/tracker/?func=detail&aid=3188495&group_id=28236&atid=392779
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ setup.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index e0d0379..385facb 100644
+--- a/setup.py
++++ b/setup.py
+@@ -106,7 +106,7 @@ else:
+             stdout=subprocess.PIPE)
+         (stdout, stderr) = p.communicate()
+         if p.wait() == 0:
+-            optbuf += stdout
++            optbuf += stdout.decode()
+     if optbuf == "":
+         raise Exception("Neither of curl-config --libs or --static-libs" +
+             "produced output")
+-- 
+1.7.1
+
+
+From d256095c74857a87fa7e3c9dbb0df58cdeded17f Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 28 Feb 2013 00:14:03 -0500
+Subject: [PATCH 118/149] Python 3 compatibility: StringIO (src)
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ python/curl/__init__.py |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+diff --git a/python/curl/__init__.py b/python/curl/__init__.py
+index 5617262..3ab019f 100644
+--- a/python/curl/__init__.py
++++ b/python/curl/__init__.py
+@@ -10,7 +10,10 @@ import os, sys, urllib, exceptions, mimetools, pycurl
+ try:
+     from cStringIO import StringIO
+ except ImportError:
+-    from StringIO import StringIO
++    try:
++        from StringIO import StringIO
++    except ImportError:
++        from io import StringIO
+ 
+ try:
+     import signal
+-- 
+1.7.1
+
+
+From 04ebd364f9b027e0bbdaeecfca02493244efcfbd Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 28 Feb 2013 00:11:58 -0500
+Subject: [PATCH 119/149] Python 3 compatibility: StringIO (examples)
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ examples/xmlrpc_curl.py |    5 ++++-
+ 1 files changed, 4 insertions(+), 1 deletions(-)
+
+diff --git a/examples/xmlrpc_curl.py b/examples/xmlrpc_curl.py
+index a9a7d9e..bb6799e 100644
+--- a/examples/xmlrpc_curl.py
++++ b/examples/xmlrpc_curl.py
+@@ -14,7 +14,10 @@ except ImportError:
+ try:
+     from cStringIO import StringIO
+ except ImportError:
+-    from StringIO import StringIO
++    try:
++        from StringIO import StringIO
++    except ImportError:
++        from io import StringIO
+ import xmlrpclib, pycurl
+ 
+ 
+-- 
+1.7.1
+
+
+From 936cceff39402efa5b91b2ff4d4d36c04c1675c8 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 28 Feb 2013 00:23:29 -0500
+Subject: [PATCH 120/149] Python 3 compatibility: xmlrpclib
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ examples/tests/test_xmlrpc.py |    5 ++++-
+ examples/xmlrpc_curl.py       |    6 +++++-
+ 2 files changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/examples/tests/test_xmlrpc.py b/examples/tests/test_xmlrpc.py
+index 3a5469a..d64794e 100644
+--- a/examples/tests/test_xmlrpc.py
++++ b/examples/tests/test_xmlrpc.py
+@@ -4,7 +4,10 @@
+ # $Id$
+ 
+ ## XML-RPC lib included in python2.2
+-import xmlrpclib
++try:
++    import xmlrpclib
++except ImportError:
++    import xmlrpc.client as xmlrpclib
+ import pycurl
+ 
+ # Header fields passed in request
+diff --git a/examples/xmlrpc_curl.py b/examples/xmlrpc_curl.py
+index bb6799e..21418b5 100644
+--- a/examples/xmlrpc_curl.py
++++ b/examples/xmlrpc_curl.py
+@@ -18,7 +18,11 @@ except ImportError:
+         from StringIO import StringIO
+     except ImportError:
+         from io import StringIO
+-import xmlrpclib, pycurl
++try:
++    import xmlrpclib
++except ImportError:
++    import xmlrpc.client as xmlrpclib
++import pycurl
+ 
+ 
+ class CURLTransport(xmlrpclib.Transport):
+-- 
+1.7.1
+
+
+From 00ce4e4176540bc899713bcd2c364ad8d3887a8b Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 28 Feb 2013 00:34:01 -0500
+Subject: [PATCH 121/149] Python 3 compatibility: urllib (src)
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ python/curl/__init__.py |   10 +++++++---
+ 1 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/python/curl/__init__.py b/python/curl/__init__.py
+index 3ab019f..fd179fc 100644
+--- a/python/curl/__init__.py
++++ b/python/curl/__init__.py
+@@ -6,7 +6,11 @@
+ #
+ # By Eric S. Raymond, April 2003.
+ 
+-import os, sys, urllib, exceptions, mimetools, pycurl
++import os, sys, exceptions, mimetools, pycurl
++try:
++    import urllib.parse as urllib_parse
++except ImportError:
++    import urllib as urllib_parse
+ try:
+     from cStringIO import StringIO
+ except ImportError:
+@@ -86,14 +90,14 @@ class Curl:
+     def get(self, url="", params=None):
+         "Ship a GET request for a specified URL, capture the response."
+         if params:
+-            url += "?" + urllib.urlencode(params)
++            url += "?" + urllib_parse.urlencode(params)
+         self.set_option(pycurl.HTTPGET, 1)
+         return self.__request(url)
+ 
+     def post(self, cgi, params):
+         "Ship a POST request to a specified CGI, capture the response."
+         self.set_option(pycurl.POST, 1)
+-        self.set_option(pycurl.POSTFIELDS, urllib.urlencode(params))
++        self.set_option(pycurl.POSTFIELDS, urllib_parse.urlencode(params))
+         return self.__request(cgi)
+ 
+     def body(self):
+-- 
+1.7.1
+
+
+From 59cde00a2b6f4329d19579c3e8982d194c71eb66 Mon Sep 17 00:00:00 2001
+From: Yuri Ushakov <yuri.ushakov@gmail.com>
+Date: Thu, 18 Apr 2013 12:29:07 -0400
+Subject: [PATCH 122/149] Correctly handle big timeout values
+
+http://curl.haxx.se/mail/curlpython-2013-04/0000.html
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 9950e00..388595c 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -2567,7 +2567,7 @@ do_multi_timeout(CurlMultiObject *self)
+     }
+ 
+     /* Return number of millisecs until timeout */
+-    return Py_BuildValue("i", timeout);
++    return Py_BuildValue("l", timeout);
+ }
+ 
+ 
+-- 
+1.7.1
+
+
+From 575f40dd24cea343980b0c628327d9a1008fa021 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 30 May 2013 13:55:35 -0400
+Subject: [PATCH 123/149] Add support for CURLOPT_USERNAME / _PASSWORD
+
+Original patch by Wim Lewis (https://sourceforge.net/u/wiml/profile/).
+
+Original patch description:
+
+This is a really trivial patch to add support for the CURLOPT_USERNAME and
+CURLOPT_PASSWORD options (and their _PROXY equivalents), which affect
+the same parts of libcurl's state that CURLOPT_USERPWD does but which
+don't require you to combine the username and password into one string first.
+(Libcurl just immediately parses it apart again anyway.)
+
+I've tested against libcurl-7.21.0, and looked through the source for
+libcurl 7.20.0 and 7.19.5 to verify that it looks like it should still do
+the right things there (in particular that curl_easy_setopt(..., NULL)
+does the reasonable thing with these options).
+
+https://sourceforge.net/p/pycurl/patches/10/
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c          |   31 +++++++++++++++++++++++++++++++
+ tests/curlopt_test.py |   18 ++++++++++++++++++
+ 2 files changed, 49 insertions(+), 0 deletions(-)
+ create mode 100644 tests/curlopt_test.py
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 388595c..9c76609 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -61,6 +61,13 @@
+ #  error "Need libcurl version 7.19.0 or greater to compile pycurl."
+ #endif
+ 
++#if LIBCURL_VERSION_MAJOR >= 8 || \
++    LIBCURL_VERSION_MAJOR == 7 && LIBCURL_VERSION_MINOR >= 20 || \
++    LIBCURL_VERSION_MAJOR == 7 && LIBCURL_VERSION_MINOR == 19 && LIBCURL_VERSION_PATCH >= 1
++#define HAVE_CURLOPT_USERNAME
++#define HAVE_CURLOPT_PROXYUSERNAME
++#endif
++
+ /* Python < 2.5 compat for Py_ssize_t */
+ #if PY_VERSION_HEX < 0x02050000 && !defined(PY_SSIZE_T_MIN)
+ typedef int Py_ssize_t;
+@@ -1558,9 +1565,17 @@ util_curl_unsetopt(CurlObject *self, int option)
+     case CURLOPT_EGDSOCKET:
+     case CURLOPT_FTPPORT:
+     case CURLOPT_PROXYUSERPWD:
++#ifdef HAVE_CURLOPT_PROXYUSERNAME
++    case CURLOPT_PROXYUSERNAME:
++    case CURLOPT_PROXYPASSWORD:
++#endif
+     case CURLOPT_RANDOM_FILE:
+     case CURLOPT_SSL_CIPHER_LIST:
+     case CURLOPT_USERPWD:
++#ifdef HAVE_CURLOPT_USERNAME
++    case CURLOPT_USERNAME:
++    case CURLOPT_PASSWORD:
++#endif
+     case CURLOPT_RANGE:
+         SETOPT((char *) 0);
+         break;
+@@ -1658,6 +1673,10 @@ do_curl_setopt(CurlObject *self, PyObject *args)
+         case CURLOPT_NETRC_FILE:
+         case CURLOPT_PROXY:
+         case CURLOPT_PROXYUSERPWD:
++#ifdef HAVE_CURLOPT_PROXYUSERNAME
++        case CURLOPT_PROXYUSERNAME:
++        case CURLOPT_PROXYPASSWORD:
++#endif
+         case CURLOPT_RANDOM_FILE:
+         case CURLOPT_RANGE:
+         case CURLOPT_REFERER:
+@@ -1671,6 +1690,10 @@ do_curl_setopt(CurlObject *self, PyObject *args)
+         case CURLOPT_URL:
+         case CURLOPT_USERAGENT:
+         case CURLOPT_USERPWD:
++#ifdef HAVE_CURLOPT_USERNAME
++        case CURLOPT_USERNAME:
++        case CURLOPT_PASSWORD:
++#endif
+         case CURLOPT_FTP_ALTERNATIVE_TO_USER:
+         case CURLOPT_SSH_PUBLIC_KEYFILE:
+         case CURLOPT_SSH_PRIVATE_KEYFILE:
+@@ -3654,7 +3677,15 @@ initpycurl(void)
+     insint_c(d, "PORT", CURLOPT_PORT);
+     insint_c(d, "PROXY", CURLOPT_PROXY);
+     insint_c(d, "USERPWD", CURLOPT_USERPWD);
++#ifdef HAVE_CURLOPT_USERNAME
++    insint_c(d, "USERNAME", CURLOPT_USERNAME);
++    insint_c(d, "PASSWORD", CURLOPT_PASSWORD);
++#endif
+     insint_c(d, "PROXYUSERPWD", CURLOPT_PROXYUSERPWD);
++#ifdef HAVE_CURLOPT_PROXYUSERNAME
++    insint_c(d, "PROXYUSERNAME", CURLOPT_PROXYUSERNAME);
++    insint_c(d, "PROXYPASSWORD", CURLOPT_PROXYPASSWORD);
++#endif
+     insint_c(d, "RANGE", CURLOPT_RANGE);
+     insint_c(d, "INFILE", CURLOPT_READDATA);
+     /* ERRORBUFFER is not supported */
+diff --git a/tests/curlopt_test.py b/tests/curlopt_test.py
+new file mode 100644
+index 0000000..9392a39
+--- /dev/null
++++ b/tests/curlopt_test.py
+@@ -0,0 +1,18 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++import pycurl
++import unittest
++import nose.tools
++
++from . import util
++
++class CurloptTest(unittest.TestCase):
++    def test_username(self):
++        # CURLOPT_USERNAME was introduced in libcurl-7.19.1
++        if not util.pycurl_version_less_than(7, 19, 1):
++            assert hasattr(pycurl, 'USERNAME')
++            assert hasattr(pycurl, 'PASSWORD')
++            assert hasattr(pycurl, 'PROXYUSERNAME')
++            assert hasattr(pycurl, 'PROXYPASSWORD')
+-- 
+1.7.1
+
+
+From db2f9a10ef399f0a69b2e4a215fe44752f780b96 Mon Sep 17 00:00:00 2001
+From: Adam Guthrie <therigu@users.sourceforge.net>
+Date: Thu, 30 May 2013 14:10:44 -0400
+Subject: [PATCH 124/149] Fixes invalid XHTML in documentation
+
+doc/callbacks.html and doc/curlshareobject.html were not valid xhtml.
+
+Thanks to Ivo Timmermans for the original report and patch to Ubuntu (LP: #364168)
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ doc/callbacks.html       |    2 +-
+ doc/curlshareobject.html |    3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/doc/callbacks.html b/doc/callbacks.html
+index b98e0a9..a117acc 100644
+--- a/doc/callbacks.html
++++ b/doc/callbacks.html
+@@ -120,7 +120,7 @@ VERBOSE option must be enabled for this callback to be invoked.</p>
+ </pre>
+ 
+ <h2>Other examples</h2>
+-The pycurl distribution also contains a number of test scripts and
++<p>The pycurl distribution also contains a number of test scripts and
+ examples which show how to use the various callbacks in libcurl.
+ For instance, the file 'examples/file_upload.py' in the distribution contains
+ example code for using READFUNCTION, 'tests/test_cb.py' shows
+diff --git a/doc/curlshareobject.html b/doc/curlshareobject.html
+index c11cafb..2043e48 100644
+--- a/doc/curlshareobject.html
++++ b/doc/curlshareobject.html
+@@ -14,6 +14,7 @@
+ 
+ <p>CurlShare objects have the following methods:</p>
+ 
++<dl>
+ <dt><code>setopt(</code><em>option, value</em><code>)</code> -&gt; <em>None</em></dt>
+ <dd>
+ 
+@@ -22,7 +23,7 @@
+ href="http://curl.haxx.se/libcurl/c/curl_share_setopt.html"><code>curl_share_setopt</code></a> in libcurl, where
+ <em>option</em> is specified with the CURLSHOPT_* constants in libcurl,
+ except that the CURLSHOPT_ prefix has been changed to SH_.  Currently,
+-<em>value</em> must be either LOCK_DATA_COOKIE or LOCK_DATA_DNS.
++<em>value</em> must be either LOCK_DATA_COOKIE or LOCK_DATA_DNS.</p>
+ 
+ <p>Example usage:</p>
+ 
+-- 
+1.7.1
+
+
+From 87aa7c722ddfefd38faef5a8a038c2e8e64db003 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 30 May 2013 15:27:02 -0400
+Subject: [PATCH 125/149] Use nose test skipping functionality
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/curlopt_test.py     |   14 ++++++++------
+ tests/global_init_test.py |   11 +++++++----
+ 2 files changed, 15 insertions(+), 10 deletions(-)
+
+diff --git a/tests/curlopt_test.py b/tests/curlopt_test.py
+index 9392a39..fd30394 100644
+--- a/tests/curlopt_test.py
++++ b/tests/curlopt_test.py
+@@ -4,15 +4,17 @@
+ 
+ import pycurl
+ import unittest
+-import nose.tools
++import nose.plugins.skip
+ 
+ from . import util
+ 
+ class CurloptTest(unittest.TestCase):
+     def test_username(self):
+         # CURLOPT_USERNAME was introduced in libcurl-7.19.1
+-        if not util.pycurl_version_less_than(7, 19, 1):
+-            assert hasattr(pycurl, 'USERNAME')
+-            assert hasattr(pycurl, 'PASSWORD')
+-            assert hasattr(pycurl, 'PROXYUSERNAME')
+-            assert hasattr(pycurl, 'PROXYPASSWORD')
++        if util.pycurl_version_less_than(7, 19, 1):
++            raise nose.plugins.skip.SkipTest('libcurl < 7.19.1')
++        
++        assert hasattr(pycurl, 'USERNAME')
++        assert hasattr(pycurl, 'PASSWORD')
++        assert hasattr(pycurl, 'PROXYUSERNAME')
++        assert hasattr(pycurl, 'PROXYPASSWORD')
+diff --git a/tests/global_init_test.py b/tests/global_init_test.py
+index b76254b..443ca49 100644
+--- a/tests/global_init_test.py
++++ b/tests/global_init_test.py
+@@ -5,6 +5,7 @@
+ import pycurl
+ import unittest
+ import nose.tools
++import nose.plugins.skip
+ 
+ from . import util
+ 
+@@ -17,10 +18,12 @@ class GlobalInitTest(unittest.TestCase):
+     def test_global_init_ack_eintr(self):
+         # the GLOBAL_ACK_EINTR flag was introduced in libcurl-7.30, but can also
+         # be backported for older versions of libcurl at the distribution level
+-        if not util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
+-            # initialize libcurl with the GLOBAL_ACK_EINTR flag
+-            pycurl.global_init(pycurl.GLOBAL_ACK_EINTR)
+-            pycurl.global_cleanup()
++        if util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
++            raise nose.plugins.skip.SkipTest('libcurl < 7.30.0 or no GLOBAL_ACK_EINTR')
++        
++        # initialize libcurl with the GLOBAL_ACK_EINTR flag
++        pycurl.global_init(pycurl.GLOBAL_ACK_EINTR)
++        pycurl.global_cleanup()
+     
+     @nose.tools.raises(ValueError)
+     def test_global_init_bogus(self):
+-- 
+1.7.1
+
+
+From 7e8144d0d83062de394582207197e1081eafcc24 Mon Sep 17 00:00:00 2001
+From: Wim Lewis <wiml@users.sourceforge.net>
+Date: Thu, 21 Jul 2011 12:00:00 -0400
+Subject: [PATCH 126/149] Fix a tiny memory leak in util_curl_init()
+
+Each time a new Curl object is created util_curl_init() leaked
+a small string buffer. The attached patch fixes the leak --
+curl_easy_setopt() strdup's its argument; the caller does not need
+to keep the buffer around for it.
+
+https://sourceforge.net/p/pycurl/patches/13/
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 9c76609..ef03747 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -793,8 +793,8 @@ util_curl_init(CurlObject *self)
+     }
+     strcpy(s, "PycURL/"); strcpy(s+7, LIBCURL_VERSION);
+     res = curl_easy_setopt(self->handle, CURLOPT_USERAGENT, (char *) s);
++    free(s);
+     if (res != CURLE_OK) {
+-        free(s);
+         return (-1);
+     }
+     return (0);
+-- 
+1.7.1
+
+
+From 14e3edf2f77368af4f3838202527c8a48a359d6a Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Fri, 31 May 2013 13:37:39 -0400
+Subject: [PATCH 127/149] Use correct logic when checking for GLOBAL_ACK_EINTR (#34)
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/global_init_test.py |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/tests/global_init_test.py b/tests/global_init_test.py
+index 443ca49..b0d1986 100644
+--- a/tests/global_init_test.py
++++ b/tests/global_init_test.py
+@@ -18,7 +18,7 @@ class GlobalInitTest(unittest.TestCase):
+     def test_global_init_ack_eintr(self):
+         # the GLOBAL_ACK_EINTR flag was introduced in libcurl-7.30, but can also
+         # be backported for older versions of libcurl at the distribution level
+-        if util.pycurl_version_less_than(7, 30) or hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
++        if util.pycurl_version_less_than(7, 30) and not hasattr(pycurl, 'GLOBAL_ACK_EINTR'):
+             raise nose.plugins.skip.SkipTest('libcurl < 7.30.0 or no GLOBAL_ACK_EINTR')
+         
+         # initialize libcurl with the GLOBAL_ACK_EINTR flag
+-- 
+1.7.1
+
+
+From b2157864dc9b80222d04e6a681d923c1bdc6c64f Mon Sep 17 00:00:00 2001
+From: Roland Sommer <rol@ndsommer.de>
+Date: Wed, 8 May 2013 15:13:14 +0300
+Subject: [PATCH 128/149] Use urlparse.urljoin instead of os.path.join
+
+Using a base_url like "http://www.google.de" and calling
+get("/") on a curl.Curl-instance does not work.
+
+os.path.join("http://www.google.de", "/") does not yield
+the expected "http://www.google.de/" but "/" which leads to:
+
+error: (3, '<url> malformed')
+
+Using urljoin fixes this.
+
+https://github.com/christophwarner/PyCurl/pull/2
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ python/curl/__init__.py |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/python/curl/__init__.py b/python/curl/__init__.py
+index fd179fc..31b9d49 100644
+--- a/python/curl/__init__.py
++++ b/python/curl/__init__.py
+@@ -6,11 +6,13 @@
+ #
+ # By Eric S. Raymond, April 2003.
+ 
+-import os, sys, exceptions, mimetools, pycurl
++import sys, exceptions, mimetools, pycurl
+ try:
+     import urllib.parse as urllib_parse
++    from urllib.parse import urljoin
+ except ImportError:
+     import urllib as urllib_parse
++    from urlparse import urljoin
+ try:
+     from cStringIO import StringIO
+ except ImportError:
+@@ -81,7 +83,7 @@ class Curl:
+         if self.fakeheaders:
+             self.set_option(pycurl.HTTPHEADER, self.fakeheaders)
+         if relative_url:
+-            self.set_option(pycurl.URL,os.path.join(self.base_url,relative_url))
++            self.set_option(pycurl.URL, urljoin(self.base_url, relative_url))
+         self.payload = ""
+         self.hdr = ""
+         self.handle.perform()
+-- 
+1.7.1
+
+
+From b12be12fc45fc786e2d537a3bbd3044488f1e367 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Tue, 4 Jun 2013 13:30:39 -0400
+Subject: [PATCH 129/149] Test coverage for relative urls in curl module
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/relative_url_test.py |   24 ++++++++++++++++++++++++
+ 1 files changed, 24 insertions(+), 0 deletions(-)
+ create mode 100644 tests/relative_url_test.py
+
+diff --git a/tests/relative_url_test.py b/tests/relative_url_test.py
+new file mode 100644
+index 0000000..ddff2b6
+--- /dev/null
++++ b/tests/relative_url_test.py
+@@ -0,0 +1,24 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++# uses the high level interface
++import curl
++import unittest
++
++from . import app
++from . import runwsgi
++from . import util
++
++setup_module, teardown_module = runwsgi.app_runner_setup((app.app, 8380))
++
++class RelativeUrlTest(unittest.TestCase):
++    def setUp(self):
++        self.curl = curl.Curl('http://localhost:8380/')
++    
++    def tearDown(self):
++        self.curl.close()
++    
++    def test_get_relative(self):
++        self.curl.get('/success')
++        self.assertEqual('success', self.curl.body())
+-- 
+1.7.1
+
+
+From d29d339d892c52aad6e0be0b22b75dc52e9d9450 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Sun, 2 Jun 2013 01:57:16 -0400
+Subject: [PATCH 130/149] Avoid dynamically allocating memory for default pycurl user agent.
+
+This implementation requires LIBCURL_VERSION to be a #define.
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |   11 ++++-------
+ 1 files changed, 4 insertions(+), 7 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index ef03747..b9d797e 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -105,6 +105,9 @@ static void pycurl_ssl_cleanup(void);
+ #define OPTIONS_SIZE    ((int)CURLOPT_LASTENTRY % 10000)
+ #define MOPTIONS_SIZE   ((int)CURLMOPT_LASTENTRY % 10000)
+ 
++/* Keep some default variables around */
++static char *g_pycurl_useragent = "PycURL/" LIBCURL_VERSION;
++
+ /* Type objects */
+ static PyObject *ErrorObject = NULL;
+ static PyTypeObject *p_Curl_Type = NULL;
+@@ -787,13 +790,7 @@ util_curl_init(CurlObject *self)
+     }
+ 
+     /* Set default USERAGENT */
+-    s = (char *) malloc(7 + strlen(LIBCURL_VERSION) + 1);
+-    if (s == NULL) {
+-        return (-1);
+-    }
+-    strcpy(s, "PycURL/"); strcpy(s+7, LIBCURL_VERSION);
+-    res = curl_easy_setopt(self->handle, CURLOPT_USERAGENT, (char *) s);
+-    free(s);
++    res = curl_easy_setopt(self->handle, CURLOPT_USERAGENT, (char *) g_pycurl_useragent);
+     if (res != CURLE_OK) {
+         return (-1);
+     }
+-- 
+1.7.1
+
+
+From f8d2f64764ee25572453317371ff58fe048a8a8a Mon Sep 17 00:00:00 2001
+From: Marien Zwart <marienz@users.sourceforge.net>
+Date: Wed, 13 Jun 2012 00:00:00 -0400
+Subject: [PATCH 131/149] Mark NSS as supported.
+
+Mark NSS as supported, as it does not require the application to
+initialize threading.
+
+If curl is using nss we do not seem to need to initialize threading
+explicitly: the only threading-related bit I see in the nss
+headers/documentation has to do with simultaneous non-nss use of
+pkcs11 modules, nss itself seems to be thread-safe by default.
+So silence the build warning.
+
+http://sourceforge.net/p/pycurl/patches/15/
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ setup.py     |    2 ++
+ src/pycurl.c |    4 ++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 385facb..40da07a 100644
+--- a/setup.py
++++ b/setup.py
+@@ -119,6 +119,8 @@ else:
+                 define_macros.append(('HAVE_CURL_OPENSSL', 1))
+             if e[2:] == 'gnutls':
+                 define_macros.append(('HAVE_CURL_GNUTLS', 1))
++            if e[2:] == 'ssl3':
++                define_macros.append(('HAVE_CURL_NSS', 1))
+         elif e[:2] == "-L":
+             library_dirs.append(e[2:])
+         else:
+diff --git a/src/pycurl.c b/src/pycurl.c
+index b9d797e..a913c47 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -88,12 +88,12 @@ typedef int Py_ssize_t;
+ #   define PYCURL_NEED_SSL_TSL
+ #   define PYCURL_NEED_GNUTLS_TSL
+ #   include <gcrypt.h>
+-# else
++# elif !defined(HAVE_CURL_NSS)
+ #  warning \
+    "libcurl was compiled with SSL support, but configure could not determine which " \
+    "library was used; thus no SSL crypto locking callbacks will be set, which may " \
+    "cause random crashes on SSL requests"
+-# endif /* HAVE_CURL_OPENSSL || HAVE_CURL_GNUTLS */
++# endif /* HAVE_CURL_OPENSSL || HAVE_CURL_GNUTLS || HAVE_CURL_NSS */
+ #endif /* HAVE_CURL_SSL */
+ 
+ #if defined(PYCURL_NEED_SSL_TSL)
+-- 
+1.7.1
+
+
+From 256f4bece80ee579daf18cbccc6007c0fa517903 Mon Sep 17 00:00:00 2001
+From: Marien Zwart <marienz@users.sourceforge.net>
+Date: Wed, 13 Jun 2012 00:00:00 -0400
+Subject: [PATCH 132/149] Only initialize gcrypt if we are using an older gnutls that needs this.
+
+This is necessary to support newer gnutls linked to libnettle instead
+of libgcrypt.
+
+If curl is using a recent version of gnutls we do not need to initialize
+libgcrypt threading: gnutls does that for us. And because recent versions
+of gnutls may be using nettle instead of gcrypt it is important that we
+don't: those functions are not necessarily defined (and linking to
+libgcrypt explicitly to get them is stupid, as they're not used). The
+modification is based on instructions from the gnutls NEWS file.
+
+http://sourceforge.net/p/pycurl/patches/15/
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |    9 ++++++---
+ 1 files changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index a913c47..5d4e5b0 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -85,9 +85,12 @@ typedef int Py_ssize_t;
+ #   define PYCURL_NEED_OPENSSL_TSL
+ #   include <openssl/crypto.h>
+ # elif defined(HAVE_CURL_GNUTLS)
+-#   define PYCURL_NEED_SSL_TSL
+-#   define PYCURL_NEED_GNUTLS_TSL
+-#   include <gcrypt.h>
++#   include <gnutls/gnutls.h>
++#   if GNUTLS_VERSION_NUMBER <= 0x020b00
++#     define PYCURL_NEED_SSL_TSL
++#     define PYCURL_NEED_GNUTLS_TSL
++#     include <gcrypt.h>
++#   endif
+ # elif !defined(HAVE_CURL_NSS)
+ #  warning \
+    "libcurl was compiled with SSL support, but configure could not determine which " \
+-- 
+1.7.1
+
+
+From f4ec6883c9d5ebfa961aa6063313903b2ca7ce1e Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Sun, 9 Jun 2013 17:34:41 +0000
+Subject: [PATCH 133/149] Allow pycURL to be used with Python binaries built without thread support
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |  215 ++++++++++++++++++++++++++++++++++++++-------------------
+ 1 files changed, 143 insertions(+), 72 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 5d4e5b0..a9923ed 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -104,6 +104,30 @@ static void pycurl_ssl_init(void);
+ static void pycurl_ssl_cleanup(void);
+ #endif
+ 
++#ifdef WITH_THREAD
++#  define PYCURL_DECLARE_THREAD_STATE PyThreadState *tmp_state
++#  define PYCURL_ACQUIRE_THREAD() acquire_thread(self, &tmp_state)
++#  define PYCURL_ACQUIRE_THREAD_MULTI() acquire_thread_multi(self, &tmp_state)
++#  define PYCURL_RELEASE_THREAD() release_thread(tmp_state)
++/* Replacement for Py_BEGIN_ALLOW_THREADS/Py_END_ALLOW_THREADS when python
++   callbacks are expected during blocking i/o operations: self->state will hold
++   the handle to current thread to be used as context */
++#  define PYCURL_BEGIN_ALLOW_THREADS \
++       self->state = PyThreadState_Get(); \
++       assert(self->state != NULL); \
++       Py_BEGIN_ALLOW_THREADS
++#  define PYCURL_END_ALLOW_THREADS \
++       Py_END_ALLOW_THREADS \
++       self->state = NULL;
++#else
++#  define PYCURL_DECLARE_THREAD_STATE
++#  define PYCURL_ACQUIRE_THREAD() (1)
++#  define PYCURL_ACQUIRE_THREAD_MULTI() (1)
++#  define PYCURL_RELEASE_THREAD()
++#  define PYCURL_BEGIN_ALLOW_THREADS
++#  define PYCURL_END_ALLOW_THREADS
++#endif
++
+ /* Calculate the number of OBJECTPOINT options we need to store */
+ #define OPTIONS_SIZE    ((int)CURLOPT_LASTENTRY % 10000)
+ #define MOPTIONS_SIZE   ((int)CURLMOPT_LASTENTRY % 10000)
+@@ -126,14 +150,18 @@ typedef struct {
+     PyObject_HEAD
+     PyObject *dict;                 /* Python attributes dictionary */
+     CURLSH *share_handle;
++#ifdef WITH_THREAD
+     ShareLock *lock;                /* lock object to implement CURLSHOPT_LOCKFUNC */
++#endif
+ } CurlShareObject;
+ 
+ typedef struct {
+     PyObject_HEAD
+     PyObject *dict;                 /* Python attributes dictionary */
+     CURLM *multi_handle;
++#ifdef WITH_THREAD
+     PyThreadState *state;
++#endif
+     fd_set read_fd_set;
+     fd_set write_fd_set;
+     fd_set exc_fd_set;
+@@ -146,7 +174,9 @@ typedef struct {
+     PyObject_HEAD
+     PyObject *dict;                 /* Python attributes dictionary */
+     CURL *handle;
++#ifdef WITH_THREAD
+     PyThreadState *state;
++#endif
+     CurlMultiObject *multi_stack;
+     CurlShareObject *share;
+     struct curl_httppost *httppost;
+@@ -261,6 +291,7 @@ error:
+ }
+ 
+ 
++#ifdef WITH_THREAD
+ /*************************************************************************
+ // static utility functions
+ **************************************************************************/
+@@ -317,13 +348,42 @@ get_thread_state_multi(const CurlMultiObject *self)
+ }
+ 
+ 
++static int acquire_thread(const CurlObject *self, PyThreadState **state)
++{
++    *state = get_thread_state(self);
++    if (*state == NULL)
++        return 0;
++    PyEval_AcquireThread(*state);
++    return 1;
++}
++
++
++static int acquire_thread_multi(const CurlMultiObject *self, PyThreadState **state)
++{
++    *state = get_thread_state_multi(self);
++    if (*state == NULL)
++        return 0;
++    PyEval_AcquireThread(*state);
++    return 1;
++}
++
++
++static void release_thread(PyThreadState *state)
++{
++    PyEval_ReleaseThread(state);
++}
++#endif
++
++
+ /* assert some CurlShareObject invariants */
+ static void
+ assert_share_state(const CurlShareObject *self)
+ {
+     assert(self != NULL);
+     assert(self->ob_type == p_CurlShare_Type);
++#ifdef WITH_THREAD
+     assert(self->lock != NULL);
++#endif
+ }
+ 
+ 
+@@ -333,7 +393,9 @@ assert_curl_state(const CurlObject *self)
+ {
+     assert(self != NULL);
+     assert(self->ob_type == p_Curl_Type);
++#ifdef WITH_THREAD
+     (void) get_thread_state(self);
++#endif
+ }
+ 
+ 
+@@ -343,9 +405,11 @@ assert_multi_state(const CurlMultiObject *self)
+ {
+     assert(self != NULL);
+     assert(self->ob_type == p_CurlMulti_Type);
++#ifdef WITH_THREAD
+     if (self->state != NULL) {
+         assert(self->multi_handle != NULL);
+     }
++#endif
+ }
+ 
+ 
+@@ -358,10 +422,12 @@ check_curl_state(const CurlObject *self, int flags, const char *name)
+         PyErr_Format(ErrorObject, "cannot invoke %s() - no curl handle", name);
+         return -1;
+     }
++#ifdef WITH_THREAD
+     if ((flags & 2) && get_thread_state(self) != NULL) {
+         PyErr_Format(ErrorObject, "cannot invoke %s() - perform() is currently running", name);
+         return -1;
+     }
++#endif
+     return 0;
+ }
+ 
+@@ -373,10 +439,12 @@ check_multi_state(const CurlMultiObject *self, int flags, const char *name)
+         PyErr_Format(ErrorObject, "cannot invoke %s() - no multi handle", name);
+         return -1;
+     }
++#ifdef WITH_THREAD
+     if ((flags & 2) && self->state != NULL) {
+         PyErr_Format(ErrorObject, "cannot invoke %s() - multi_perform() is currently running", name);
+         return -1;
+     }
++#endif
+     return 0;
+ }
+ 
+@@ -391,6 +459,7 @@ check_share_state(const CurlShareObject *self, int flags, const char *name)
+ // SSL TSL
+ **************************************************************************/
+ 
++#ifdef WITH_THREAD
+ #ifdef PYCURL_NEED_OPENSSL_TSL
+ 
+ static PyThread_type_lock *pycurl_openssl_tsl = NULL;
+@@ -560,6 +629,19 @@ share_unlock_callback(CURL *handle, curl_lock_data data, void *userptr)
+     share_lock_unlock(share->lock, data);
+ }
+ 
++#else /* WITH_THREAD */
++
++static void pycurl_ssl_init(void)
++{
++    return;
++}
++
++static void pycurl_ssl_cleanup(void)
++{
++    return;
++}
++
++#endif /* WITH_THREAD */
+ 
+ /* constructor - this is a module-level function returning a new instance */
+ static CurlShareObject *
+@@ -567,8 +649,10 @@ do_share_new(PyObject *dummy)
+ {
+     int res;
+     CurlShareObject *self;
++#ifdef WITH_THREAD
+     const curl_lock_function lock_cb = share_lock_callback;
+     const curl_unlock_function unlock_cb = share_unlock_callback;
++#endif
+ 
+     UNUSED(dummy);
+ 
+@@ -583,8 +667,10 @@ do_share_new(PyObject *dummy)
+ 
+     /* Initialize object attributes */
+     self->dict = NULL;
++#ifdef WITH_THREAD
+     self->lock = share_lock_new();
+     assert(self->lock != NULL);
++#endif
+ 
+     /* Allocate libcurl share handle */
+     self->share_handle = curl_share_init();
+@@ -594,6 +680,7 @@ do_share_new(PyObject *dummy)
+         return NULL;
+     }
+ 
++#ifdef WITH_THREAD
+     /* Set locking functions and data  */
+     res = curl_share_setopt(self->share_handle, CURLSHOPT_LOCKFUNC, lock_cb);
+     assert(res == CURLE_OK);
+@@ -601,6 +688,7 @@ do_share_new(PyObject *dummy)
+     assert(res == CURLE_OK);
+     res = curl_share_setopt(self->share_handle, CURLSHOPT_UNLOCKFUNC, unlock_cb);
+     assert(res == CURLE_OK);
++#endif
+ 
+     return self;
+ }
+@@ -632,7 +720,9 @@ do_share_clear(CurlShareObject *self)
+ static void
+ util_share_close(CurlShareObject *self){
+     curl_share_cleanup(self->share_handle);
++#ifdef WITH_THREAD
+     share_lock_destroy(self->lock);
++#endif
+ }
+ 
+ 
+@@ -723,7 +813,9 @@ util_curl_new(void)
+     /* Set python curl object initial values */
+     self->dict = NULL;
+     self->handle = NULL;
++#ifdef WITH_THREAD
+     self->state = NULL;
++#endif
+     self->share = NULL;
+     self->multi_stack = NULL;
+     self->httppost = NULL;
+@@ -898,12 +990,16 @@ util_curl_close(CurlObject *self)
+     if (handle == NULL) {
+         /* Some paranoia assertions just to make sure the object
+          * deallocation problem is finally really fixed... */
++#ifdef WITH_THREAD
+         assert(self->state == NULL);
++#endif
+         assert(self->multi_stack == NULL);
+         assert(self->share == NULL);
+         return;             /* already closed */
+     }
++#ifdef WITH_THREAD
+     self->state = NULL;
++#endif
+ 
+     /* Decref multi stuff which uses this handle */
+     util_curl_xdecref(self, 2, handle);
+@@ -977,7 +1073,9 @@ do_curl_errstr(CurlObject *self)
+ static int
+ do_curl_clear(CurlObject *self)
+ {
++#ifdef WITH_THREAD
+     assert(get_thread_state(self) == NULL);
++#endif
+     util_curl_xdecref(self, 1 | 2 | 4 | 8 | 16, self->handle);
+     return 0;
+ }
+@@ -1020,17 +1118,9 @@ do_curl_perform(CurlObject *self)
+         return NULL;
+     }
+ 
+-    /* Save handle to current thread (used as context for python callbacks) */
+-    self->state = PyThreadState_Get();
+-    assert(self->state != NULL);
+-
+-    /* Release global lock and start */
+-    Py_BEGIN_ALLOW_THREADS
++    PYCURL_BEGIN_ALLOW_THREADS
+     res = curl_easy_perform(self->handle);
+-    Py_END_ALLOW_THREADS
+-
+-    /* Zero thread-state to disallow callbacks to be run from now on */
+-    self->state = NULL;
++    PYCURL_END_ALLOW_THREADS
+ 
+     if (res != CURLE_OK) {
+         CURLERROR_RETVAL();
+@@ -1050,7 +1140,7 @@ static size_t
+ util_write_callback(int flags, char *ptr, size_t size, size_t nmemb, void *stream)
+ {
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     size_t ret = 0;     /* assume error */
+@@ -1059,10 +1149,8 @@ util_write_callback(int flags, char *ptr, size_t size, size_t nmemb, void *strea
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+-    tmp_state = get_thread_state(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD())
+         return ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     cb = flags ? self->h_cb : self->w_cb;
+@@ -1101,7 +1189,7 @@ util_write_callback(int flags, char *ptr, size_t size, size_t nmemb, void *strea
+ done:
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -1131,13 +1219,12 @@ opensocket_callback(void *clientp, curlsocktype purpose,
+     PyObject *result = NULL;
+     PyObject *fileno_result = NULL;
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     int ret = CURL_SOCKET_BAD;
+ 
+     self = (CurlObject *)clientp;
+-    tmp_state = get_thread_state(self);
++    PYCURL_ACQUIRE_THREAD();
+     
+-    PyEval_AcquireThread(tmp_state);
+     arglist = Py_BuildValue("(iii)", address->family, address->socktype, address->protocol);
+     if (arglist == NULL)
+         goto verbose_error;
+@@ -1171,7 +1258,7 @@ silent_error:
+ done:
+     Py_XDECREF(result);
+     Py_XDECREF(fileno_result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -1182,7 +1269,7 @@ static int
+ seek_callback(void *stream, curl_off_t offset, int origin)
+ {
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 2;     /* assume error 2 (can't seek, libcurl free to work around). */
+@@ -1191,10 +1278,8 @@ seek_callback(void *stream, curl_off_t offset, int origin)
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+-    tmp_state = get_thread_state(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD())
+         return ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check arguments */
+     switch (origin)
+@@ -1244,7 +1329,7 @@ seek_callback(void *stream, curl_off_t offset, int origin)
+ 
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -1258,7 +1343,7 @@ static size_t
+ read_callback(char *ptr, size_t size, size_t nmemb, void *stream)
+ {
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+ 
+@@ -1267,10 +1352,8 @@ read_callback(char *ptr, size_t size, size_t nmemb, void *stream)
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+-    tmp_state = get_thread_state(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD())
+         return ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     if (self->r_cb == NULL)
+@@ -1328,7 +1411,7 @@ read_callback(char *ptr, size_t size, size_t nmemb, void *stream)
+ done:
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -1341,17 +1424,15 @@ progress_callback(void *stream,
+                   double dltotal, double dlnow, double ultotal, double ulnow)
+ {
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 1;       /* assume error */
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+-    tmp_state = get_thread_state(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD())
+         return ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     if (self->pro_cb == NULL)
+@@ -1379,7 +1460,7 @@ progress_callback(void *stream,
+ 
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -1392,7 +1473,7 @@ debug_callback(CURL *curlobj, curl_infotype type,
+                char *buffer, size_t total_size, void *stream)
+ {
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 0;       /* always success */
+@@ -1401,10 +1482,8 @@ debug_callback(CURL *curlobj, curl_infotype type,
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+-    tmp_state = get_thread_state(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD())
+         return ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     if (self->debug_cb == NULL)
+@@ -1427,7 +1506,7 @@ debug_callback(CURL *curlobj, curl_infotype type,
+ 
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -1439,7 +1518,7 @@ static curlioerr
+ ioctl_callback(CURL *curlobj, int cmd, void *stream)
+ {
+     CurlObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = CURLIOE_FAILRESTART;       /* assume error */
+@@ -1448,10 +1527,8 @@ ioctl_callback(CURL *curlobj, int cmd, void *stream)
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+-    tmp_state = get_thread_state(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD())
+         return (curlioerr) ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     if (self->ioctl_cb == NULL)
+@@ -1480,7 +1557,7 @@ ioctl_callback(CURL *curlobj, int cmd, void *stream)
+ 
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return (curlioerr) ret;
+ verbose_error:
+     PyErr_Print();
+@@ -2324,7 +2401,9 @@ do_multi_new(PyObject *dummy)
+ 
+     /* Initialize object attributes */
+     self->dict = NULL;
++#ifdef WITH_THREAD
+     self->state = NULL;
++#endif
+     self->t_cb = NULL;
+     self->s_cb = NULL;
+ 
+@@ -2342,7 +2421,9 @@ static void
+ util_multi_close(CurlMultiObject *self)
+ {
+     assert(self != NULL);
++#ifdef WITH_THREAD
+     self->state = NULL;
++#endif
+     if (self->multi_handle != NULL) {
+         CURLM *multi_handle = self->multi_handle;
+         self->multi_handle = NULL;
+@@ -2411,7 +2492,7 @@ int multi_socket_callback(CURL *easy,
+ {
+     CurlMultiObject *self;
+     CurlObject *easy_self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret;
+@@ -2419,10 +2500,8 @@ int multi_socket_callback(CURL *easy,
+     /* acquire thread */
+     self = (CurlMultiObject *)userp;
+     ret = curl_easy_getinfo(easy, CURLINFO_PRIVATE, &easy_self);
+-    tmp_state = get_thread_state_multi(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD_MULTI())
+         return 0;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     if (self->s_cb == NULL)
+@@ -2446,7 +2525,7 @@ int multi_socket_callback(CURL *easy,
+ 
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return 0;
+ verbose_error:
+     PyErr_Print();
+@@ -2460,7 +2539,7 @@ int multi_timer_callback(CURLM *multi,
+                          void *userp)
+ {
+     CurlMultiObject *self;
+-    PyThreadState *tmp_state;
++    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 0;       /* always success */
+@@ -2469,10 +2548,8 @@ int multi_timer_callback(CURLM *multi,
+ 
+     /* acquire thread */
+     self = (CurlMultiObject *)userp;
+-    tmp_state = get_thread_state_multi(self);
+-    if (tmp_state == NULL)
++    if (!PYCURL_ACQUIRE_THREAD_MULTI())
+         return ret;
+-    PyEval_AcquireThread(tmp_state);
+ 
+     /* check args */
+     if (self->t_cb == NULL)
+@@ -2491,7 +2568,7 @@ int multi_timer_callback(CURLM *multi,
+ 
+ silent_error:
+     Py_XDECREF(result);
+-    PyEval_ReleaseThread(tmp_state);
++    PYCURL_RELEASE_THREAD();
+     return ret;
+ verbose_error:
+     PyErr_Print();
+@@ -2634,14 +2711,10 @@ do_multi_socket_action(CurlMultiObject *self, PyObject *args)
+     if (check_multi_state(self, 1 | 2, "socket_action") != 0) {
+         return NULL;
+     }
+-    /* Release global lock and start */
+-    self->state = PyThreadState_Get();
+-    assert(self->state != NULL);
+-    Py_BEGIN_ALLOW_THREADS
+ 
++    PYCURL_BEGIN_ALLOW_THREADS
+     res = curl_multi_socket_action(self->multi_handle, socket, ev_bitmask, &running);
+-    Py_END_ALLOW_THREADS
+-    self->state = NULL;
++    PYCURL_END_ALLOW_THREADS
+ 
+     if (res != CURLM_OK) {
+         CURLERROR_MSG("multi_socket_action failed");
+@@ -2662,13 +2735,9 @@ do_multi_socket_all(CurlMultiObject *self)
+         return NULL;
+     }
+ 
+-    /* Release global lock and start */
+-    self->state = PyThreadState_Get();
+-    assert(self->state != NULL);
+-    Py_BEGIN_ALLOW_THREADS
++    PYCURL_BEGIN_ALLOW_THREADS
+     res = curl_multi_socket_all(self->multi_handle, &running);
+-    Py_END_ALLOW_THREADS
+-    self->state = NULL;
++    PYCURL_END_ALLOW_THREADS
+ 
+     /* We assume these errors are ok, otherwise throw exception */
+     if (res != CURLM_OK && res != CURLM_CALL_MULTI_PERFORM) {
+@@ -2692,13 +2761,9 @@ do_multi_perform(CurlMultiObject *self)
+         return NULL;
+     }
+ 
+-    /* Release global lock and start */
+-    self->state = PyThreadState_Get();
+-    assert(self->state != NULL);
+-    Py_BEGIN_ALLOW_THREADS
++    PYCURL_BEGIN_ALLOW_THREADS
+     res = curl_multi_perform(self->multi_handle, &running);
+-    Py_END_ALLOW_THREADS
+-    self->state = NULL;
++    PYCURL_END_ALLOW_THREADS
+ 
+     /* We assume these errors are ok, otherwise throw exception */
+     if (res != CURLM_OK && res != CURLM_CALL_MULTI_PERFORM) {
+@@ -2722,16 +2787,20 @@ check_multi_add_remove(const CurlMultiObject *self, const CurlObject *obj)
+         PyErr_SetString(ErrorObject, "cannot add/remove handle - multi-stack is closed");
+         return -1;
+     }
++#ifdef WITH_THREAD
+     if (self->state != NULL) {
+         PyErr_SetString(ErrorObject, "cannot add/remove handle - multi_perform() already running");
+         return -1;
+     }
++#endif
+     /* check CurlObject status */
+     assert_curl_state(obj);
++#ifdef WITH_THREAD
+     if (obj->state != NULL) {
+         PyErr_SetString(ErrorObject, "cannot add/remove handle - perform() of curl object already running");
+         return -1;
+     }
++#endif
+     if (obj->multi_stack != NULL && obj->multi_stack != self) {
+         PyErr_SetString(ErrorObject, "cannot add/remove handle - curl object already on another multi-stack");
+         return -1;
+@@ -3989,8 +4058,10 @@ initpycurl(void)
+     pycurl_ssl_init();
+ #endif
+ 
++#ifdef WITH_THREAD
+     /* Finally initialize global interpreter lock */
+     PyEval_InitThreads();
++#endif
+ 
+ }
+ 
+-- 
+1.7.1
+
+
+From 9c06c6f29f4fcb5b6be9200f96c19b54b71e4b3b Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Wed, 12 Jun 2013 00:48:14 -0400
+Subject: [PATCH 134/149] Test for seek function
+
+Original patch by Jonas <seventies@users.sourceforge.net>.
+
+http://sourceforge.net/p/pycurl/patches/8/
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ .gitignore                  |    1 +
+ Makefile                    |    1 +
+ tests/seek_function_test.py |   72 +++++++++++++++++++++++++++++++++++++++++++
+ tests/vsftpd.conf           |    4 ++-
+ 4 files changed, 77 insertions(+), 1 deletions(-)
+ create mode 100644 tests/seek_function_test.py
+
+diff --git a/.gitignore b/.gitignore
+index c873e32..abc741a 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -3,6 +3,7 @@
+ /MANIFEST
+ /build
+ /dist
++/tests/tmp
+ /www/htdocs/download/*.bz2
+ /www/htdocs/download/*.exe
+ /www/htdocs/download/*.gz
+diff --git a/Makefile b/Makefile
+index 9475250..cb12aaf 100644
+--- a/Makefile
++++ b/Makefile
+@@ -16,6 +16,7 @@ build-7.10.8:
+ 	$(PYTHON) setup.py build --curl-config=/home/hosts/localhost/packages/curl-7.10.8/bin/curl-config
+ 
+ test: build
++	mkdir -p tests/tmp
+ 	PYTHONPATH=$$(ls -d build/lib.*):$$PYTHONPATH \
+ 	$(NOSETESTS)
+ 
+diff --git a/tests/seek_function_test.py b/tests/seek_function_test.py
+new file mode 100644
+index 0000000..2a28078
+--- /dev/null
++++ b/tests/seek_function_test.py
+@@ -0,0 +1,72 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++# Note: this test is meant to be run from pycurl project root.
++
++import pycurl
++import unittest
++import os.path
++
++from . import util
++from . import procmgr
++
++setup_module, teardown_module = procmgr.vsftpd_setup()
++
++class PartialFileSource:
++    def __init__(self):
++        self.__buf = '1234567890.1234567890'
++        self.__maxread = None
++        self.__bufptr = 0
++
++    def read(self, size):
++        p = self.__bufptr
++        end = p+size
++        if self.__maxread:
++            end = min(self.__maxread, end)
++        ret = self.__buf[p:end]
++        self.__bufptr+= len(ret)
++        #print 20*">>>", "read(%s)   ==> %s" % (size, len(ret))
++        return ret
++      
++    def seek(self, offset, origin):
++        #print 20*">>>",  "seek(%s, %s)" %  (offset, origin)
++        self.__bufptr = offset
++
++    def set_maxread(self, maxread):
++        self.__maxread = maxread
++
++class SeekFunctionTest(unittest.TestCase):
++    def test_seek_function(self):
++        c = pycurl.Curl()
++        c.setopt(pycurl.UPLOAD, 1)
++        c.setopt(pycurl.URL, "ftp://localhost:8321/tests/tmp/upload.txt")
++        c.setopt(pycurl.RESUME_FROM, 0)
++        #c.setopt(pycurl.VERBOSE, 1)
++        upload_file = PartialFileSource()
++        c.setopt(pycurl.READFUNCTION, upload_file.read)
++        upload_file.set_maxread(10)
++        c.perform()
++        
++        with open(os.path.join(os.path.dirname(__file__), 'tmp', 'upload.txt')) as f:
++            content = f.read()
++        self.assertEqual('1234567890', content)
++
++        c.close()
++        del c
++        del upload_file
++
++        c = pycurl.Curl()
++        c.setopt(pycurl.URL, "ftp://localhost:8321/tests/tmp/upload.txt")
++        c.setopt(pycurl.RESUME_FROM, -1)
++        c.setopt(pycurl.UPLOAD, 1)
++        #c.setopt(pycurl.VERBOSE, 1)
++        upload_file = PartialFileSource()
++        c.setopt(pycurl.READFUNCTION, upload_file.read)
++        c.setopt(pycurl.SEEKFUNCTION, upload_file.seek)
++        c.perform()
++        c.close()
++        
++        with open(os.path.join(os.path.dirname(__file__), 'tmp', 'upload.txt')) as f:
++            content = f.read()
++        self.assertEqual('1234567890.1234567890', content)
+diff --git a/tests/vsftpd.conf b/tests/vsftpd.conf
+index b4e4972..787da0e 100644
+--- a/tests/vsftpd.conf
++++ b/tests/vsftpd.conf
+@@ -5,7 +5,9 @@ background=no
+ download_enable=no
+ listen=yes
+ run_as_launching_user=yes
+-write_enable=no
++write_enable=yes
++anon_upload_enable=yes
++anon_other_write_enable=yes
+ listen_port=8321
+ # should be supplied on command line
+ anon_root=/var/empty
+-- 
+1.7.1
+
+
+From 7445cc96205e9c2b734ec07955519db224aa3ab7 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Wed, 12 Jun 2013 18:01:16 -0400
+Subject: [PATCH 135/149] Allow multiple ftp tests to work in the suite
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/procmgr.py |   15 ++++++++++-----
+ 1 files changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/tests/procmgr.py b/tests/procmgr.py
+index ce08da9..18c3dd2 100644
+--- a/tests/procmgr.py
++++ b/tests/procmgr.py
+@@ -12,6 +12,7 @@ class ProcessManager(object):
+     
+     def start(self):
+         self.process = subprocess.Popen(self.cmd)
++        self.running = True
+         
+         self.thread = threading.Thread(target=self.run)
+         self.thread.daemon = True
+@@ -19,11 +20,18 @@ class ProcessManager(object):
+     
+     def run(self):
+         self.process.communicate()
++    
++    def stop(self):
++        try:
++            os.kill(self.process.pid, signal.SIGTERM)
++        except OSError:
++            pass
++        self.running = False
+ 
+ managers = {}
+ 
+ def start(cmd):
+-    if str(cmd) in managers:
++    if str(cmd) in managers and managers[str(cmd)].running:
+         # already started
+         return
+     
+@@ -75,9 +83,6 @@ def vsftpd_setup():
+         except KeyError:
+             pass
+         else:
+-            try:
+-                os.kill(manager.process.pid, signal.SIGTERM)
+-            except OSError:
+-                pass
++            manager.stop()
+     
+     return do_setup_module, teardown_module
+-- 
+1.7.1
+
+
+From 4f8e4def8eddac6d5e5239602ef00230a2be3690 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Wed, 12 Jun 2013 19:26:25 -0400
+Subject: [PATCH 136/149] Do not run vsftpd tests by default due to security implications
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ README.rst       |   18 ++++++++++++++++++
+ tests/procmgr.py |   14 +++++++++++++-
+ 2 files changed, 31 insertions(+), 1 deletions(-)
+
+diff --git a/README.rst b/README.rst
+index 3518d9d..c4427aa 100644
+--- a/README.rst
++++ b/README.rst
+@@ -49,6 +49,24 @@ or `pip`_::
+ .. _easy_install: http://peak.telecommunity.com/DevCenter/EasyInstall
+ .. _pip: http://pypi.python.org/pypi/pip
+ 
++Automated Tests
++---------------
++
++PycURL comes with an automated test suite. To run the tests, execute::
++
++    make test
++
++Some tests use vsftpd configured to accept anonymous uploads. These tests
++are not run by default. As configured, vsftpd will allow reads and writes to
++anything the user running the tests has read and write access. To run
++vsftpd tests you must explicitly set PYCURL_VSFTPD_PATH variable like so::
++
++    # use vsftpd in PATH
++    export PYCURL_VSFTPD_PATH=vsftpd
++
++    # specify full path to vsftpd
++    export PYCURL_VSFTPD_PATH=/usr/local/libexec/vsftpd
++
+ Contribute
+ ----------
+ 
+diff --git a/tests/procmgr.py b/tests/procmgr.py
+index 18c3dd2..9309aa8 100644
+--- a/tests/procmgr.py
++++ b/tests/procmgr.py
+@@ -3,6 +3,7 @@ import subprocess
+ import os
+ import sys
+ import signal
++import nose.plugins.skip
+ 
+ from . import runwsgi
+ 
+@@ -50,7 +51,16 @@ def start_setup(cmd):
+ if 'PYCURL_VSFTPD_PATH' in os.environ:
+     vsftpd_path = os.environ['PYCURL_VSFTPD_PATH']
+ else:
+-    vsftpd_path = 'vsftpd'
++    vsftpd_path = None
++
++try:
++    # python 2
++    exception_base = StandardError
++except NameError:
++    # python 3
++    exception_base = Exception
++class VsftpdNotConfigured(exception_base):
++    pass
+ 
+ def vsftpd_setup():
+     config_file_path = os.path.join(os.path.dirname(__file__), 'vsftpd.conf')
+@@ -62,6 +72,8 @@ def vsftpd_setup():
+     ]
+     setup_module = start_setup(cmd)
+     def do_setup_module():
++        if vsftpd_path is None:
++            raise nose.plugins.skip.SkipTest('PYCURL_VSFTPD_PATH environment variable not set')
+         try:
+             setup_module()
+         except OSError:
+-- 
+1.7.1
+
+
+From 079b262507e77a61772255aea969471b2d81f16c Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Tue, 16 Jul 2013 11:05:54 -0300
+Subject: [PATCH 137/149] Adjusted declaration order for C89 compilers
+
+PYCURL_DECLARE_THREAD_STATE looks like an
+executable statement for some non-C99 compilers
+(e.g. armcc), so it must appear at the end of
+the declaration list.
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |   19 ++++++++++---------
+ 1 files changed, 10 insertions(+), 9 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index a9923ed..cdb934e 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -1140,12 +1140,12 @@ static size_t
+ util_write_callback(int flags, char *ptr, size_t size, size_t nmemb, void *stream)
+ {
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     size_t ret = 0;     /* assume error */
+     PyObject *cb;
+     int total_size;
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+@@ -1219,8 +1219,8 @@ opensocket_callback(void *clientp, curlsocktype purpose,
+     PyObject *result = NULL;
+     PyObject *fileno_result = NULL;
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     int ret = CURL_SOCKET_BAD;
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     self = (CurlObject *)clientp;
+     PYCURL_ACQUIRE_THREAD();
+@@ -1269,12 +1269,12 @@ static int
+ seek_callback(void *stream, curl_off_t offset, int origin)
+ {
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 2;     /* assume error 2 (can't seek, libcurl free to work around). */
+     PyObject *cb;
+     int source = 0;     /* assume beginning */
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+@@ -1343,13 +1343,14 @@ static size_t
+ read_callback(char *ptr, size_t size, size_t nmemb, void *stream)
+ {
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+ 
+     size_t ret = CURL_READFUNC_ABORT;     /* assume error, this actually works */
+     int total_size;
+ 
++    PYCURL_DECLARE_THREAD_STATE;
++    
+     /* acquire thread */
+     self = (CurlObject *)stream;
+     if (!PYCURL_ACQUIRE_THREAD())
+@@ -1424,10 +1425,10 @@ progress_callback(void *stream,
+                   double dltotal, double dlnow, double ultotal, double ulnow)
+ {
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 1;       /* assume error */
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     /* acquire thread */
+     self = (CurlObject *)stream;
+@@ -1473,10 +1474,10 @@ debug_callback(CURL *curlobj, curl_infotype type,
+                char *buffer, size_t total_size, void *stream)
+ {
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 0;       /* always success */
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     UNUSED(curlobj);
+ 
+@@ -1518,10 +1519,10 @@ static curlioerr
+ ioctl_callback(CURL *curlobj, int cmd, void *stream)
+ {
+     CurlObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = CURLIOE_FAILRESTART;       /* assume error */
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     UNUSED(curlobj);
+ 
+@@ -2492,10 +2493,10 @@ int multi_socket_callback(CURL *easy,
+ {
+     CurlMultiObject *self;
+     CurlObject *easy_self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret;
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     /* acquire thread */
+     self = (CurlMultiObject *)userp;
+@@ -2539,10 +2540,10 @@ int multi_timer_callback(CURLM *multi,
+                          void *userp)
+ {
+     CurlMultiObject *self;
+-    PYCURL_DECLARE_THREAD_STATE;
+     PyObject *arglist;
+     PyObject *result = NULL;
+     int ret = 0;       /* always success */
++    PYCURL_DECLARE_THREAD_STATE;
+ 
+     UNUSED(multi);
+ 
+-- 
+1.7.1
+
+
+From 350016b90e38505eeee46358d5303de2a7faca5e Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Tue, 16 Jul 2013 11:13:52 -0300
+Subject: [PATCH 138/149] Silence compiler hints about unused variables
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |    4 +---
+ 1 files changed, 1 insertions(+), 3 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index cdb934e..7b96b01 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -851,7 +851,6 @@ static int
+ util_curl_init(CurlObject *self)
+ {
+     int res;
+-    char *s = NULL;
+ 
+     /* Set curl error buffer and zero it */
+     res = curl_easy_setopt(self->handle, CURLOPT_ERRORBUFFER, self->error);
+@@ -2495,12 +2494,11 @@ int multi_socket_callback(CURL *easy,
+     CurlObject *easy_self;
+     PyObject *arglist;
+     PyObject *result = NULL;
+-    int ret;
+     PYCURL_DECLARE_THREAD_STATE;
+ 
+     /* acquire thread */
+     self = (CurlMultiObject *)userp;
+-    ret = curl_easy_getinfo(easy, CURLINFO_PRIVATE, &easy_self);
++    curl_easy_getinfo(easy, CURLINFO_PRIVATE, &easy_self);
+     if (!PYCURL_ACQUIRE_THREAD_MULTI())
+         return 0;
+ 
+-- 
+1.7.1
+
+
+From 19af5bbbc98dc2198cc7541b81ed313a75faeb9c Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Tue, 16 Jul 2013 11:44:36 -0300
+Subject: [PATCH 139/149] Added support for CURLOPT_RESOLVE
+
+http://curl.haxx.se/libcurl/c/curl_easy_setopt.html#CURLOPTRESOLVE
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |   36 ++++++++++++++++++++++++++++++++----
+ 1 files changed, 32 insertions(+), 4 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 7b96b01..bb6056e 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -68,6 +68,10 @@
+ #define HAVE_CURLOPT_PROXYUSERNAME
+ #endif
+ 
++#if LIBCURL_VERSION_NUM >= 0x071503 /* check for 7.21.3 or greater */
++#define HAVE_CURLOPT_RESOLVE
++#endif
++
+ /* Python < 2.5 compat for Py_ssize_t */
+ #if PY_VERSION_HEX < 0x02050000 && !defined(PY_SSIZE_T_MIN)
+ typedef int Py_ssize_t;
+@@ -185,6 +189,9 @@ typedef struct {
+     struct curl_slist *quote;
+     struct curl_slist *postquote;
+     struct curl_slist *prequote;
++#ifdef HAVE_CURLOPT_RESOLVE
++    struct curl_slist *resolve;
++#endif
+     /* callbacks */
+     PyObject *w_cb;
+     PyObject *h_cb;
+@@ -824,6 +831,9 @@ util_curl_new(void)
+     self->quote = NULL;
+     self->postquote = NULL;
+     self->prequote = NULL;
++#ifdef HAVE_CURLOPT_RESOLVE
++    self->resolve = NULL;
++#endif
+ 
+     /* Set callback pointers to NULL by default */
+     self->w_cb = NULL;
+@@ -1025,6 +1035,9 @@ util_curl_close(CurlObject *self)
+     SFREE(self->quote);
+     SFREE(self->postquote);
+     SFREE(self->prequote);
++#ifdef HAVE_CURLOPT_RESOLVE
++    SFREE(self->resolve);
++#endif
+ #undef SFREE
+ }
+ 
+@@ -1588,6 +1601,9 @@ do_curl_reset(CurlObject *self)
+     SFREE(self->quote);
+     SFREE(self->postquote);
+     SFREE(self->prequote);
++#ifdef HAVE_CURLOPT_RESOLVE
++    SFREE(self->resolve);
++#endif
+ #undef SFREE
+     res = util_curl_init(self);
+     if (res < 0) {
+@@ -1933,6 +1949,11 @@ do_curl_setopt(CurlObject *self, PyObject *args)
+         case CURLOPT_PREQUOTE:
+             old_slist = &self->prequote;
+             break;
++#ifdef HAVE_CURLOPT_RESOLVE
++        case CURLOPT_RESOLVE:
++            old_slist = &self->resolve;
++            break;
++#endif
+         case CURLOPT_HTTPPOST:
+             break;
+         default:
+@@ -1944,10 +1965,14 @@ do_curl_setopt(CurlObject *self, PyObject *args)
+         len = PyList_Size(obj);
+         if (len == 0) {
+             /* Empty list - do nothing */
+-            if (!(option == CURLOPT_HTTPHEADER ||
+-                  option == CURLOPT_QUOTE ||
+-                  option == CURLOPT_POSTQUOTE ||
+-                  option == CURLOPT_PREQUOTE)) {
++            if (!(option == CURLOPT_HTTPHEADER
++                  || option == CURLOPT_QUOTE
++                  || option == CURLOPT_POSTQUOTE
++                  || option == CURLOPT_PREQUOTE
++#ifdef HAVE_CURLOPT_RESOLVE
++                  || option == CURLOPT_RESOLVE
++#endif
++                  )) {
+                 /* Empty list - do nothing */
+                 Py_INCREF(Py_None);
+                 return Py_None;
+@@ -3888,6 +3913,9 @@ initpycurl(void)
+     insint_c(d, "CRLFILE", CURLOPT_CRLFILE);
+     insint_c(d, "ISSUERCERT", CURLOPT_ISSUERCERT);
+     insint_c(d, "ADDRESS_SCOPE", CURLOPT_ADDRESS_SCOPE);
++#ifdef HAVE_CURLOPT_RESOLVE
++    insint_c(d, "RESOLVE", CURLOPT_RESOLVE);
++#endif
+ 
+     insint_c(d, "M_TIMERFUNCTION", CURLMOPT_TIMERFUNCTION);
+     insint_c(d, "M_SOCKETFUNCTION", CURLMOPT_SOCKETFUNCTION);
+-- 
+1.7.1
+
+
+From 576efa57797d878e23dd97b1f5ec2393167b30c6 Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Fri, 19 Jul 2013 11:36:43 -0300
+Subject: [PATCH 140/149] Added test-case for CURLOPT_RESOLVE
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/resolve_test.py |   22 ++++++++++++++++++++++
+ 1 files changed, 22 insertions(+), 0 deletions(-)
+ create mode 100644 tests/resolve_test.py
+
+diff --git a/tests/resolve_test.py b/tests/resolve_test.py
+new file mode 100644
+index 0000000..fcee830
+--- /dev/null
++++ b/tests/resolve_test.py
+@@ -0,0 +1,22 @@
++# -*- coding: iso-8859-1 -*-
++
++import pycurl
++import unittest
++
++from . import app
++from . import runwsgi
++
++setup_module, teardown_module = runwsgi.app_runner_setup((app.app, 8380))
++
++class ResolveTest(unittest.TestCase):
++    def setUp(self):
++        self.curl = pycurl.Curl()
++    
++    def tearDown(self):
++        self.curl.close()
++    
++    def test_resolve(self):
++        self.curl.setopt(pycurl.URL, 'http://p.localhost:8380/success')
++        self.curl.setopt(pycurl.RESOLVE, ['p.localhost:8380:127.0.0.1'])
++        self.curl.perform()
++        self.assertEqual(200, self.curl.getinfo(pycurl.RESPONSE_CODE))
+-- 
+1.7.1
+
+
+From 2ebc6b6097df0a83a6982e8941af3e880e18a74f Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Fri, 19 Jul 2013 11:24:40 -0300
+Subject: [PATCH 141/149] Test suite documentation
+
+Briefly clarified documentation about dependencies
+of the test suite.
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ README.rst |    5 +++++
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+
+diff --git a/README.rst b/README.rst
+index c4427aa..b416b97 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56,6 +56,8 @@ PycURL comes with an automated test suite. To run the tests, execute::
+ 
+     make test
+ 
++The suite depends on packages `nose`_ and `bottle`_.
++
+ Some tests use vsftpd configured to accept anonymous uploads. These tests
+ are not run by default. As configured, vsftpd will allow reads and writes to
+ anything the user running the tests has read and write access. To run
+@@ -67,6 +69,9 @@ vsftpd tests you must explicitly set PYCURL_VSFTPD_PATH variable like so::
+     # specify full path to vsftpd
+     export PYCURL_VSFTPD_PATH=/usr/local/libexec/vsftpd
+ 
++.. _nose: https://nose.readthedocs.org/
++.. _bottle: http://bottlepy.org/
++
+ Contribute
+ ----------
+ 
+-- 
+1.7.1
+
+
+From 59fd64c38e4adf28242dca3fd3d3a0167016945a Mon Sep 17 00:00:00 2001
+From: Wim Lewis <wiml@users.sourceforge.net>
+Date: Thu, 21 Jul 2011 12:00:00 -0400
+Subject: [PATCH 142/149] Add suport for CURLINFO_CERTINFO and CURLOPT_CERTINFO.
+
+This patch adds support for CURLINFO_CERTINFO (and CURLOPT_CERTINFO),
+as well as documentation for them and a couple of minor documentation fixes.
+These options appeared in libcurl 7.19.1.
+
+The format of the returned information was chosen to be reasonably close
+to the underlying libcurl data structure, while also allowing a
+Python programmer to pass the cerificate info to dict() in order to get
+a more convenient representation.
+
+https://sourceforge.net/p/pycurl/patches/14/
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ doc/curlobject.html |   19 ++++++++++-
+ src/pycurl.c        |   83 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 100 insertions(+), 2 deletions(-)
+
+diff --git a/doc/curlobject.html b/doc/curlobject.html
+index a3d421f..394b950 100644
+--- a/doc/curlobject.html
++++ b/doc/curlobject.html
+@@ -43,9 +43,11 @@ href="http://curl.haxx.se/libcurl/c/curl_easy_reset.html"><code>curl_easy_reset<
+ <p>Corresponds to
+ <a href="http://curl.haxx.se/libcurl/c/curl_easy_setopt.html"><code>curl_easy_setopt</code></a> in libcurl, where
+ <em>option</em> is specified with the CURLOPT_* constants in libcurl,
+-except that the CURLOPT_ prefix has been removed. The type for
++except that the CURLOPT_ prefix has been removed.
++(See below for exceptions.)
++The type for
+ <em>value</em> depends on the option, and can be either a string,
+-integer, long integer, file objects, lists, or functions.</p>
++integer, long integer, file object, list, or function.</p>
+ 
+ <p>Example usage:</p>
+ 
+@@ -72,6 +74,7 @@ print b.getvalue()
+ <a href="http://curl.haxx.se/libcurl/c/curl_easy_getinfo.html"><code>curl_easy_getinfo</code></a> in libcurl, where
+ <em>option</em> is the same as the CURLINFO_* constants in libcurl,
+ except that the CURLINFO_ prefix has been removed.
++(See below for exceptions.)
+ <em>Result</em> contains an integer, float or string, depending on
+ which option is given. The <code>getinfo</code> method should
+ not be called unless <code>perform</code> has been called and
+@@ -97,6 +100,18 @@ print c.getinfo(pycurl.HTTP_CODE), c.getinfo(pycurl.EFFECTIVE_URL)
+ </dd>
+ </dl>
+ 
++<p>In order to distinguish between similarly-named CURLOPT and
++CURLINFO constants, some have <code>OPT_</code>
++and <code>INFO_</code> prefixes. These are
++<code>INFO_FILETIME</code>, <code>OPT_FILETIME</code>,
++<code>INFO_COOKIELIST</code> (but <code>setopt</code> uses <code>COOKIELIST</code>!),
++<code>INFO_CERTINFO</code>, and <code>OPT_CERTINFO</code>.</p>
++
++<p>The value returned by <code>getinfo(INFO_CERTINFO)</code> is a list
++with one element per certificate in the chain, starting with the leaf;
++each element is a sequence
++of <code>(</code><em>key</em><code>, </code><em>value</em><code>)</code>
++tuples.</p>
+ 
+ <hr />
+ <p>
+diff --git a/src/pycurl.c b/src/pycurl.c
+index bb6056e..5da354d 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -297,6 +297,71 @@ error:
+     return NULL;
+ }
+ 
++/* Convert a struct curl_certinfo into a Python data structure.
++ * In case of error return NULL with an exception set.
++ */
++static PyObject *convert_certinfo(struct curl_certinfo *cinfo)
++{
++    PyObject *certs;
++    int cert_index;
++
++    if (!cinfo) {
++        certs = Py_None;
++        Py_INCREF(certs);
++        return certs;
++    }
++
++    certs = PyList_New((Py_ssize_t)(cinfo->num_of_certs));
++    if (!certs)
++        return NULL;
++
++    for (cert_index = 0; cert_index < cinfo->num_of_certs; cert_index ++) {
++        struct curl_slist *fields = cinfo->certinfo[cert_index];
++        struct curl_slist *field_cursor;
++        int field_count, field_index;
++        PyObject *cert;
++
++        field_count = 0;
++        field_cursor = fields;
++        while (field_cursor != NULL) {
++            field_cursor = field_cursor->next;
++            field_count ++;
++        }
++
++        
++        cert = PyTuple_New((Py_ssize_t)field_count);
++        if (!cert)
++            goto error;
++        PyList_SetItem(certs, cert_index, cert); /* Eats the ref from New() */
++        
++        for(field_index = 0, field_cursor = fields;
++            field_cursor != NULL;
++            field_index ++, field_cursor = field_cursor->next) {
++            const char *field = field_cursor->data;
++            PyObject *field_tuple;
++
++            if (!field) {
++                field_tuple = Py_None; Py_INCREF(field_tuple);
++            } else {
++                const char *sep = strchr(field, ':');
++                if (!sep) {
++                    field_tuple = PyString_FromString(field);
++                } else {
++                    field_tuple = Py_BuildValue("s#s", field, (int)(sep - field), sep+1);
++                }
++                if (!field_tuple)
++                    goto error;
++            }
++            PyTuple_SET_ITEM(cert, field_index, field_tuple); /* Eats the ref */
++        }
++    }
++
++    return certs;
++    
++ error:
++    Py_XDECREF(certs);
++    return NULL;
++}
+ 
+ #ifdef WITH_THREAD
+ /*************************************************************************
+@@ -1673,6 +1738,10 @@ util_curl_unsetopt(CurlObject *self, int option)
+         SETOPT((char *) 0);
+         break;
+ 
++    case CURLOPT_CERTINFO:
++        SETOPT((long) 0);
++        break;
++
+     /* info: we explicitly list unsupported options here */
+     case CURLOPT_COOKIEFILE:
+     default:
+@@ -2394,6 +2463,18 @@ do_curl_getinfo(CurlObject *self, PyObject *args)
+             }
+             return convert_slist(slist, 1 | 2);
+         }
++
++    case CURLINFO_CERTINFO:
++        {
++            /* Return a list of lists of 2-tuples */
++            struct curl_certinfo *clist = NULL;
++            res = curl_easy_getinfo(self->handle, CURLINFO_CERTINFO, &clist);
++            if (res != CURLE_OK) {
++                CURLERROR_RETVAL();
++            } else {
++                return convert_certinfo(clist);
++            }
++        }
+     }
+ 
+     /* Got wrong option on the method call */
+@@ -3916,6 +3997,7 @@ initpycurl(void)
+ #ifdef HAVE_CURLOPT_RESOLVE
+     insint_c(d, "RESOLVE", CURLOPT_RESOLVE);
+ #endif
++    insint_c(d, "OPT_CERTINFO", CURLOPT_CERTINFO);
+ 
+     insint_c(d, "M_TIMERFUNCTION", CURLMOPT_TIMERFUNCTION);
+     insint_c(d, "M_SOCKETFUNCTION", CURLMOPT_SOCKETFUNCTION);
+@@ -3993,6 +4075,7 @@ initpycurl(void)
+     insint_c(d, "INFO_COOKIELIST", CURLINFO_COOKIELIST);
+     insint_c(d, "LASTSOCKET", CURLINFO_LASTSOCKET);
+     insint_c(d, "FTP_ENTRY_PATH", CURLINFO_FTP_ENTRY_PATH);
++    insint_c(d, "INFO_CERTINFO", CURLINFO_CERTINFO);
+ 
+     /* options for global_init() */
+     insint(d, "GLOBAL_SSL", CURL_GLOBAL_SSL);
+-- 
+1.7.1
+
+
+From aa82321393ebc813d326cb305a1e2f73bbe45abe Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 30 May 2013 14:42:38 -0400
+Subject: [PATCH 143/149] Conditional compilation for CERTINFO bits
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |   11 +++++++++++
+ 1 files changed, 11 insertions(+), 0 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 5da354d..c0fec4b 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -66,6 +66,7 @@
+     LIBCURL_VERSION_MAJOR == 7 && LIBCURL_VERSION_MINOR == 19 && LIBCURL_VERSION_PATCH >= 1
+ #define HAVE_CURLOPT_USERNAME
+ #define HAVE_CURLOPT_PROXYUSERNAME
++#define HAVE_CURLOPT_CERTINFO
+ #endif
+ 
+ #if LIBCURL_VERSION_NUM >= 0x071503 /* check for 7.21.3 or greater */
+@@ -297,6 +298,7 @@ error:
+     return NULL;
+ }
+ 
++#ifdef HAVE_CURLOPT_CERTINFO
+ /* Convert a struct curl_certinfo into a Python data structure.
+  * In case of error return NULL with an exception set.
+  */
+@@ -362,6 +364,7 @@ static PyObject *convert_certinfo(struct curl_certinfo *cinfo)
+     Py_XDECREF(certs);
+     return NULL;
+ }
++#endif
+ 
+ #ifdef WITH_THREAD
+ /*************************************************************************
+@@ -1738,9 +1741,11 @@ util_curl_unsetopt(CurlObject *self, int option)
+         SETOPT((char *) 0);
+         break;
+ 
++#ifdef HAVE_CURLOPT_CERTINFO
+     case CURLOPT_CERTINFO:
+         SETOPT((long) 0);
+         break;
++#endif
+ 
+     /* info: we explicitly list unsupported options here */
+     case CURLOPT_COOKIEFILE:
+@@ -2464,6 +2469,7 @@ do_curl_getinfo(CurlObject *self, PyObject *args)
+             return convert_slist(slist, 1 | 2);
+         }
+ 
++#ifdef HAVE_CURLOPT_CERTINFO
+     case CURLINFO_CERTINFO:
+         {
+             /* Return a list of lists of 2-tuples */
+@@ -2476,6 +2482,7 @@ do_curl_getinfo(CurlObject *self, PyObject *args)
+             }
+         }
+     }
++#endif
+ 
+     /* Got wrong option on the method call */
+     PyErr_SetString(PyExc_ValueError, "invalid argument to getinfo");
+@@ -3997,7 +4004,9 @@ initpycurl(void)
+ #ifdef HAVE_CURLOPT_RESOLVE
+     insint_c(d, "RESOLVE", CURLOPT_RESOLVE);
+ #endif
++#ifdef HAVE_CURLOPT_CERTINFO
+     insint_c(d, "OPT_CERTINFO", CURLOPT_CERTINFO);
++#endif
+ 
+     insint_c(d, "M_TIMERFUNCTION", CURLMOPT_TIMERFUNCTION);
+     insint_c(d, "M_SOCKETFUNCTION", CURLMOPT_SOCKETFUNCTION);
+@@ -4075,7 +4084,9 @@ initpycurl(void)
+     insint_c(d, "INFO_COOKIELIST", CURLINFO_COOKIELIST);
+     insint_c(d, "LASTSOCKET", CURLINFO_LASTSOCKET);
+     insint_c(d, "FTP_ENTRY_PATH", CURLINFO_FTP_ENTRY_PATH);
++#ifdef HAVE_CURLOPT_CERTINFO
+     insint_c(d, "INFO_CERTINFO", CURLINFO_CERTINFO);
++#endif
+ 
+     /* options for global_init() */
+     insint(d, "GLOBAL_SSL", CURL_GLOBAL_SSL);
+-- 
+1.7.1
+
+
+From 68713450eef4fd4252babafefe24d42faebc6de9 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 30 May 2013 14:49:44 -0400
+Subject: [PATCH 144/149] Use an ordinary DECREF
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index c0fec4b..c8b8402 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -361,7 +361,7 @@ static PyObject *convert_certinfo(struct curl_certinfo *cinfo)
+     return certs;
+     
+  error:
+-    Py_XDECREF(certs);
++    Py_DECREF(certs);
+     return NULL;
+ }
+ #endif
+-- 
+1.7.1
+
+
+From 53999f0ca88f6a71ff0b9331ce9da89a5f07fb0f Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Thu, 30 May 2013 15:35:31 -0400
+Subject: [PATCH 145/149] SSL certinfo test using github
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/certinfo_test.py |   52 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 52 insertions(+), 0 deletions(-)
+ create mode 100644 tests/certinfo_test.py
+
+diff --git a/tests/certinfo_test.py b/tests/certinfo_test.py
+new file mode 100644
+index 0000000..25c05af
+--- /dev/null
++++ b/tests/certinfo_test.py
+@@ -0,0 +1,52 @@
++#! /usr/bin/env python
++# -*- coding: iso-8859-1 -*-
++# vi:ts=4:et
++
++import pycurl
++import unittest
++import nose.plugins.skip
++
++from . import util
++
++class CertinfoTest(unittest.TestCase):
++    def setUp(self):
++        self.curl = pycurl.Curl()
++    
++    def tearDown(self):
++        self.curl.close()
++    
++    def test_certinfo_option(self):
++        # CURLOPT_CERTINFO was introduced in libcurl-7.19.1
++        if util.pycurl_version_less_than(7, 19, 1):
++            raise nose.plugins.skip.SkipTest('libcurl < 7.19.1')
++        
++        assert hasattr(pycurl, 'OPT_CERTINFO')
++    
++    def test_request_without_certinfo(self):
++        # CURLOPT_CERTINFO was introduced in libcurl-7.19.1
++        if util.pycurl_version_less_than(7, 19, 1):
++            raise nose.plugins.skip.SkipTest('libcurl < 7.19.1')
++        
++        self.curl.setopt(pycurl.URL, 'https://github.com/')
++        sio = util.StringIO()
++        self.curl.setopt(pycurl.WRITEFUNCTION, sio.write)
++        self.curl.perform()
++        assert 'GitHub' in sio.getvalue()
++        
++        certinfo = self.curl.getinfo(pycurl.INFO_CERTINFO)
++        self.assertEqual([], certinfo)
++    
++    def test_request_with_certinfo(self):
++        # CURLOPT_CERTINFO was introduced in libcurl-7.19.1
++        if util.pycurl_version_less_than(7, 19, 1):
++            raise nose.plugins.skip.SkipTest('libcurl < 7.19.1')
++        
++        self.curl.setopt(pycurl.URL, 'https://github.com/')
++        sio = util.StringIO()
++        self.curl.setopt(pycurl.WRITEFUNCTION, sio.write)
++        self.curl.setopt(pycurl.OPT_CERTINFO, 1)
++        self.curl.perform()
++        assert 'GitHub' in sio.getvalue()
++        
++        certinfo = self.curl.getinfo(pycurl.INFO_CERTINFO)
++        assert len(certinfo) > 0
+-- 
+1.7.1
+
+
+From 6ca51826965392ed3ac2338b5da7dac5215bd840 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Tue, 23 Jul 2013 20:10:47 -0400
+Subject: [PATCH 146/149] Self signed certificate for ssl tests
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/certs/server.crt |   14 ++++++++++++++
+ tests/certs/server.key |   15 +++++++++++++++
+ 2 files changed, 29 insertions(+), 0 deletions(-)
+ create mode 100644 tests/certs/server.crt
+ create mode 100644 tests/certs/server.key
+
+diff --git a/tests/certs/server.crt b/tests/certs/server.crt
+new file mode 100644
+index 0000000..4a8decc
+--- /dev/null
++++ b/tests/certs/server.crt
+@@ -0,0 +1,14 @@
++-----BEGIN CERTIFICATE-----
++MIICJTCCAY4CCQDfQAHGuFkN2zANBgkqhkiG9w0BAQUFADBXMQswCQYDVQQGEwJB
++VTETMBEGA1UECBMKU29tZS1TdGF0ZTEaMBgGA1UEChMRcHljdXJsIHRlc3Qgc3Vp
++dGUxFzAVBgNVBAMTDmxvY2FsaG9zdDo4MzgzMB4XDTEzMDcyNDAwMDgxNVoXDTE0
++MDcyNDAwMDgxNVowVzELMAkGA1UEBhMCQVUxEzARBgNVBAgTClNvbWUtU3RhdGUx
++GjAYBgNVBAoTEXB5Y3VybCB0ZXN0IHN1aXRlMRcwFQYDVQQDEw5sb2NhbGhvc3Q6
++ODM4MzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAxE0+59Kf2z9ccZyUAuKG
++QpkQaXtEJC13exY4SWIfr78FfCStdqpZdfmm66djFENhmaAZYGsPHGXrEIHQqja2
++7KYkHo4cXLxksR4Db01yPMtMU9xHzg37OTIS2lGRmMxLduKc5XKsxA98PV/D1k4k
++sqLcLDH//YdLR0iYUYLOIgMCAwEAATANBgkqhkiG9w0BAQUFAAOBgQAppFdMNMHe
++68uQA1y2xAYW7faUH8/g+XAuH9WjLL2QfWGXgWey/pwofsrTO2Hl+D9y8Rey4eJ/
++BDv3OV2cBWBYBOxZv/kqyDHQc38tho9gdaPQnD4ttFk2TSgaOs1W39pGY1On0Ejd
++O6CXEGV7p8C613AgEkbdudnn+ChvyH/Shw==
++-----END CERTIFICATE-----
+diff --git a/tests/certs/server.key b/tests/certs/server.key
+new file mode 100644
+index 0000000..5bdbbf9
+--- /dev/null
++++ b/tests/certs/server.key
+@@ -0,0 +1,15 @@
++-----BEGIN RSA PRIVATE KEY-----
++MIICXAIBAAKBgQDETT7n0p/bP1xxnJQC4oZCmRBpe0QkLXd7FjhJYh+vvwV8JK12
++qll1+abrp2MUQ2GZoBlgaw8cZesQgdCqNrbspiQejhxcvGSxHgNvTXI8y0xT3EfO
++Dfs5MhLaUZGYzEt24pzlcqzED3w9X8PWTiSyotwsMf/9h0tHSJhRgs4iAwIDAQAB
++AoGAMLNFTvgnJpqikaEZ61lNm8ojkze8oQkSolvR3QrV96D5eGIVEuKSTT2Blucx
++In7RAO8CPLRyzEXQuoiqPwBSAxY2Xswd+zcAgN2Zi8uqWTmPNsW6451BJRemgLjK
++OxLxCdVTOTxHfttj/CnwYQ6zn55oyZJGGmaVGykbvH/AgukCQQD3HfhOPExsI/6X
++Bp7CeZOhmM+LBOQGQGDjRnBdRp0s3HiUfaDxU2mbEafGPI2OyuzpYAqxHVTJLai6
++CQlJGuQXAkEAy1upObz2bcN2dUCHNufk2qdfRSCRkmKemuqznwCW3fSoRKB+qOu3
++xyTLEkTvLBNnAFjoyd6B75QzL/7//qvo9QJAE0xV3dY7qZ5N/YFY2Jsh+layroqd
++PBe++UDA+afQEnbNO9trvCzlbGS+k26bJ3GVeswzSY2e128nZA/cl8bv1QJAfTEO
++uybjpqtAj+qL03drYljLw+jK9Y2VCtYWgnqAZmAp/yW3FBMZbpXuFm8ttrqzHHmf
++xjcfUvivkoqv2n7GyQJBAKxbBVx/LQiSVpOTnXTEA1NJF8NS2NCF+3sm3kGhFKql
++Hi/cCAFrhBl9MoPJF/6noukfIkq0SzjkWrYIcoBDoVg=
++-----END RSA PRIVATE KEY-----
+-- 
+1.7.1
+
+
+From 2bc1535519faf3e574bac514b634d29ed7e28c20 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Sat, 1 Jun 2013 05:23:41 -0400
+Subject: [PATCH 147/149] Support for testing against a local ssl server
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/runwsgi.py |   34 +++++++++++++++++++++++++++++-----
+ 1 files changed, 29 insertions(+), 5 deletions(-)
+
+diff --git a/tests/runwsgi.py b/tests/runwsgi.py
+index 114ce42..c9bc236 100644
+--- a/tests/runwsgi.py
++++ b/tests/runwsgi.py
+@@ -4,6 +4,7 @@ import sys
+ import bottle
+ import threading
+ import socket
++import os.path
+ import time as _time
+ 
+ try:
+@@ -37,6 +38,21 @@ class Server(bottle.WSGIRefServer):
+         else:
+             self.srv.serve_forever(poll_interval=0.1)
+ 
++class SslServer(bottle.CherryPyServer):
++    def run(self, handler):
++        import cherrypy.wsgiserver, cherrypy.wsgiserver.ssl_builtin
++        server = cherrypy.wsgiserver.CherryPyWSGIServer((self.host, self.port), handler)
++        cert_dir = os.path.join(os.path.dirname(__file__), 'certs')
++        ssl_adapter = cherrypy.wsgiserver.ssl_builtin.BuiltinSSLAdapter(
++            os.path.join(cert_dir, 'server.crt'),
++            os.path.join(cert_dir, 'server.key'),
++        )
++        server.ssl_adapter = ssl_adapter
++        try:
++            server.start()
++        finally:
++            server.stop()
++
+ def wait_for_network_service(netloc, check_interval, num_attempts):
+     ok = False
+     for i in range(num_attempts):
+@@ -51,8 +67,8 @@ def wait_for_network_service(netloc, check_interval, num_attempts):
+             break
+     return ok
+ 
+-def start_bottle_server(app, port, **kwargs):
+-    server_thread = ServerThread(app, port, kwargs)
++def start_bottle_server(app, port, server, **kwargs):
++    server_thread = ServerThread(app, port, server, kwargs)
+     server_thread.daemon = True
+     server_thread.start()
+     
+@@ -64,12 +80,12 @@ def start_bottle_server(app, port, **kwargs):
+     return server_thread.server
+ 
+ class ServerThread(threading.Thread):
+-    def __init__(self, app, port, server_kwargs):
++    def __init__(self, app, port, server, server_kwargs):
+         threading.Thread.__init__(self)
+         self.app = app
+         self.port = port
+         self.server_kwargs = server_kwargs
+-        self.server = Server(host='localhost', port=self.port, **self.server_kwargs)
++        self.server = server(host='localhost', port=self.port, **self.server_kwargs)
+     
+     def run(self):
+         bottle.run(self.app, server=self.server, quiet=True)
+@@ -104,7 +120,15 @@ def app_runner_setup(*specs):
+             if port in started_servers:
+                 assert started_servers[port] == (app, kwargs)
+             else:
+-                self.servers.append(start_bottle_server(app, port, **kwargs))
++                server = Server
++                if 'server' in kwargs:
++                    server = kwargs['server']
++                    del kwargs['server']
++                elif 'ssl' in kwargs:
++                    if kwargs['ssl']:
++                        server = SslServer
++                    del kwargs['ssl']
++                self.servers.append(start_bottle_server(app, port, server, **kwargs))
+             started_servers[port] = (app, kwargs)
+     
+     def teardown(self):
+-- 
+1.7.1
+
+
+From 1bae541fbeb5d7554c29d76f7e57dc3bc6cb4985 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Tue, 23 Jul 2013 20:11:25 -0400
+Subject: [PATCH 148/149] Test against a local ssl server
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ tests/certinfo_test.py |   26 +++++++++++++++++++++-----
+ 1 files changed, 21 insertions(+), 5 deletions(-)
+
+diff --git a/tests/certinfo_test.py b/tests/certinfo_test.py
+index 25c05af..1473d39 100644
+--- a/tests/certinfo_test.py
++++ b/tests/certinfo_test.py
+@@ -6,8 +6,12 @@ import pycurl
+ import unittest
+ import nose.plugins.skip
+ 
++from . import app
++from . import runwsgi
+ from . import util
+ 
++setup_module, teardown_module = runwsgi.app_runner_setup((app.app, 8383, dict(ssl=True)))
++
+ class CertinfoTest(unittest.TestCase):
+     def setUp(self):
+         self.curl = pycurl.Curl()
+@@ -27,11 +31,13 @@ class CertinfoTest(unittest.TestCase):
+         if util.pycurl_version_less_than(7, 19, 1):
+             raise nose.plugins.skip.SkipTest('libcurl < 7.19.1')
+         
+-        self.curl.setopt(pycurl.URL, 'https://github.com/')
++        self.curl.setopt(pycurl.URL, 'https://localhost:8383/success')
+         sio = util.StringIO()
+         self.curl.setopt(pycurl.WRITEFUNCTION, sio.write)
++        # self signed certificate
++        self.curl.setopt(pycurl.SSL_VERIFYPEER, 0)
+         self.curl.perform()
+-        assert 'GitHub' in sio.getvalue()
++        assert sio.getvalue() == 'success'
+         
+         certinfo = self.curl.getinfo(pycurl.INFO_CERTINFO)
+         self.assertEqual([], certinfo)
+@@ -41,12 +47,22 @@ class CertinfoTest(unittest.TestCase):
+         if util.pycurl_version_less_than(7, 19, 1):
+             raise nose.plugins.skip.SkipTest('libcurl < 7.19.1')
+         
+-        self.curl.setopt(pycurl.URL, 'https://github.com/')
++        self.curl.setopt(pycurl.URL, 'https://localhost:8383/success')
+         sio = util.StringIO()
+         self.curl.setopt(pycurl.WRITEFUNCTION, sio.write)
+         self.curl.setopt(pycurl.OPT_CERTINFO, 1)
++        # self signed certificate
++        self.curl.setopt(pycurl.SSL_VERIFYPEER, 0)
+         self.curl.perform()
+-        assert 'GitHub' in sio.getvalue()
++        assert sio.getvalue() == 'success'
+         
+         certinfo = self.curl.getinfo(pycurl.INFO_CERTINFO)
+-        assert len(certinfo) > 0
++        # self signed certificate, one certificate in chain
++        assert len(certinfo) == 1
++        certinfo = certinfo[0]
++        # convert to a dictionary
++        certinfo_dict = {}
++        for entry in certinfo:
++            certinfo_dict[entry[0]] = entry[1]
++        assert 'Subject' in certinfo_dict
++        assert 'pycurl test suite' in certinfo_dict['Subject']
+-- 
+1.7.1
+
+
+From bb2b2e6f5a7dd7a343e2c1207ca152dbeb4cf14b Mon Sep 17 00:00:00 2001
+From: Romulo A. Ceccon <romuloceccon@gmail.com>
+Date: Fri, 26 Jul 2013 10:23:26 -0300
+Subject: [PATCH 149/149] Added documentation for dependency on CherryPy
+
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ README.rst           |    3 ++-
+ requirements-dev.txt |    1 +
+ 2 files changed, 3 insertions(+), 1 deletions(-)
+
+diff --git a/README.rst b/README.rst
+index b416b97..e0641d0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -56,7 +56,7 @@ PycURL comes with an automated test suite. To run the tests, execute::
+ 
+     make test
+ 
+-The suite depends on packages `nose`_ and `bottle`_.
++The suite depends on packages `nose`_, `bottle`_ and `cherrypy`_.
+ 
+ Some tests use vsftpd configured to accept anonymous uploads. These tests
+ are not run by default. As configured, vsftpd will allow reads and writes to
+@@ -71,6 +71,7 @@ vsftpd tests you must explicitly set PYCURL_VSFTPD_PATH variable like so::
+ 
+ .. _nose: https://nose.readthedocs.org/
+ .. _bottle: http://bottlepy.org/
++.. _cherrypy: http://www.cherrypy.org/
+ 
+ Contribute
+ ----------
+diff --git a/requirements-dev.txt b/requirements-dev.txt
+index 36b0b24..ea11ac9 100644
+--- a/requirements-dev.txt
++++ b/requirements-dev.txt
+@@ -1,2 +1,3 @@
+ bottle
+ nose
++cherrypy
 -- 
 1.7.1
 

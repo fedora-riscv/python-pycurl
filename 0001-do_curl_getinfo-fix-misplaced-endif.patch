@@ -1,0 +1,26 @@
+From dc431c729b9639485a45dbd91e020c5c95508c90 Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Thu, 8 Aug 2013 12:51:48 +0200
+Subject: [PATCH 1/2] do_curl_getinfo: fix misplaced #endif
+
+---
+ src/pycurl.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index c8b8402..87dac7e 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -2481,8 +2481,8 @@ do_curl_getinfo(CurlObject *self, PyObject *args)
+                 return convert_certinfo(clist);
+             }
+         }
+-    }
+ #endif
++    }
+ 
+     /* Got wrong option on the method call */
+     PyErr_SetString(PyExc_ValueError, "invalid argument to getinfo");
+-- 
+1.7.1
+

@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        17.20120408git9b8f4e38%{?dist}
+Release:        18.20130315git8d654296%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -10,18 +10,19 @@ License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 
-# sync with upstream's 9b8f4e38
-Patch0:         0000-pycurl-7.19.7-9b8f4e38.patch
+# sync with upstream's 8d654296
+Patch0:         0000-pycurl-7.19.7-8d654296.patch
 
-# bz #920589 - add the GLOBAL_ACK_EINTR constant to the list of exported symbols
-Patch1:         0001-add-the-GLOBAL_ACK_EINTR-constant-to-the-list-of-exp.patch
-Patch2:         0002-tests-global_init_ack_eintr.py-test-GLOBAL_ACK_EINTR.patch
+# get the test-suite running
+Patch1:         0001-do_curl_getinfo-fix-misplaced-endif.patch
+Patch2:         0002-runwsgi.py-start-the-server-explicitly-at-127.0.0.1.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
 BuildRequires:  curl-devel >= 7.19.0
 BuildRequires:  openssl-devel
 BuildRequires:  python-bottle
+BuildRequires:  python-cherrypy
 BuildRequires:  python-nose
 BuildRequires:  vsftpd
 
@@ -56,6 +57,9 @@ find -type f | xargs sed -i 's/\$Id: [^$]*\$/$Id$/'
 %patch1 -p1
 %patch2 -p1
 
+# remove a test specific to OpenSSL-powered libcurl
+rm -f tests/certinfo_test.py
+
 # temporarily disable intermittently failing test-case
 rm -f tests/multi_socket_select_test.py
 
@@ -75,6 +79,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Thu Aug 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-18.20130315git8d654296
+- sync with upstream 8d654296
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.0-17.20120408git9b8f4e38
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
