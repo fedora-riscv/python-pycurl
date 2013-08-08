@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0
-Release:        19.20130315git8d654296%{?dist}
+Release:        18.20130315git8d654296%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -17,12 +17,8 @@ Patch0:         0000-pycurl-7.19.7-8d654296.patch
 Patch1:         0001-do_curl_getinfo-fix-misplaced-endif.patch
 Patch2:         0002-runwsgi.py-start-the-server-explicitly-at-127.0.0.1.patch
 
-# for Python3 compatibility
-Patch3:         0003-python3-use-Py_TYPE-obj-instead-of-obj-ob_type.patch
-
 Requires:       keyutils-libs
 BuildRequires:  python-devel
-BuildRequires:  python3-devel
 BuildRequires:  curl-devel >= 7.19.0
 BuildRequires:  openssl-devel
 BuildRequires:  python-bottle
@@ -48,15 +44,6 @@ objects identified by a URL from a Python program, similar to the
 urllib Python module. PycURL is mature, very fast, and supports a lot
 of features.
 
-%package -n python3-pycurl
-Summary:        A Python interface to libcurl for Python 3
-
-%description -n python3-pycurl
-PycURL is a Python interface to libcurl. PycURL can be used to fetch
-objects identified by a URL from a Python program, similar to the
-urllib Python module. PycURL is mature, very fast, and supports a lot
-of features.
-
 %prep
 %setup0 -q -n pycurl-%{version}
 
@@ -69,7 +56,6 @@ find -type f | xargs sed -i 's/\$Id: [^$]*\$/$Id$/'
 # patches not yet upstream
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 # remove a test specific to OpenSSL-powered libcurl
 rm -f tests/certinfo_test.py
@@ -77,43 +63,22 @@ rm -f tests/certinfo_test.py
 # temporarily disable intermittently failing test-case
 rm -f tests/multi_socket_select_test.py
 
-# copy the whole directory for the python3 build
-cp -a . %{py3dir}
-
 %build
-export CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL"
-%{__python} setup.py build
-pushd %{py3dir}
-%{__python3} setup.py build
-popd
+CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
 
 %check
 export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
 make test PYTHON=%{__python}
-pushd %{py3dir}
-export PYTHONPATH=$RPM_BUILD_ROOT%{python3_sitearch}
-make test PYTHON=%{__python3}
-popd
 
 %install
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
-pushd %{py3dir}
-%{__python3} setup.py install -O1 --skip-build --root %{buildroot}
-popd
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %files
 %doc COPYING COPYING2 ChangeLog README.rst TODO examples doc tests
 %{python_sitearch}/*
 
-%files -n python3-pycurl
-%doc COPYING COPYING2 ChangeLog README.rst TODO examples doc tests
-%{python3_sitearch}/*
-
 %changelog
-* Thu Aug 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-19.20130315git8d654296
-- add python3 subpackage (#985288)
-
 * Thu Aug 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-18.20130315git8d654296
 - sync with upstream 8d654296
 
