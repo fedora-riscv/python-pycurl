@@ -1,21 +1,14 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.0
-Release:        18.20130315git8d654296%{?dist}
+Version:        7.19.3
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
-
-# sync with upstream's 8d654296
-Patch0:         0000-pycurl-7.19.7-8d654296.patch
-
-# get the test-suite running
-Patch1:         0001-do_curl_getinfo-fix-misplaced-endif.patch
-Patch2:         0002-runwsgi.py-start-the-server-explicitly-at-127.0.0.1.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -47,24 +40,8 @@ of features.
 %prep
 %setup0 -q -n pycurl-%{version}
 
-# drop CVS stuff that would prevent git patches from being applied
-find -type f | xargs sed -i 's/\$Id: [^$]*\$/$Id$/'
-
-# upstream patches
-%patch0 -p1
-
-# patches not yet upstream
-%patch1 -p1
-%patch2 -p1
-
-# remove a test specific to OpenSSL-powered libcurl
-rm -f tests/certinfo_test.py
-
-# temporarily disable intermittently failing test-case
-rm -f tests/multi_socket_select_test.py
-
 %build
-CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
+CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build --with-nss
 
 %check
 export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
@@ -75,10 +52,13 @@ make test PYTHON=%{__python}
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %files
-%doc COPYING COPYING2 ChangeLog README.rst TODO examples doc tests
+%doc COPYING-LGPL COPYING-MIT ChangeLog README.rst examples doc tests
 %{python_sitearch}/*
 
 %changelog
+* Tue Jan 21 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.3-1
+- update to 7.19.3
+
 * Thu Aug 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-18.20130315git8d654296
 - sync with upstream 8d654296
 
