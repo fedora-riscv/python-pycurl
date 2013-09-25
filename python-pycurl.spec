@@ -1,21 +1,14 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.0
-Release:        18.20130315git8d654296%{?dist}
+Version:        7.19.0.1
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
-
-# sync with upstream's 8d654296
-Patch0:         0000-pycurl-7.19.7-8d654296.patch
-
-# get the test-suite running
-Patch1:         0001-do_curl_getinfo-fix-misplaced-endif.patch
-Patch2:         0002-runwsgi.py-start-the-server-explicitly-at-127.0.0.1.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -47,16 +40,6 @@ of features.
 %prep
 %setup0 -q -n pycurl-%{version}
 
-# drop CVS stuff that would prevent git patches from being applied
-find -type f | xargs sed -i 's/\$Id: [^$]*\$/$Id$/'
-
-# upstream patches
-%patch0 -p1
-
-# patches not yet upstream
-%patch1 -p1
-%patch2 -p1
-
 # remove a test specific to OpenSSL-powered libcurl
 rm -f tests/certinfo_test.py
 
@@ -79,6 +62,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Wed Sep 25 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.1-1
+- update to 7.19.0.1
+
 * Thu Aug 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0-18.20130315git8d654296
 - sync with upstream 8d654296
 
