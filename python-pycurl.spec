@@ -1,7 +1,7 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.0.1
+Version:        7.19.0.2
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
@@ -62,6 +62,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Tue Oct 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1
+- update to 7.19.0.2
+
 * Wed Sep 25 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.1-1
 - update to 7.19.0.1
 
