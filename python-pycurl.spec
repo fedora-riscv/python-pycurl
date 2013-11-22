@@ -9,6 +9,7 @@ Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
+Patch0:         pycurl-7.19.0.2-pyton3.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -39,6 +40,7 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
+%patch0 -p1
 
 # remove a test specific to OpenSSL-powered libcurl
 rm -f tests/certinfo_test.py
