@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.0.2
-Release:        1.1%{?dist}
+Release:        1.2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -71,6 +71,10 @@ popd
 %check
 export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
 make test PYTHON=%{__python}
+pushd %{py3dir}
+export PYTHONPATH=$RPM_BUILD_ROOT%{python3_sitearch}
+make test PYTHON=%{__python3} NOSETESTS="nosetests-3.3 -v"
+popd
 
 %install
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
@@ -88,6 +92,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Mon Dec 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1.2
+- update the python3 patch to the latest upstream version
+
 * Fri Nov 22 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1.1
 - add python3 subpackage (#1014583)
 
