@@ -19,6 +19,7 @@ BuildRequires:  openssl-devel
 BuildRequires:  python-bottle
 BuildRequires:  python-cherrypy
 BuildRequires:  python-nose
+BuildRequires:  python3-nose
 BuildRequires:  vsftpd
 
 # During its initialization, PycURL checks that the actual libcurl version
