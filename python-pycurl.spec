@@ -19,6 +19,8 @@ BuildRequires:  openssl-devel
 BuildRequires:  python-bottle
 BuildRequires:  python-cherrypy
 BuildRequires:  python-nose
+BuildRequires:  python3-bottle
+BuildRequires:  python3-cherrypy
 BuildRequires:  python3-nose
 BuildRequires:  vsftpd
 
