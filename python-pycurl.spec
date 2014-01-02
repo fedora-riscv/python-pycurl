@@ -1,7 +1,7 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.0.2
+Version:        7.19.0.3
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
@@ -9,6 +9,7 @@ Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
+Patch1:         0001-pycurl-7.19.0.3-verbose-output.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -39,6 +40,7 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
+%patch1 -p1
 
 # remove a test specific to OpenSSL-powered libcurl
 rm -f tests/certinfo_test.py
@@ -47,7 +49,7 @@ rm -f tests/certinfo_test.py
 rm -f tests/multi_socket_select_test.py
 
 %build
-CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL" %{__python} setup.py build
+CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_NSS" %{__python} setup.py build
 
 %check
 export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
@@ -62,6 +64,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python_sitearch}/*
 
 %changelog
+* Thu Jan 02 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.0.3-1
+- update to 7.19.0.3
+
 * Tue Oct 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1
 - update to 7.19.0.2
 
