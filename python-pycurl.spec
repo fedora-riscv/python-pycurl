@@ -1,7 +1,7 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.0.2
+Version:        7.19.0.3
 Release:        1.2%{?dist}
 Summary:        A Python interface to libcurl
 
@@ -9,7 +9,7 @@ Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
-Patch0:         pycurl-7.19.0.2-pyton3.patch
+Patch0:         pycurl-7.19.0.3-pyton3.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -65,10 +65,10 @@ rm -f tests/multi_socket_select_test.py
 cp -a . %{py3dir}
 
 %build
-export CFLAGS="$RPM_OPT_FLAGS -DHAVE_CURL_OPENSSL"
-%{__python} setup.py build
+export CFLAGS="$RPM_OPT_FLAGS"
+%{__python} setup.py build --with-nss
 pushd %{py3dir}
-%{__python3} setup.py build
+%{__python3} setup.py build --with-nss
 popd
 
 %check
@@ -95,11 +95,11 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
-* Mon Dec 09 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1.2
-- update the python3 patch to the latest upstream version
-
-* Fri Nov 22 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1.1
+* Fri Jan 03 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.0.3-1.1
 - add python3 subpackage (#1014583)
+
+* Thu Jan 02 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.0.3-1
+- update to 7.19.0.3
 
 * Tue Oct 08 2013 Kamil Dudka <kdudka@redhat.com> - 7.19.0.2-1
 - update to 7.19.0.2
