@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.3.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -74,7 +74,7 @@ export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
 make test PYTHON=%{__python}
 pushd %{py3dir}
 export PYTHONPATH=$RPM_BUILD_ROOT%{python3_sitearch}
-make test PYTHON=%{__python3} NOSETESTS="nosetests-3.3 -v"
+make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v"
 popd
 
 %install
@@ -94,6 +94,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Mon May 19 2014 Bohuslav Kabrda <bkabrda@redhat.com> - 7.19.3.1-2
+- Rebuilt for https://fedoraproject.org/wiki/Changes/Python_3.4
+
 * Thu Feb 06 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.3.1-1
 - update to 7.19.3.1
 
