@@ -1,8 +1,9 @@
+%{!?py3dir: %global py3dir %{_builddir}/python3-%{name}-%{version}-%{release}}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.3.1
-Release:        3%{?dist}
+Version:        7.19.5
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -94,6 +95,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Mon Jul 14 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.5-1
+- update to 7.19.5
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.3.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
