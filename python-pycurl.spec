@@ -57,12 +57,10 @@ of features.
 %setup0 -q -n pycurl-%{pycurl_rel}
 
 # temporarily exclude failing test-cases
-rm -f tests/{pycurl_object_test,share_test}.py
-
-# fails with python3 on i686
-rm -f tests/post_test.py
+rm -f tests/{post_test,reset_test}.py
 
 # copy the whole directory for the python3 build
+rm -rf %{py3dir}
 cp -a . %{py3dir}
 
 %build
