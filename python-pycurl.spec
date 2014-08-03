@@ -2,7 +2,7 @@
 
 Name:           python-pycurl
 Version:        7.19.3.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -85,15 +85,22 @@ popd
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %files
-%doc COPYING-LGPL COPYING-MIT ChangeLog README.rst examples doc tests
+%{!?_licensedir:%global license %%doc}
+%license COPYING-LGPL COPYING-MIT
+%doc ChangeLog README.rst examples doc tests
 %{python_sitearch}/*
 
 %files -n python3-pycurl
 # TODO: find the lost COPYING file
-%doc COPYING-LGPL COPYING-MIT ChangeLog README.rst examples doc tests
+%{!?_licensedir:%global license %%doc}
+%license COPYING-LGPL COPYING-MIT
+%doc ChangeLog README.rst examples doc tests
 %{python3_sitearch}/*
 
 %changelog
+* Sun Aug  3 2014 Tom Callaway <spot@fedoraproject.org> - 7.19.3.1-4
+- fix license handling 
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.3.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
