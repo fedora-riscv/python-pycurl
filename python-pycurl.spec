@@ -5,7 +5,7 @@
 
 Name:           python-pycurl
 Version:        7.19.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -88,15 +88,22 @@ popd
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %files
-%doc COPYING-LGPL COPYING-MIT ChangeLog README.rst examples doc tests
+%{!?_licensedir:%global license %%doc}
+%license COPYING-LGPL COPYING-MIT
+%doc ChangeLog README.rst examples doc tests
 %{python_sitearch}/*
 
 %files -n python3-pycurl
 # TODO: find the lost COPYING file
-%doc COPYING-LGPL COPYING-MIT ChangeLog README.rst examples doc tests
+%{!?_licensedir:%global license %%doc}
+%license COPYING-LGPL COPYING-MIT
+%doc ChangeLog README.rst examples doc tests
 %{python3_sitearch}/*
 
 %changelog
+* Sun Aug  3 2014 Tom Callaway <spot@fedoraproject.org> - 7.19.5-2
+- fix license handling
+
 * Mon Jul 14 2014 Kamil Dudka <kdudka@redhat.com> - 7.19.5-1
 - update to 7.19.5
 
