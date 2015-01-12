@@ -1,8 +1,6 @@
 %{!?py3dir: %global py3dir %{_builddir}/python3-%{name}-%{version}-%{release}}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
-%global pycurl_rel REL_7_19_5
-
 Name:           python-pycurl
 Version:        7.19.5
 Release:        3%{?dist}
@@ -11,7 +9,7 @@ Summary:        A Python interface to libcurl
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
-Source0:        https://github.com/pycurl/pycurl/archive/%{pycurl_rel}.tar.gz
+Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -54,7 +52,7 @@ urllib Python module. PycURL is mature, very fast, and supports a lot
 of features.
 
 %prep
-%setup0 -q -n pycurl-%{pycurl_rel}
+%setup0 -q -n pycurl-%{version}
 
 # temporarily exclude failing test-cases
 rm -f tests/{post_test,reset_test}.py
@@ -65,10 +63,8 @@ cp -a . %{py3dir}
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS"
-%{__python} setup.py docstrings
 %{__python} setup.py build --with-nss
 pushd %{py3dir}
-%{__python3} setup.py docstrings
 %{__python3} setup.py build --with-nss
 popd
 
