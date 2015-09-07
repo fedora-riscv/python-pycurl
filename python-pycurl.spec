@@ -2,13 +2,16 @@
 
 Name:           python-pycurl
 Version:        7.19.3.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
+
+# introduce CURL_SSLVERSION_TLSv1_[0-2] (#1260408)
+Patch1:         pycurl-7.19.5.1-tls12.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -52,6 +55,7 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
+%patch1 -p1
 
 # temporarily exclude failing test-cases
 rm -f tests/{pycurl_object_test,share_test}.py
@@ -98,6 +102,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Mon Sep 07 2015 Kamil Dudka <kdudka@redhat.com> - 7.19.3.1-6
+- introduce CURL_SSLVERSION_TLSv1_[0-2] (#1260408)
+
 * Sun Aug 17 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.3.1-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 

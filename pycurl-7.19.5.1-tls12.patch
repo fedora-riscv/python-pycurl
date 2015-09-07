@@ -1,0 +1,59 @@
+From 9bd5591fda8cc72ca712cd5098afe524be55b4f4 Mon Sep 17 00:00:00 2001
+From: Oleg Pudeyev <oleg@bsdpower.com>
+Date: Tue, 19 May 2015 11:41:27 -0400
+Subject: [PATCH] Add libcurl 7.34.0 sslversion options
+
+Upstream-commit: 83ccaa22e824b1bd9d2c60cab10dff323c7d0ca4
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/pycurl.c                   |  7 ++++++-
+ tests/option_constants_test.py | 16 ++++++++++++++++
+ 2 files changed, 22 insertions(+), 1 deletion(-)
+
+diff --git a/src/pycurl.c b/src/pycurl.c
+index 5f6afaa..0ddcfb8 100644
+--- a/src/pycurl.c
++++ b/src/pycurl.c
+@@ -4873,9 +4873,14 @@ initpycurl(void)
+ 
+     /* constants for setopt(SSLVERSION, x) */
+     insint_c(d, "SSLVERSION_DEFAULT", CURL_SSLVERSION_DEFAULT);
+-    insint_c(d, "SSLVERSION_TLSv1", CURL_SSLVERSION_TLSv1);
+     insint_c(d, "SSLVERSION_SSLv2", CURL_SSLVERSION_SSLv2);
+     insint_c(d, "SSLVERSION_SSLv3", CURL_SSLVERSION_SSLv3);
++    insint_c(d, "SSLVERSION_TLSv1", CURL_SSLVERSION_TLSv1);
++#if LIBCURL_VERSION_NUM >= 0x072200 /* check for 7.34.0 or greater */
++    insint_c(d, "SSLVERSION_TLSv1_0", CURL_SSLVERSION_TLSv1_0);
++    insint_c(d, "SSLVERSION_TLSv1_1", CURL_SSLVERSION_TLSv1_1);
++    insint_c(d, "SSLVERSION_TLSv1_2", CURL_SSLVERSION_TLSv1_2);
++#endif
+ 
+     /* curl_TimeCond: constants for setopt(TIMECONDITION, x) */
+     insint_c(d, "TIMECONDITION_NONE", CURL_TIMECOND_NONE);
+diff --git a/tests/option_constants_test.py b/tests/option_constants_test.py
+index 878d1b3..cf615ee 100644
+--- a/tests/option_constants_test.py
++++ b/tests/option_constants_test.py
+@@ -74,3 +74,19 @@ class OptionConstantsTest(unittest.TestCase):
+         curl = pycurl.Curl()
+         curl.setopt(curl.NOPROXY, 'localhost')
+         curl.close()
++    
++    def test_sslversion_options(self):
++        curl = pycurl.Curl()
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_DEFAULT)
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_SSLv2)
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_SSLv3)
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_TLSv1)
++        curl.close()
++    
++    @util.min_libcurl(7, 34, 0)
++    def test_sslversion_7_34_0(self):
++        curl = pycurl.Curl()
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_TLSv1_0)
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_TLSv1_1)
++        curl.setopt(curl.SSLVERSION, curl.SSLVERSION_TLSv1_2)
++        curl.close()
+-- 
+2.4.6
+
