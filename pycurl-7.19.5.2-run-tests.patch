@@ -1,0 +1,41 @@
+From ece0018e96b92a7eedd1fcea62212ec36ffb5d37 Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Mon, 2 Nov 2015 16:29:16 +0100
+Subject: [PATCH] tests/run.sh: allow to override $PYTHON and $NOSETESTS
+
+... needed for building Fedora packages where both Python 2 and Python 3
+modules need to be built on the same system.
+---
+ tests/run.sh | 11 +++++++----
+ 1 file changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/tests/run.sh b/tests/run.sh
+index 7bb9cd0..ca8138a 100755
+--- a/tests/run.sh
++++ b/tests/run.sh
+@@ -3,8 +3,11 @@
+ set -e
+ set -x
+ 
++test -n "$PYTHON" || PYTHON=python
++test -n "$NOSETESTS" || NOSETESTS=nosetests
++
+ mkdir -p tests/tmp
+-export PYTHONSUFFIX=$(python -V 2>&1 |awk '{print $2}' |awk -F. '{print $1 "." $2}')
++export PYTHONSUFFIX=$($PYTHON -V 2>&1 |awk '{print $2}' |awk -F. '{print $1 "." $2}')
+ export PYTHONPATH=$(ls -d build/lib.*$PYTHONSUFFIX):$PYTHONPATH
+ 
+ extra_attrs=
+@@ -16,6 +19,6 @@ if test "$CI" = true; then
+   fi
+ fi
+ 
+-python -c 'import pycurl; print(pycurl.version)'
+-nosetests -a \!standalone"$extra_attrs" --with-flaky "$@"
+-nosetests -a standalone --with-flaky "$@"
++$PYTHON -c 'import pycurl; print(pycurl.version)'
++$NOSETESTS -a \!standalone"$extra_attrs" "$@"
++$NOSETESTS -a standalone "$@"
+-- 
+2.5.2
+
