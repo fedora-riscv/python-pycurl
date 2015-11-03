@@ -2,7 +2,7 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.19.5.2
+Version:        7.19.5.3
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
@@ -10,9 +10,6 @@ Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://github.com/pycurl/downloads/raw/master/pycurl-%{version}.tar.gz
-
-# make tests work: http://curl.haxx.se/mail/curlpython-2015-11/0003.html
-Patch1:         pycurl-7.19.5.2-run-tests.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -58,13 +55,13 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
-%patch1 -p1
 
 # temporarily exclude failing test-cases
 rm -f tests/{post_test,reset_test}.py
 
 # remove tests depending on the 'flaky' nose plug-in (not available in Fedora)
 grep '^import flaky' -r tests | cut -d: -f1 | xargs rm -fv
+sed -e 's/ --with-flaky//' -i tests/run.sh
 
 # copy the whole directory for the python3 build
 rm -rf %{py3dir}
@@ -106,6 +103,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Tue Nov 03 2015 Kamil Dudka <kdudka@redhat.com> - 7.19.5.3-1
+- update to 7.19.5.3
+
 * Mon Nov 02 2015 Kamil Dudka <kdudka@redhat.com> - 7.19.5.2-1
 - update to 7.19.5.2
 
