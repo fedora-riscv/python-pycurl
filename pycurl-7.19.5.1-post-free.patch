@@ -1,0 +1,50 @@
+From 823eff2f691d028339d67a4e8e5bf2be12f7c183 Mon Sep 17 00:00:00 2001
+From: Clint Clayton <clintclayton@me.com>
+Date: Thu, 8 Oct 2015 01:30:36 -0700
+Subject: [PATCH] Fix use after free in Curl object's HTTPPOST setopt with
+ unicode FORM_BUFFERPTR.
+
+Fixes use after free in the Curl object's HTTPPOST setopt when a unicode value
+is passed as a value with a FORM_BUFFERPTR. The str object created from
+the passed in unicode object would have its buffer used but the unicode object
+would be stored instead of the str object.
+
+Upstream-commit: 2a743674dcf152beaaf6adaddb1ef51b18d1fffe
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/easy.c | 12 ++++++++++--
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+
+diff --git a/src/easy.c b/src/easy.c
+index e521de4..891c62b 100644
+--- a/src/easy.c
++++ b/src/easy.c
+@@ -1581,7 +1581,7 @@ do_curl_setopt(CurlObject *self, PyObject *args)
+                             ++k;
+                         }
+                         else if (val == CURLFORM_BUFFERPTR) {
+-                            PyObject *obj = PyTuple_GET_ITEM(t, j+1);
++                            PyObject *obj = NULL;
+ 
+                             ref_params = PyList_New((Py_ssize_t)0);
+                             if (ref_params == NULL) {
+@@ -1590,7 +1590,15 @@ do_curl_setopt(CurlObject *self, PyObject *args)
+                                 curl_formfree(post);
+                                 return NULL;
+                             }
+-                            
++
++                            /* Keep a reference to the object that holds the ostr buffer. */
++                            if (oencoded_obj == NULL) {
++                                obj = PyTuple_GET_ITEM(t, j+1);
++                            }
++                            else {
++                                obj = oencoded_obj;
++                            }
++
+                             /* Ensure that the buffer remains alive until curl_easy_cleanup() */
+                             if (PyList_Append(ref_params, obj) != 0) {
+                                 PyText_EncodedDecref(oencoded_obj);
+-- 
+2.5.2
+
