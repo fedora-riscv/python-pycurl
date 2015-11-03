@@ -3,7 +3,7 @@
 
 Name:           python-pycurl
 Version:        7.19.5.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -13,6 +13,9 @@ Source0:        http://pycurl.sourceforge.net/download/pycurl-%{version}.tar.gz
 
 # introduce CURL_SSLVERSION_TLSv1_[0-2] (#1260408)
 Patch1:         pycurl-7.19.5.1-tls12.patch
+
+# fix a use after free issue with unicode FORM_BUFFERPTR (#1277488)
+Patch2:         pycurl-7.19.5.1-post-free.patch
 
 Requires:       keyutils-libs
 BuildRequires:  python-devel
@@ -57,6 +60,7 @@ of features.
 %prep
 %setup0 -q -n pycurl-%{version}
 %patch1 -p1
+%patch2 -p1
 
 # temporarily exclude failing test-cases
 rm -f tests/{post_test,reset_test}.py
@@ -101,6 +105,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Tue Nov 03 2015 Kamil Dudka <kdudka@redhat.com> - 7.19.5.1-3
+- fix a use after free issue with unicode FORM_BUFFERPTR (#1277488)
+
 * Mon Sep 07 2015 Kamil Dudka <kdudka@redhat.com> - 7.19.5.1-2
 - introduce CURL_SSLVERSION_TLSv1_[0-2] (#1260408)
 
