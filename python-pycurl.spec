@@ -3,7 +3,7 @@
 
 Name:           python-pycurl
 Version:        7.19.5.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -103,6 +103,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.5.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
+
 * Tue Nov 03 2015 Kamil Dudka <kdudka@redhat.com> - 7.19.5.3-1
 - update to 7.19.5.3
 
