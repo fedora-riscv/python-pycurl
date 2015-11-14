@@ -3,7 +3,7 @@
 
 Name:           python-pycurl
 Version:        7.19.5.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -18,10 +18,8 @@ BuildRequires:  curl-devel >= 7.19.0
 BuildRequires:  openssl-devel
 BuildRequires:  pyflakes
 BuildRequires:  python-bottle
-BuildRequires:  python-cherrypy
 BuildRequires:  python-nose
 BuildRequires:  python3-bottle
-BuildRequires:  python3-cherrypy
 BuildRequires:  python3-nose
 BuildRequires:  python3-pyflakes
 BuildRequires:  vsftpd
@@ -103,6 +101,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Sat Nov 14 2015 Toshio Kuratomi <toshio@fedoraproject.org> - - 7.19.5.3-3
+- Remove build dependency on cherrypy as it's no longer needed for testing
+
 * Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.19.5.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
 
