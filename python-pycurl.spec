@@ -57,8 +57,8 @@ of features.
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
 
-# temporarily exclude failing test-cases
-rm -f tests/{post_test,reset_test}.py
+# remove a test-case that relies on sftp://web.sourceforge.net being available
+rm -f tests/ssh_key_cb_test.py
 
 # remove tests depending on the 'flaky' nose plug-in (not available in Fedora)
 grep '^import flaky' -r tests | cut -d: -f1 | xargs rm -fv
