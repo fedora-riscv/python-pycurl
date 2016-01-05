@@ -3,7 +3,7 @@
 
 Name:           python-pycurl
 Version:        7.21.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -82,9 +82,11 @@ popd
 %check
 export PYTHONPATH=$RPM_BUILD_ROOT%{python_sitearch}
 make test PYTHON=%{__python}
+rm -fv tests/fake-curl/libcurl/*.so
 pushd %{py3dir}
 export PYTHONPATH=$RPM_BUILD_ROOT%{python3_sitearch}
 make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v"
+rm -fv tests/fake-curl/libcurl/*.so
 popd
 
 %install
@@ -108,6 +110,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Tue Jan 05 2016 Kamil Dudka <kdudka@redhat.com> - 7.21.5-2
+- avoid installing binaries generated in %%check to /usr/share
+
 * Tue Jan 05 2016 Kamil Dudka <kdudka@redhat.com> - 7.21.5-1
 - update to 7.21.5
 
