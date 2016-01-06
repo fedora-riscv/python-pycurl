@@ -3,7 +3,7 @@
 
 Name:           python-pycurl
 Version:        7.21.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -11,7 +11,6 @@ License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://github.com/pycurl/downloads/raw/master/pycurl-%{version}.tar.gz
 
-Requires:       keyutils-libs
 BuildRequires:  python-devel
 BuildRequires:  python3-devel
 BuildRequires:  curl-devel >= 7.21.5
@@ -110,6 +109,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Wed Jan 06 2016 Kamil Dudka <kdudka@redhat.com> - 7.21.5-3
+- remove explicit dependency on keyutils-libs (reported by rpmlint)
+
 * Tue Jan 05 2016 Kamil Dudka <kdudka@redhat.com> - 7.21.5-2
 - avoid installing binaries generated in %%check to /usr/share
 
