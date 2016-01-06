@@ -11,6 +11,9 @@ License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://github.com/pycurl/downloads/raw/master/pycurl-%{version}.tar.gz
 
+# update FSF address in COPYING-LGPL (detected by rpmlint)
+Patch1:         0001-COPYING-LGPL-update-FSF-address.patch
+
 BuildRequires:  python-devel
 BuildRequires:  python3-devel
 BuildRequires:  curl-devel >= 7.21.5
@@ -52,6 +55,7 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
+%patch1 -p1
 
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
@@ -111,6 +115,7 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %changelog
 * Wed Jan 06 2016 Kamil Dudka <kdudka@redhat.com> - 7.21.5-3
 - remove explicit dependency on keyutils-libs (reported by rpmlint)
+- update FSF address in COPYING-LGPL (detected by rpmlint)
 
 * Tue Jan 05 2016 Kamil Dudka <kdudka@redhat.com> - 7.21.5-2
 - avoid installing binaries generated in %%check to /usr/share
