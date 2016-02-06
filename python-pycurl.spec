@@ -2,17 +2,14 @@
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
 Name:           python-pycurl
-Version:        7.21.5
-Release:        4%{?dist}
+Version:        7.43.0
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
-Source0:        https://github.com/pycurl/downloads/raw/master/pycurl-%{version}.tar.gz
-
-# update FSF address in COPYING-LGPL (detected by rpmlint)
-Patch1:         0001-COPYING-LGPL-update-FSF-address.patch
+Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
 
 BuildRequires:  python-devel
 BuildRequires:  python3-devel
@@ -55,7 +52,6 @@ of features.
 
 %prep
 %setup0 -q -n pycurl-%{version}
-%patch1 -p1
 
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
@@ -65,15 +61,15 @@ rm -f tests/ssh_key_cb_test.py
 
 # remove tests depending on the 'flaky' nose plug-in (not available in Fedora)
 grep '^import flaky' -r tests | cut -d: -f1 | xargs rm -fv
-sed -e 's/ --with-flaky//' -i tests/run.sh
+
+# drop options that are not supported by nose in Fedora
+sed -e 's/ --show-skipped//' \
+    -e 's/ --with-flaky//' \
+    -i tests/run.sh
 
 # copy the whole directory for the python3 build
 rm -rf %{py3dir}
 cp -a . %{py3dir}
-
-# temporarily tweak a failing test-case
-sed -e 's/assert isinstance(socket_open_address, bytes)/pass/' \
-    -i %{py3dir}/tests/open_socket_cb_test.py
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS"
@@ -113,6 +109,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Sat Feb 06 2016 Kamil Dudka <kdudka@redhat.com> - 7.43.0-1
+- update to 7.43.0
+
 * Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 7.21.5-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
 
