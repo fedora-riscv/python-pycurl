@@ -3,7 +3,7 @@
 
 Name:           python-pycurl
 Version:        7.43.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 Group:          Development/Languages
@@ -31,7 +31,7 @@ BuildRequires:  vsftpd
 %global libcurl_sed '/^#define LIBCURL_VERSION "/!d;s/"[^"]*$//;s/.*"//;q'
 %global curlver_h /usr/include/curl/curlver.h
 %global libcurl_ver %(sed %{libcurl_sed} %{curlver_h} 2>/dev/null || echo 0)
-Requires:       libcurl >= %{libcurl_ver}
+Requires:       libcurl%{?_isa} >= %{libcurl_ver}
 
 Provides:       pycurl = %{version}-%{release}
 
@@ -109,6 +109,9 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %{python3_sitearch}/*
 
 %changelog
+* Fri Feb 26 2016 Kamil Dudka <kdudka@redhat.com> - 7.43.0-2
+- require libcurl of the same architecture as python-pycurl
+
 * Sat Feb 06 2016 Kamil Dudka <kdudka@redhat.com> - 7.43.0-1
 - update to 7.43.0
 
