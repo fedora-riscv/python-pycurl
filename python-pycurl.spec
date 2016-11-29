@@ -2,7 +2,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -32,7 +32,7 @@ of features.
 Summary:        Python interface to libcurl for Python 2
 %{?python_provide:%python_provide python2-%{modname}}
 BuildRequires:  python2-devel
-BuildRequires:  python-bottle
+BuildRequires:  python2-bottle
 BuildRequires:  python2-nose
 BuildRequires:  python-pyflakes
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
@@ -99,14 +99,14 @@ export PYTHONPATH=%{buildroot}%{python3_sitearch}
 make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v"
 rm -fv tests/fake-curl/libcurl/*.so
 
-%files
+%files -n python2-%{modname}
 %license COPYING-LGPL COPYING-MIT
 %doc ChangeLog README.rst examples doc tests
 %{python2_sitearch}/curl/
 %{python2_sitearch}/%{modname}.so
 %{python2_sitearch}/%{modname}-%{version}-*.egg-info
 
-%files -n python3-pycurl
+%files -n python3-%{modname}
 %license COPYING-LGPL COPYING-MIT
 %doc ChangeLog README.rst examples doc tests
 %{python3_sitearch}/curl/
@@ -114,6 +114,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Tue Nov 29 2016 Charalampos Stratakis <cstratak@redhat.com> - 7.43.0-5
+- Fix python2 subpackage name
+
 * Tue Jul 19 2016 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 7.43.0-4
 - https://fedoraproject.org/wiki/Changes/Automatic_Provides_for_Python_RPM_Packages
 
