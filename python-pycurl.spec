@@ -2,7 +2,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -114,6 +114,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Mon Dec 12 2016 Stratakis Charalampos <cstratak@redhat.com> - 7.43.0-6
+- Rebuild for Python 3.6
+
 * Tue Nov 29 2016 Charalampos Stratakis <cstratak@redhat.com> - 7.43.0-5
 - Fix python2 subpackage name
 
