@@ -1,0 +1,26 @@
+From 39f89cacbe7c6b88e9c79d2a20b396c5bcbe2e2e Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Tue, 18 Apr 2017 17:40:00 +0200
+Subject: [PATCH] tests/option_constants_test.py: disable TLS-SRP test
+
+... because the build of OpenSSL in Fedora does not support it
+---
+ tests/option_constants_test.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/option_constants_test.py b/tests/option_constants_test.py
+index 8f3ce82..0aa648a 100644
+--- a/tests/option_constants_test.py
++++ b/tests/option_constants_test.py
+@@ -421,7 +421,7 @@ class OptionConstantsSettingTest(unittest.TestCase):
+         assert self.curl.PROTO_SMBS is not None
+ 
+     @util.min_libcurl(7, 21, 4)
+-    @util.only_ssl_backends('openssl', 'gnutls')
++    @util.only_ssl_backends('openssl-with-srp', 'gnutls')
+     def test_tlsauth(self):
+         self.curl.setopt(self.curl.TLSAUTH_TYPE, "SRP")
+         self.curl.setopt(self.curl.TLSAUTH_USERNAME, "test")
+-- 
+2.9.3
+
