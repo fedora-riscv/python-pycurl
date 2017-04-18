@@ -2,7 +2,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        7%{?dist}
+Release:        7.1%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -116,6 +116,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Tue Apr 18 2017 Kamil Dudka <kdudka@redhat.com> - 7.43.0-7.1
+- make pycurl compile against libcurl-openssl
+
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
