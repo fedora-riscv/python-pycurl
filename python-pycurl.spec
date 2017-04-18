@@ -9,6 +9,8 @@ License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
 
+Patch1:         0001-python-pycurl-7.43.0-openssl-srp.patch
+
 BuildRequires:  curl-devel >= 7.21.5
 BuildRequires:  openssl-devel
 BuildRequires:  vsftpd
@@ -65,7 +67,7 @@ of features.
 Python 3 version.
 
 %prep
-%autosetup -n %{modname}-%{version}
+%autosetup -n %{modname}-%{version} -p1
 
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
@@ -82,8 +84,8 @@ sed -e 's/ --show-skipped//' \
     -i tests/run.sh
 
 %build
-%py2_build -- --with-nss
-%py3_build -- --with-nss
+%py2_build -- --with-openssl
+%py3_build -- --with-openssl
 
 %install
 %py2_install
