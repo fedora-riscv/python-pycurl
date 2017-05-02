@@ -2,14 +2,17 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
 
-BuildRequires:  curl-devel >= 7.21.5
+# drop link-time vs. run-time TLS backend check (#1446850)
+Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
+
+BuildRequires:  libcurl-devel
 BuildRequires:  openssl-devel
 BuildRequires:  vsftpd
 
@@ -65,7 +68,7 @@ of features.
 Python 3 version.
 
 %prep
-%autosetup -n %{modname}-%{version}
+%autosetup -n %{modname}-%{version} -p1
 
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
@@ -114,6 +117,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Wed May 03 2017 Kamil Dudka <kdudka@redhat.com> - 7.43.0-8
+- drop link-time vs. run-time TLS backend check (#1446850)
+
 * Sat Feb 11 2017 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
