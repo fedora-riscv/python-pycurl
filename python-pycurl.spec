@@ -2,7 +2,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        12%{?dist}
+Release:        13%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -40,7 +40,7 @@ Summary:        Python interface to libcurl for Python 2
 BuildRequires:  python2-devel
 BuildRequires:  python2-bottle
 BuildRequires:  python2-nose
-BuildRequires:  python-pyflakes
+BuildRequires:  python2-pyflakes
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
 
 Provides:       %{modname} = %{version}-%{release}
@@ -120,6 +120,10 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Fri Feb 09 2018 Iryna Shcherbina <ishcherb@redhat.com> - 7.43.0-13
+- Update Python 2 dependency declarations to new packaging standards
+  (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
+
 * Fri Feb 09 2018 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0-12
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
