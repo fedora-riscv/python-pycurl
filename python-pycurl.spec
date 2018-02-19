@@ -2,7 +2,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -15,6 +15,7 @@ Patch1:         0001-python-pycurl-7.43.0-openssl-srp.patch
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
 
+BuildRequires:  gcc
 BuildRequires:  libcurl-devel
 BuildRequires:  openssl-devel
 BuildRequires:  vsftpd
@@ -120,6 +121,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Mon Feb 19 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-14
+- add explicit BR for the gcc compiler
+
 * Fri Feb 09 2018 Iryna Shcherbina <ishcherb@redhat.com> - 7.43.0-13
 - Update Python 2 dependency declarations to new packaging standards
   (See https://fedoraproject.org/wiki/FinalizingFedoraSwitchtoPython3)
