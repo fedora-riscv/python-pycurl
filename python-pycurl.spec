@@ -95,10 +95,6 @@ sed -e 's/ --show-skipped//' \
 rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %check
-export PYTHONPATH=%{buildroot}%{python2_sitearch}
-make test PYTHON=%{__python2} NOSETESTS="nosetests-%{python2_version} -v"
-rm -fv tests/fake-curl/libcurl/*.so
-
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
 make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v"
 rm -fv tests/fake-curl/libcurl/*.so
@@ -119,6 +115,7 @@ rm -fv tests/fake-curl/libcurl/*.so
 
 %changelog
 * Wed Mar 14 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-15
+- run the test-suite for Python 3 only
 - do not disable TLS-SRP test because it is now supported by OpenSSL in Fedora
 
 * Mon Feb 19 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-14
