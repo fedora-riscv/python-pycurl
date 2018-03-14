@@ -2,15 +2,12 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        14%{?dist}
+Release:        15%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
-
-# disable TLS-SRP test because TLS-SRP is not supported by OpenSSL in Fedora
-Patch1:         0001-python-pycurl-7.43.0-openssl-srp.patch
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
@@ -121,6 +118,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Wed Mar 14 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-15
+- do not disable TLS-SRP test because it is now supported by OpenSSL in Fedora
+
 * Mon Feb 19 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-14
 - add explicit BR for the gcc compiler
 
