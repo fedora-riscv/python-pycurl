@@ -2,12 +2,15 @@
 
 Name:           python-%{modname}
 Version:        7.43.0
-Release:        15%{?dist}
+Release:        16%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
+
+# fix build failure caused by NotImplemented exceptions in winbuild.py
+Patch1:         0001-python-pycurl-7.43-winbuild.patch
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
@@ -118,6 +121,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %{python3_sitearch}/%{modname}-%{version}-*.egg-info
 
 %changelog
+* Wed May 23 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-16
+- fix build failure caused by NotImplemented exceptions in winbuild.py
+
 * Wed Mar 14 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-15
 - enable vsftpd-based tests
 - run the test-suite for Python 3 only
