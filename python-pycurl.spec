@@ -15,16 +15,13 @@
 %global modname pycurl
 
 Name:           python-%{modname}
-Version:        7.43.0
-Release:        17%{?dist}
+Version:        7.43.0.2
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
-
-# fix build failure caused by NotImplemented exceptions in winbuild.py
-Patch1:         0001-python-pycurl-7.43-winbuild.patch
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
@@ -118,6 +115,7 @@ sed -e 's/ --show-skipped//' \
 %endif
 
 %install
+export PYCURL_SSL_LIBRARY=openssl
 %if %{with python2}
 %py2_install
 %endif
@@ -129,6 +127,7 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 %if %{with python3}
 %check
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
+export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
 make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v"
 rm -fv tests/fake-curl/libcurl/*.so
@@ -153,6 +152,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Mon Jun 04 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0.2-1
+- update to 7.43.0.2
+
 * Wed May 30 2018 Kamil Dudka <kdudka@redhat.com> - 7.43.0-17
 - make the python2 and python3 subpackages optional
 
