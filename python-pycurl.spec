@@ -1,3 +1,7 @@
+# This package depends on automagic byte compilation
+# https://fedoraproject.org/wiki/Changes/No_more_automagic_Python_bytecompilation_phase_2
+%global _python_bytecompile_extra 1
+
 # python3 is not available on RHEL <= 7
 %if 0%{?fedora} || 0%{?rhel} > 7
 %bcond_without python3
