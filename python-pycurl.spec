@@ -20,12 +20,16 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
+
+# fix programming mistakes detected by static analyzers
+# upstream pull request: https://github.com/pycurl/pycurl/pull/550
+Patch1:         0001-python-pycurl-7.43.0.2-static-analysis.patch
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
@@ -156,6 +160,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Jan 29 2019 Kamil Dudka <kdudka@redhat.com> - 7.43.0.2-4
+- fix programming mistakes detected by static analyzers
+
 * Sat Jul 14 2018 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 

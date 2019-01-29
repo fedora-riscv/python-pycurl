@@ -1,0 +1,93 @@
+From 047bd00ee53a722eaf46e58e330888cf628d5a7c Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Mon, 14 Jan 2019 16:54:19 +0100
+Subject: [PATCH 1/2] do_curl_setopt_httppost: do not use uninitialized stack
+ variable
+
+Detected by Coverity Analysis and Clang:
+
+Error: UNINIT (CWE-457):
+pycurl-7.43.0.2/src/easyopt.c:493: var_decl: Declaring variable "res" without initializer.
+pycurl-7.43.0.2/src/easyopt.c:524: uninit_use_in_call: Using uninitialized value "(int)res" when calling "create_and_set_error_object".
+522|               if (PyText_AsStringAndSize(httppost_option, &cstr, &clen, &cencoded_obj)) {
+523|                   PyText_EncodedDecref(nencoded_obj);
+524|->                 CURLERROR_SET_RETVAL();
+525|                   goto error;
+526|               }
+
+Error: CLANG_WARNING:
+pycurl-7.43.0.2/src/easyopt.c:524:17: warning: 2nd function call argument is an uninitialized value
+pycurl-7.43.0.2/src/pycurl.h:286:5: note: expanded from macro 'CURLERROR_SET_RETVAL'
+pycurl-7.43.0.2/src/easyopt.c:493:5: note: 'res' declared without an initial value
+pycurl-7.43.0.2/src/easyopt.c:496:9: note: Assuming 'len' is not equal to 0
+pycurl-7.43.0.2/src/easyopt.c:496:5: note: Taking false branch
+pycurl-7.43.0.2/src/easyopt.c:499:17: note: Assuming 'i' is < 'len'
+pycurl-7.43.0.2/src/easyopt.c:499:5: note: Loop condition is true.  Entering loop body
+pycurl-7.43.0.2/src/easyopt.c:505:13: note: Assuming 'which_httppost_item' is not equal to 0
+pycurl-7.43.0.2/src/easyopt.c:505:9: note: Taking false branch
+pycurl-7.43.0.2/src/easyopt.c:509:13: note: Assuming the condition is false
+pycurl-7.43.0.2/src/easyopt.c:509:9: note: Taking false branch
+pycurl-7.43.0.2/src/easyopt.c:513:13: note: Assuming the condition is false
+pycurl-7.43.0.2/src/easyopt.c:513:9: note: Taking false branch
+pycurl-7.43.0.2/src/easyopt.c:519:13: note: Assuming the condition is true
+pycurl-7.43.0.2/src/easyopt.c:519:9: note: Taking true branch
+pycurl-7.43.0.2/src/easyopt.c:522:17: note: Assuming the condition is true
+pycurl-7.43.0.2/src/easyopt.c:522:13: note: Taking true branch
+pycurl-7.43.0.2/src/easyopt.c:524:17: note: 2nd function call argument is an uninitialized value
+pycurl-7.43.0.2/src/pycurl.h:286:5: note: expanded from macro 'CURLERROR_SET_RETVAL'
+---
+ src/easyopt.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/easyopt.c b/src/easyopt.c
+index 015fa93..471400c 100644
+--- a/src/easyopt.c
++++ b/src/easyopt.c
+@@ -521,7 +521,7 @@ do_curl_setopt_httppost(CurlObject *self, int option, int which, PyObject *obj)
+ 
+             if (PyText_AsStringAndSize(httppost_option, &cstr, &clen, &cencoded_obj)) {
+                 PyText_EncodedDecref(nencoded_obj);
+-                CURLERROR_SET_RETVAL();
++                create_and_set_error_object(self, CURLE_BAD_FUNCTION_ARGUMENT);
+                 goto error;
+             }
+             /* INFO: curl_formadd() internally does memdup() the data, so
+-- 
+2.17.2
+
+
+From 6f0f7896412c107c390f4967dcdf94fd14d52047 Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Mon, 14 Jan 2019 16:57:14 +0100
+Subject: [PATCH 2/2] do_multi_add_handle: execute clean-up code before return
+
+Detected by Coverity Analysis:
+
+Error: UNREACHABLE (CWE-561):
+pycurl-7.43.0.2/src/multi.c:631: unreachable: This code cannot be reached: "PyDict_DelItem(self->easy_o...".
+629|       if (res != CURLM_OK) {
+630|           CURLERROR_MSG("curl_multi_add_handle() failed due to internal errors");
+631|->         PyDict_DelItem(self->easy_object_dict, (PyObject *) obj);
+632|       }
+633|       obj->multi_stack = self;
+---
+ src/multi.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/multi.c b/src/multi.c
+index 7ecedbf..3407423 100644
+--- a/src/multi.c
++++ b/src/multi.c
+@@ -627,8 +627,8 @@ do_multi_add_handle(CurlMultiObject *self, PyObject *args)
+     assert(obj->multi_stack == NULL);
+     res = curl_multi_add_handle(self->multi_handle, obj->handle);
+     if (res != CURLM_OK) {
+-        CURLERROR_MSG("curl_multi_add_handle() failed due to internal errors");
+         PyDict_DelItem(self->easy_object_dict, (PyObject *) obj);
++        CURLERROR_MSG("curl_multi_add_handle() failed due to internal errors");
+     }
+     obj->multi_stack = self;
+     Py_INCREF(self);
+-- 
+2.17.2
+
