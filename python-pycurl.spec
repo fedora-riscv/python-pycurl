@@ -9,8 +9,8 @@
 %bcond_with python3
 %endif
 
-# python2 is not available on RHEL > 7 and not needed on Fedora > 29
-%if 0%{?rhel} > 7 || 0%{?fedora} > 29
+# python2 is not available on RHEL > 7
+%if 0%{?rhel} > 7
 %bcond_with python2
 %else
 %bcond_without python2
@@ -20,7 +20,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.2
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -160,6 +160,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Sun Feb 03 2019 Kamil Dudka <kdudka@redhat.com> - 7.43.0.2-6
+- reintroduce the python2-pycurl subpackage on Fedora (#1672061)
+
 * Sat Feb 02 2019 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0.2-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
