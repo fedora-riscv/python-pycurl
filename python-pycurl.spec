@@ -20,7 +20,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.2
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -59,9 +59,6 @@ of features.
 Summary:        Python interface to libcurl for Python 2
 %{?python_provide:%python_provide python2-%{modname}}
 BuildRequires:  python2-devel
-BuildRequires:  python2-bottle
-BuildRequires:  python2-nose
-BuildRequires:  python2-pyflakes
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
 
 Provides:       %{modname} = %{version}-%{release}
@@ -160,6 +157,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Sep 24 2019 Miro Hrončok <mhroncok@redhat.com> - 7.43.0.2-9
+- Drop unused Python 2 BuildRequires
+
 * Thu Aug 15 2019 Miro Hrončok <mhroncok@redhat.com> - 7.43.0.2-8
 - Rebuilt for Python 3.8
 
