@@ -9,8 +9,8 @@
 %bcond_with python3
 %endif
 
-# python2 is not available on RHEL > 7
-%if 0%{?rhel} > 7
+# python2 is not available on and f32+ and el8+
+%if 0%{?fedora} > 31 || 0%{?rhel} > 7
 %bcond_with python2
 %else
 %bcond_without python2
@@ -20,7 +20,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.2
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -157,6 +157,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Fri Nov 15 2019 Kamil Dudka <kdudka@redhat.com> - 7.43.0.2-10
+- do not build python2-pycurl on f32+
+
 * Tue Sep 24 2019 Miro Hrončok <mhroncok@redhat.com> - 7.43.0.2-9
 - Drop unused Python 2 BuildRequires
 
