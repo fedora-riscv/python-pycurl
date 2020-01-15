@@ -19,17 +19,13 @@
 %global modname pycurl
 
 Name:           python-%{modname}
-Version:        7.43.0.2
-Release:        10%{?dist}
+Version:        7.43.0.4
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.sourceforge.net/
 Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%{version}.tar.gz
-
-# fix programming mistakes detected by static analyzers
-# upstream pull request: https://github.com/pycurl/pycurl/pull/550
-Patch1:         0001-python-pycurl-7.43.0.2-static-analysis.patch
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
@@ -157,6 +153,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Wed Jan 15 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.4-1
+- update to 7.43.0.4
+
 * Fri Nov 15 2019 Kamil Dudka <kdudka@redhat.com> - 7.43.0.2-10
 - do not build python2-pycurl on f32+
 

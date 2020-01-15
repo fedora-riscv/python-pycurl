@@ -8,8 +8,8 @@ This effectively reverts the following commit:
 
 Bug: https://bugzilla.redhat.com/1446850
 ---
- src/module.c | 20 +-------------------
- 1 file changed, 1 insertion(+), 19 deletions(-)
+ src/module.c | 24 +-----------------------
+ 1 file changed, 1 insertion(+), 23 deletions(-)
 
 diff --git a/src/module.c b/src/module.c
 index a7108a0..af79875 100644
@@ -24,7 +24,7 @@ index a7108a0..af79875 100644
      size_t libcurl_version_len, pycurl_version_len;
      PyObject *xio_module = NULL;
      PyObject *collections_module = NULL;
-@@ -345,24 +345,6 @@ initpycurl(void)
+@@ -345,28 +345,6 @@ initpycurl(void)
          goto error;
      }
  
@@ -34,10 +34,14 @@ index a7108a0..af79875 100644
 -    } else if (!strncmp(vi->ssl_version, "OpenSSL/", 8) || !strncmp(vi->ssl_version, "LibreSSL/", 9) ||
 -               !strncmp(vi->ssl_version, "BoringSSL", 9)) {
 -        runtime_ssl_lib = "openssl";
+-    } else if (!strncmp(vi->ssl_version, "wolfSSL/", 8)) {
+-        runtime_ssl_lib = "wolfssl";
 -    } else if (!strncmp(vi->ssl_version, "GnuTLS/", 7)) {
 -        runtime_ssl_lib = "gnutls";
 -    } else if (!strncmp(vi->ssl_version, "NSS/", 4)) {
 -        runtime_ssl_lib = "nss";
+-    } else if (!strncmp(vi->ssl_version, "mbedTLS/", 8)) {
+-        runtime_ssl_lib = "mbedtls";
 -    } else {
 -        runtime_ssl_lib = "none/other";
 -    }
