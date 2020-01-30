@@ -19,7 +19,7 @@
 %global modname pycurl
 
 Name:           python-%{modname}
-Version:        7.43.0.4
+Version:        7.43.0.5
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
@@ -90,6 +90,10 @@ Python 3 version.
 %prep
 %autosetup -n %{modname}-%{version} -p1
 
+# remove windows-specific build script
+rm -f winbuild.py
+sed -e 's| winbuild.py||' -i Makefile
+
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
 
@@ -153,6 +157,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Thu Jan 30 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.5-1
+- update to 7.43.0.5
+
 * Wed Jan 15 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.4-1
 - update to 7.43.0.4
 
