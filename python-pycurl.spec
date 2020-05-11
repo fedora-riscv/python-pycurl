@@ -75,7 +75,6 @@ Summary:        Python interface to libcurl for Python 3
 BuildRequires:  python3-devel
 BuildRequires:  python3-bottle
 BuildRequires:  python3-nose
-BuildRequires:  python3-pyflakes
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
 
 %description -n python3-%{modname}
@@ -134,7 +133,7 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
 export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
-make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v"
+make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v" PYFLAKES=true
 rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
