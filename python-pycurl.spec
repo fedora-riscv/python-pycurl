@@ -20,7 +20,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -156,6 +156,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Sat May 23 2020 Miro Hrončok <mhroncok@redhat.com> - 7.43.0.5-2
+- Rebuilt for Python 3.9
+
 * Thu Jan 30 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.5-1
 - update to 7.43.0.5
 
