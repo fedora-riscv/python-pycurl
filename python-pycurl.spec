@@ -20,7 +20,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.5
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -75,6 +75,7 @@ Summary:        Python interface to libcurl for Python 3
 BuildRequires:  python3-devel
 BuildRequires:  python3-bottle
 BuildRequires:  python3-nose
+BuildRequires:  python3-setuptools
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
 
 %description -n python3-%{modname}
@@ -156,6 +157,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Jun 23 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.5-3
+- explicitly require python3-setuptools for build
+
 * Sat May 23 2020 Miro Hrončok <mhroncok@redhat.com> - 7.43.0.5-2
 - Rebuilt for Python 3.9
 
