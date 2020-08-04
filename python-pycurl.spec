@@ -16,7 +16,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.5
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -127,6 +127,10 @@ rm -rf %{buildroot}%{_datadir}/doc/pycurl
 
 %if %{with python3}
 %check
+# relax crypto policy for the test-suite to make it pass again (#1863711)
+export OPENSSL_SYSTEM_CIPHERS_OVERRIDE=XXX
+export OPENSSL_CONF=
+
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
 export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
@@ -153,6 +157,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Aug 04 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.5-6
+- relax crypto policy for the test-suite to make it pass again (#1863711)
+
 * Sat Aug 01 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0.5-5
 - Second attempt - Rebuilt for
   https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
