@@ -1,0 +1,56 @@
+From b3a1ff559c28f71702248cae317fa83baaa086a0 Mon Sep 17 00:00:00 2001
+From: Kamil Dudka <kdudka@redhat.com>
+Date: Mon, 26 Oct 2020 17:26:23 +0100
+Subject: [PATCH] src/module.c: make the code compile against python-3.10.0a1
+
+src/module.c:353:25: error: lvalue required as left operand of assignment
+  353 |     Py_TYPE(&Curl_Type) = &PyType_Type;
+      |                         ^
+src/module.c:354:30: error: lvalue required as left operand of assignment
+  354 |     Py_TYPE(&CurlMulti_Type) = &PyType_Type;
+      |                              ^
+src/module.c:355:30: error: lvalue required as left operand of assignment
+  355 |     Py_TYPE(&CurlShare_Type) = &PyType_Type;
+      |                              ^
+
+Bug: https://bugzilla.redhat.com/1890442
+
+Upstream-commit: c4036bdcb5dd01420a451cf02efac7c3fdf9e41f
+Signed-off-by: Kamil Dudka <kdudka@redhat.com>
+---
+ src/module.c | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/src/module.c b/src/module.c
+index 65e8c3a..9204ee0 100644
+--- a/src/module.c
++++ b/src/module.c
+@@ -11,6 +11,12 @@
+ 
+ #define PYCURL_VERSION_PREFIX "PycURL/" PYCURL_VERSION_STRING
+ 
++/* needed for compatibility with python < 3.10, as suggested at:
++ * https://docs.python.org/3.10/whatsnew/3.10.html#id2 */
++#if PY_VERSION_HEX < 0x030900A4
++#  define Py_SET_TYPE(obj, type) ((Py_TYPE(obj) = (type)), (void)0)
++#endif
++
+ PYCURL_INTERNAL char *empty_keywords[] = { NULL };
+ 
+ PYCURL_INTERNAL PyObject *bytesio = NULL;
+@@ -412,9 +418,9 @@ initpycurl(void)
+     p_Curl_Type = &Curl_Type;
+     p_CurlMulti_Type = &CurlMulti_Type;
+     p_CurlShare_Type = &CurlShare_Type;
+-    Py_TYPE(&Curl_Type) = &PyType_Type;
+-    Py_TYPE(&CurlMulti_Type) = &PyType_Type;
+-    Py_TYPE(&CurlShare_Type) = &PyType_Type;
++    Py_SET_TYPE(&Curl_Type, &PyType_Type);
++    Py_SET_TYPE(&CurlMulti_Type, &PyType_Type);
++    Py_SET_TYPE(&CurlShare_Type, &PyType_Type);
+ 
+     /* Create the module and add the functions */
+     if (PyType_Ready(&Curl_Type) < 0)
+-- 
+2.25.4
+
