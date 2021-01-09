@@ -31,10 +31,10 @@ Patch1:         0001-python-pycurl-7.43.0.6-python-3.10.patch
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
 
-BuildRequires: make
 BuildRequires:  gcc
 BuildRequires:  libcurl-devel
 BuildRequires:  openssl-devel
+BuildRequires:  make
 BuildRequires:  vsftpd
 
 # During its initialization, PycURL checks that the actual libcurl version
