@@ -5,18 +5,25 @@
 %bcond_with python3
 %endif
 
-# python2 is not available on and f32+ and el8+
-%if 0%{?fedora} > 31 || 0%{?rhel} > 7
+# python2 is not available on Fedora and el8+
+%if 0%{?fedora} || 0%{?rhel} > 7
 %bcond_with python2
 %else
 %bcond_without python2
+%endif
+
+# test dependencies are not available on el9+
+%if 0%{?fedora}
+%bcond_without tests
+%else
+%bcond_with tests
 %endif
 
 %global modname pycurl
 
 Name:           python-%{modname}
 Version:        7.43.0.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -75,8 +82,13 @@ Python 2 version.
 Summary:        Python interface to libcurl for Python 3
 %{?python_provide:%python_provide python3-%{modname}}
 BuildRequires:  python3-devel
+%if %{with tests}
 BuildRequires:  python3-bottle
 BuildRequires:  python3-nose
+%global nosetests nosetests-%{python3_version} -v
+%else
+%global nosetests true
+%endif
 BuildRequires:  python3-setuptools
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
 
@@ -147,7 +159,7 @@ export OPENSSL_CONF=
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
 export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
-make test PYTHON=%{__python3} NOSETESTS="nosetests-%{python3_version} -v" PYFLAKES=true
+make test PYTHON=%{__python3} NOSETESTS="%{nosetests}" PYFLAKES=true
 rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
@@ -170,6 +182,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Mon Jan 18 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-3
+- make build dependencies for upstream tests optional
+
 * Tue Oct 27 2020 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-2
 - make the code compile against python-3.10.0a1 (#1890442)
 
