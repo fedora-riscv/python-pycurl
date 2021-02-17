@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.6
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -111,6 +111,10 @@ sed -e 's| winbuild.py||' -i Makefile
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
 
+# temporarily remove a failing test-case (#1927655)
+# upstream issue: https://github.com/curl/curl/issues/6615
+rm -f tests/failonerror_test.py
+
 # remove a test-case that relies on sftp://web.sourceforge.net being available
 rm -f tests/ssh_key_cb_test.py
 
@@ -182,6 +186,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Wed Feb 17 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-5
+- temporarily remove a failing test-case (#1927655)
+
 * Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0.6-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
