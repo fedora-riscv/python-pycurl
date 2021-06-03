@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.6
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -37,6 +37,9 @@ Patch1:         0001-python-pycurl-7.43.0.6-python-3.10.patch
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
+
+# skip tests which are incompatible with recent releases of libcurl
+Patch3:         0003-python-pycurl-7.43.0.6-tests.patch
 
 BuildRequires:  gcc
 BuildRequires:  libcurl-devel
@@ -111,10 +114,6 @@ sed -e 's| winbuild.py||' -i Makefile
 # remove binaries packaged by upstream
 rm -f tests/fake-curl/libcurl/*.so
 
-# temporarily remove a failing test-case (#1927655)
-# upstream issue: https://github.com/curl/curl/issues/6615
-rm -f tests/failonerror_test.py
-
 # remove a test-case that relies on sftp://web.sourceforge.net being available
 rm -f tests/ssh_key_cb_test.py
 
@@ -186,6 +185,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Thu Jun 03 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-7
+- skip tests which are incompatible with recent releases of libcurl
+
 * Thu Jun 03 2021 Python Maint <python-maint@redhat.com> - 7.43.0.6-6
 - Rebuilt for Python 3.10
 
