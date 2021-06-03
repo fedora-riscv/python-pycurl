@@ -38,7 +38,7 @@ Patch1:         0001-python-pycurl-7.43.0.6-python-3.10.patch
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
 
-# skip tests which are incompatible with recent releases of libcurl
+# skip tests which are incompatible with recent releases of libcurl (#1965235)
 Patch3:         0003-python-pycurl-7.43.0.6-tests.patch
 
 BuildRequires:  gcc
@@ -189,7 +189,7 @@ rm -fv tests/fake-curl/libcurl/*.so
 - Rebuilt for Python 3.10
 
 * Thu Jun 03 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-7
-- skip tests which are incompatible with recent releases of libcurl
+- skip tests which are incompatible with recent releases of libcurl (#1965235)
 
 * Wed Feb 17 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-5
 - temporarily remove a failing test-case (#1927655)
