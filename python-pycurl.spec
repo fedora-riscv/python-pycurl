@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.6
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -185,11 +185,11 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Thu Jun 03 2021 Python Maint <python-maint@redhat.com> - 7.43.0.6-8
+- Rebuilt for Python 3.10
+
 * Thu Jun 03 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-7
 - skip tests which are incompatible with recent releases of libcurl
-
-* Thu Jun 03 2021 Python Maint <python-maint@redhat.com> - 7.43.0.6-6
-- Rebuilt for Python 3.10
 
 * Wed Feb 17 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-5
 - temporarily remove a failing test-case (#1927655)
