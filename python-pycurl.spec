@@ -23,14 +23,12 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.6
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
-URL:            http://pycurl.sourceforge.net/
-# reported as unavailable: https://github.com/pycurl/pycurl/issues/651
-# Source0:        https://dl.bintray.com/pycurl/pycurl/pycurl-%%{version}.tar.gz
-Source0:        https://github.com/pycurl/pycurl/archive/REL_7_43_0_6.tar.gz#/pycurl-%{version}.tar.gz
+URL:            http://pycurl.io/
+Source0:        https://files.pythonhosted.org/packages/50/1a/35b1d8b8e4e23a234f1b17a8a40299fd550940b16866c9a1f2d47a04b969/pycurl-%{version}.tar.gz
 
 # make the code compile against python-3.10.0a1 (#1890442)
 Patch1:         0001-python-pycurl-7.43.0.6-python-3.10.patch
@@ -105,7 +103,7 @@ Python 3 version.
 %endif
 
 %prep
-%autosetup -n %{modname}-REL_7_43_0_6 -p1
+%autosetup -n %{modname}-%{version} -p1
 
 # remove windows-specific build script
 rm -f winbuild.py
@@ -131,15 +129,13 @@ sed -e 's/ --show-skipped//' \
 # use %%{python3} instead of python to invoke tests, to make them work on f34
 sed -e 's|python |%{python3} |' -i tests/ext/test-suite.sh
 sed -e 's|^#! */usr/bin/env python$|#! /usr/bin/env %{python3}|' \
-    -i tests/*.py tests/bin/* setup.py
+    -i tests/*.py setup.py
 
 %build
 %if %{with python2}
-%{python2} setup.py docstrings
 %py2_build -- --with-openssl
 %endif
 %if %{with python3}
-%{python3} setup.py docstrings
 %py3_build -- --with-openssl
 %endif
 
@@ -185,6 +181,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Jul 20 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-9
+- use release tarball uploaded by upstream
+
 * Thu Jun 03 2021 Python Maint <python-maint@redhat.com> - 7.43.0.6-8
 - Rebuilt for Python 3.10
 
