@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.43.0.6
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -181,6 +181,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0.6-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Tue Jul 20 2021 Kamil Dudka <kdudka@redhat.com> - 7.43.0.6-9
 - use release tarball uploaded by upstream
 
