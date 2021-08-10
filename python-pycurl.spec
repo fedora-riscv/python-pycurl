@@ -22,27 +22,21 @@
 %global modname pycurl
 
 Name:           python-%{modname}
-Version:        7.43.0.6
-Release:        10%{?dist}
+Version:        7.44.0
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.io/
-Source0:        https://files.pythonhosted.org/packages/50/1a/35b1d8b8e4e23a234f1b17a8a40299fd550940b16866c9a1f2d47a04b969/pycurl-%{version}.tar.gz
-
-# make the code compile against python-3.10.0a1 (#1890442)
-Patch1:         0001-python-pycurl-7.43.0.6-python-3.10.patch
+Source0:        https://files.pythonhosted.org/packages/0f/db/856a430445d6cd631a7c97f028e3a9d947f84a1a27c42b5d47245eae920e/pycurl-%{version}.tar.gz
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
 
-# skip tests which are incompatible with recent releases of libcurl (#1965235)
-Patch3:         0003-python-pycurl-7.43.0.6-tests.patch
-
 BuildRequires:  gcc
 BuildRequires:  libcurl-devel
-BuildRequires:  openssl-devel
 BuildRequires:  make
+BuildRequires:  openssl-devel
 BuildRequires:  vsftpd
 
 # During its initialization, PycURL checks that the actual libcurl version
@@ -85,10 +79,10 @@ Summary:        Python interface to libcurl for Python 3
 BuildRequires:  python3-devel
 %if %{with tests}
 BuildRequires:  python3-bottle
-BuildRequires:  python3-nose
-%global nosetests nosetests-%{python3_version} -v
+BuildRequires:  python3-pytest
+%global pytest pytest
 %else
-%global nosetests true
+%global pytest true
 %endif
 BuildRequires:  python3-setuptools
 Requires:       libcurl%{?_isa} >= %{libcurl_ver}
@@ -106,25 +100,26 @@ Python 3 version.
 %autosetup -n %{modname}-%{version} -p1
 
 # remove windows-specific build script
-rm -f winbuild.py
+rm -fv winbuild.py
 sed -e 's| winbuild.py||' -i Makefile
 
 # remove binaries packaged by upstream
-rm -f tests/fake-curl/libcurl/*.so
+rm -fv tests/fake-curl/libcurl/*.so
 
 # remove a test-case that relies on sftp://web.sourceforge.net being available
-rm -f tests/ssh_key_cb_test.py
+rm -fv tests/ssh_key_cb_test.py
 
 # remove a test-case that fails in Koji
-rm -f tests/seek_cb_test.py
+rm -fv tests/seek_cb_test.py
 
-# remove tests depending on the 'flaky' nose plug-in (not available in Fedora)
+# remove test-cases that depend on external network
+rm -fv examples/tests/test_{build_config,xmlrpc}.py
+
+# remove a test-case that depends on pygtk
+rm -fv examples/tests/test_gtk.py
+
+# remove tests depending on the 'flaky' python module
 grep '^import flaky' -r tests | cut -d: -f1 | xargs rm -fv
-
-# drop options that are not supported by nose in Fedora
-sed -e 's/ --show-skipped//' \
-    -e 's/ --with-flaky//' \
-    -i tests/run.sh
 
 # use %%{python3} instead of python to invoke tests, to make them work on f34
 sed -e 's|python |%{python3} |' -i tests/ext/test-suite.sh
@@ -158,7 +153,7 @@ export OPENSSL_CONF=
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
 export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
-make test PYTHON=%{__python3} NOSETESTS="%{nosetests}" PYFLAKES=true
+make test PYTHON=%{__python3} PYTEST=%{pytest} PYFLAKES=true
 rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
@@ -181,6 +176,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Aug 10 2021 Kamil Dudka <kdudka@redhat.com> - 7.44.0-1
+- update to 7.44.0
+
 * Fri Jul 23 2021 Fedora Release Engineering <releng@fedoraproject.org> - 7.43.0.6-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
