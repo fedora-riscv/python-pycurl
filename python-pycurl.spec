@@ -22,13 +22,13 @@
 %global modname pycurl
 
 Name:           python-%{modname}
-Version:        7.44.0
+Version:        7.44.1
 Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.io/
-Source0:        https://files.pythonhosted.org/packages/0f/db/856a430445d6cd631a7c97f028e3a9d947f84a1a27c42b5d47245eae920e/pycurl-%{version}.tar.gz
+Source0:        https://files.pythonhosted.org/packages/47/f9/c41d6830f7bd4e70d5726d26f8564538d08ca3a7ac3db98b325f94cdcb7f/pycurl-%{version}.tar.gz
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
@@ -103,9 +103,6 @@ Python 3 version.
 rm -fv winbuild.py
 sed -e 's| winbuild.py||' -i Makefile
 
-# remove binaries packaged by upstream
-rm -fv tests/fake-curl/libcurl/*.so
-
 # remove a test-case that relies on sftp://web.sourceforge.net being available
 rm -fv tests/ssh_key_cb_test.py
 
@@ -176,6 +173,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Mon Aug 16 2021 Kamil Dudka <kdudka@redhat.com> - 7.44.1-1
+- update to 7.44.1
+
 * Tue Aug 10 2021 Kamil Dudka <kdudka@redhat.com> - 7.44.0-1
 - update to 7.44.0
 
