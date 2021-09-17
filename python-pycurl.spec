@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.44.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -79,6 +79,7 @@ Summary:        Python interface to libcurl for Python 3
 BuildRequires:  python3-devel
 %if %{with tests}
 BuildRequires:  python3-bottle
+BuildRequires:  python3-flaky
 BuildRequires:  python3-pytest
 %global pytest pytest
 %else
@@ -101,22 +102,6 @@ Python 3 version.
 
 # remove windows-specific build script
 rm -fv winbuild.py
-sed -e 's| winbuild.py||' -i Makefile
-
-# remove a test-case that relies on sftp://web.sourceforge.net being available
-rm -fv tests/ssh_key_cb_test.py
-
-# remove a test-case that fails in Koji
-rm -fv tests/seek_cb_test.py
-
-# remove test-cases that depend on external network
-rm -fv examples/tests/test_{build_config,xmlrpc}.py
-
-# remove a test-case that depends on pygtk
-rm -fv examples/tests/test_gtk.py
-
-# remove tests depending on the 'flaky' python module
-grep '^import flaky' -r tests | cut -d: -f1 | xargs rm -fv
 
 # use %%{python3} instead of python to invoke tests, to make them work on f34
 sed -e 's|python |%{python3} |' -i tests/ext/test-suite.sh
@@ -150,6 +135,7 @@ export OPENSSL_CONF=
 export PYTHONPATH=%{buildroot}%{python3_sitearch}
 export PYCURL_SSL_LIBRARY=openssl
 export PYCURL_VSFTPD_PATH=vsftpd
+export PYTEST_ADDOPTS="--ignore examples -m 'not online'"
 make test PYTHON=%{__python3} PYTEST=%{pytest} PYFLAKES=true
 rm -fv tests/fake-curl/libcurl/*.so
 %endif
@@ -173,6 +159,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Fri Sep 17 2021 Scott Talbert <swt@techie.net> - 7.44.1-3
+- Cleanup test overrides & enable more tests
+
 * Tue Sep 14 2021 Sahana Prasad <sahana@redhat.com> - 7.44.1-2
 - Rebuilt with OpenSSL 3.0.0
 
