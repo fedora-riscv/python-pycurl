@@ -23,13 +23,15 @@
 
 Name:           python-%{modname}
 Version:        7.44.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.io/
 Source0:        https://files.pythonhosted.org/packages/47/f9/c41d6830f7bd4e70d5726d26f8564538d08ca3a7ac3db98b325f94cdcb7f/pycurl-%{version}.tar.gz
 
+# do not use deprecated unittest features (#2019410)
+Patch1:         0001-Fix-warnings-when-running-tests.patch
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
 
@@ -159,6 +161,9 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Wed Nov 03 2021 Lukáš Zaoral <lzaoral@redhat.com> - 7.44.1-4
+- do not use deprecated unittest features (#2019410)
+
 * Fri Sep 17 2021 Scott Talbert <swt@techie.net> - 7.44.1-3
 - Cleanup test overrides & enable more tests
 
