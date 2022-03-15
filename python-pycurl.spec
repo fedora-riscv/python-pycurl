@@ -22,18 +22,16 @@
 %global modname pycurl
 
 Name:           python-%{modname}
-Version:        7.44.1
-Release:        5%{?dist}
+Version:        7.45.1
+Release:        1%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
 URL:            http://pycurl.io/
 Source0:        https://files.pythonhosted.org/packages/47/f9/c41d6830f7bd4e70d5726d26f8564538d08ca3a7ac3db98b325f94cdcb7f/pycurl-%{version}.tar.gz
 
-# do not use deprecated unittest features (#2019410)
-Patch1:         0001-Fix-warnings-when-running-tests.patch
 # drop link-time vs. run-time TLS backend check (#1446850)
-Patch2:         0002-python-pycurl-7.43.0-tls-backend.patch
+Patch1:         0001-python-pycurl-7.45.1-tls-backend.patch
 
 BuildRequires:  gcc
 BuildRequires:  libcurl-devel
@@ -107,6 +105,7 @@ rm -fv winbuild.py
 
 # use %%{python3} instead of python to invoke tests, to make them work on f34
 sed -e 's|python |%{python3} |' -i tests/ext/test-suite.sh
+# use %%py3_shebang_fix after EPEL 7 EOL
 sed -e 's|^#! */usr/bin/env python$|#! /usr/bin/env %{python3}|' \
     -i tests/*.py setup.py
 
@@ -140,6 +139,7 @@ export PYCURL_VSFTPD_PATH=vsftpd
 export PYTEST_ADDOPTS="--ignore examples -m 'not online'"
 make test PYTHON=%{__python3} PYTEST=%{pytest} PYFLAKES=true
 rm -fv tests/fake-curl/libcurl/*.so
+rm -fvr tests/__pycache__
 %endif
 
 %if %{with python2}
@@ -161,6 +161,10 @@ rm -fv tests/fake-curl/libcurl/*.so
 %endif
 
 %changelog
+* Tue Mar 15 2022 Lukáš Zaoral <lzaoral@redhat.com> - 7.45.1-1
+- update to 7.45.1 (#2062500)
+- do not ship tests/__pycache__
+
 * Fri Jan 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 7.44.1-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 

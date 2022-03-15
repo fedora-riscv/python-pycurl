@@ -1,4 +1,4 @@
-From 36dcccb94bef72a7c4cf6acf7479f18568e545bb Mon Sep 17 00:00:00 2001
+From 9a5bfbe011be8d79e4bde1f8db2369beb063eb3a Mon Sep 17 00:00:00 2001
 From: Kamil Dudka <kdudka@redhat.com>
 Date: Tue, 2 May 2017 17:19:20 +0200
 Subject: [PATCH] module: drop link-time vs. run-time TLS backend check
@@ -8,14 +8,14 @@ This effectively reverts the following commit:
 
 Bug: https://bugzilla.redhat.com/1446850
 ---
- src/module.c | 62 ----------------------------------------------------
- 1 file changed, 62 deletions(-)
+ src/module.c | 69 ----------------------------------------------------
+ 1 file changed, 69 deletions(-)
 
 diff --git a/src/module.c b/src/module.c
-index a7108a0..af79875 100644
+index a81391f..b87d1d5 100644
 --- a/src/module.c
 +++ b/src/module.c
-@@ -328,15 +328,6 @@ initpycurl(void)
+@@ -336,15 +336,6 @@ initpycurl(void)
      PyObject *collections_module = NULL;
      PyObject *named_tuple = NULL;
      PyObject *arglist = NULL;
@@ -31,7 +31,7 @@ index a7108a0..af79875 100644
  
      assert(Curl_Type.tp_weaklistoffset > 0);
      assert(CurlMulti_Type.tp_weaklistoffset > 0);
-@@ -354,59 +345,6 @@ initpycurl(void)
+@@ -362,66 +353,6 @@ initpycurl(void)
          goto error;
      }
  
@@ -49,6 +49,11 @@ index a7108a0..af79875 100644
 -                case CURLSSLBACKEND_NSS:
 -                case CURLSSLBACKEND_WOLFSSL:
 -                case CURLSSLBACKEND_MBEDTLS:
+-#if LIBCURL_VERSION_NUM >= MAKE_LIBCURL_VERSION(7, 64, 1)
+-                case CURLSSLBACKEND_SECURETRANSPORT:
+-#else
+-                case CURLSSLBACKEND_DARWINSSL:
+-#endif
 -                    runtime_supported_backend_found = 1;
 -                    break;
 -                default:
@@ -79,6 +84,8 @@ index a7108a0..af79875 100644
 -        runtime_ssl_lib = "nss";
 -    } else if (!strncmp(vi->ssl_version, "mbedTLS/", 8)) {
 -        runtime_ssl_lib = "mbedtls";
+-    } else if (!strncmp(vi->ssl_version, "Secure Transport", 16)) {
+-        runtime_ssl_lib = "secure-transport";
 -    } else {
 -        runtime_ssl_lib = "none/other";
 -    }
@@ -92,5 +99,5 @@ index a7108a0..af79875 100644
       * is required for portability to Windows without requiring C++. */
      p_Curl_Type = &Curl_Type;
 -- 
-2.10.2
+2.35.1
 
