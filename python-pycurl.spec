@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.45.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -32,6 +32,8 @@ Source0:        https://files.pythonhosted.org/packages/47/f9/c41d6830f7bd4e70d5
 
 # drop link-time vs. run-time TLS backend check (#1446850)
 Patch1:         0001-python-pycurl-7.45.1-tls-backend.patch
+# https://github.com/pycurl/pycurl/pull/753
+Patch2:         0002-python-pycurl-7.45.1-curl-7.83-compatibility.patch
 
 BuildRequires:  gcc
 BuildRequires:  libcurl-devel
@@ -161,6 +163,9 @@ rm -fvr tests/__pycache__
 %endif
 
 %changelog
+* Tue May 03 2022 Lukáš Zaoral <lzaoral@redhat.com> - 7.45.1-2
+- fix failing test-suite with curl 7.83+
+
 * Tue Mar 15 2022 Lukáš Zaoral <lzaoral@redhat.com> - 7.45.1-1
 - update to 7.45.1 (#2062500)
 - do not ship tests/__pycache__
