@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.45.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -163,6 +163,9 @@ rm -fvr tests/__pycache__
 %endif
 
 %changelog
+* Mon Jun 13 2022 Python Maint <python-maint@redhat.com> - 7.45.1-3
+- Rebuilt for Python 3.11
+
 * Tue May 03 2022 Lukáš Zaoral <lzaoral@redhat.com> - 7.45.1-2
 - fix failing test-suite with curl 7.83+
 
