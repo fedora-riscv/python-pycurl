@@ -23,7 +23,7 @@
 
 Name:           python-%{modname}
 Version:        7.45.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        A Python interface to libcurl
 
 License:        LGPLv2+ or MIT
@@ -163,6 +163,9 @@ rm -fvr tests/__pycache__
 %endif
 
 %changelog
+* Fri Jul 22 2022 Fedora Release Engineering <releng@fedoraproject.org> - 7.45.1-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
 * Mon Jun 13 2022 Python Maint <python-maint@redhat.com> - 7.45.1-3
 - Rebuilt for Python 3.11
 
